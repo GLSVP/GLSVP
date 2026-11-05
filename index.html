@@ -64,7 +64,42 @@
         .btn-cv:hover {
             background-color: #0056b3;            /* Bleu plus foncé au survol */
         }
-    </style>
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    z-index: 10;
+    border-radius: 4px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+}
+
+.dropdown-content a {
+    color: #333333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+    color: #007bff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
 </head>
 <body>
     <header>
@@ -77,8 +112,14 @@
         <p>En attendant une reprise de mission je m'amuse à faire une page internet grâce à l'IA</p>
     <!-- Nous avons ajouté class="btn-cv" pour appliquer le style CSS ci-dessus -->
     <p style="margin-top: 30px;">
-        <a href="CV_GLSVP-fr.pdf" download class="btn-cv">📥 Alors appuies sur ce bouton ! (PDF)</a>
-    </p>
+  <div class="dropdown" style="display: inline-block;">
+    <button class="btn-cv">📥 Télécharger le CV</button>
+    <div class="dropdown-content">
+      <a href="CV_GLSVP-fr.pdf" download="CV_GLSVP-fr.pdf">Format PDF (.pdf)</a>
+      <a href="CV_GLSVP-fr.docx" download="CV_GLSVP-fr.docx">Format Word (.docx)</a>
+    </div>
+  </div>
+</p>
     </header>
 
      <main>
