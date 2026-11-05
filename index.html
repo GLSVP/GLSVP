@@ -21,13 +21,43 @@
             padding: 2rem;
         }
         main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+  position: relative; /* Indispensable pour superposer l'arrière-plan */
+  overflow: hidden;   /* Empêche les images de dépasser des coins arrondis (border-radius) */
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background: white;  /* Fond de secours pendant le chargement */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Le calque qui contiendra les images du diaporama */
+.main-bg-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Placé en arrière-plan */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out; /* Transition douce d'1 seconde */
+}
+/* Un voile blanc semi-transparent pour garder vos textes bien lisibles */
+.main-bg-slideshow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75); /* Ajustez l'opacité (0.75 = 75%) selon le contraste voulu */
+}
+/* Éléments de premier plan : force tout le contenu HTML à passer devant les images */
+main > *:not(.main-bg-slideshow) {
+  position: relative;
+  z-index: 2;
+}
                 footer {
             text-align: center;
             padding: 1rem;
@@ -123,6 +153,9 @@
     </header>
 
      <main>
+        <!-- Ajoutez cette ligne ici -->
+  <div class="main-bg-slideshow" id="bg-slideshow"></div>
+  
         <h2>Je vais ajouter des fichiers et des images dans cette espace</h2>
         <p>Alors bienvenue et que ça reste entre nous !!!</p>
         
@@ -150,5 +183,44 @@
         📁 Déposer un fichier
     </a>
 </section>
+<script>
+  // Liste des images de votre diaporama (pensez à utiliser des images au format léger .webp)
+  const images = [
+    'images/diapo1.jpg',
+    'images/diapo2.jpeg',
+    'images/diapo3.jpeg',
+    'images/diapo4.jpg',
+    'images/diapo5.jpg'
+  ];
+
+  let currentIndex = 0;
+  const slideshowElement = document.getElementById('bg-slideshow');
+
+  // 1. Affiche immédiatement la première image au chargement
+  if (images.length > 0) {
+    slideshowElement.style.backgroundImage = `url('${images[0]}')`;
+  }
+
+  // 2. Fonction de pré-chargement en arrière-plan (évite les clignotements)
+  function preloadImage(url) {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = () => resolve(url);
+    });
+  }
+
+  // 3. Changement automatique d'image toutes les 6 secondes
+  setInterval(async () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    const nextImageUrl = images[currentIndex];
+
+    // Télécharge l'image en mémoire avant de l'injecter sur la page
+    await preloadImage(nextImageUrl);
+    
+    // Applique l'image avec l'effet de transition CSS
+    slideshowElement.style.backgroundImage = `url('${nextImageUrl}')`;
+  }, 6000);
+</script>
 </body>
 </html>
