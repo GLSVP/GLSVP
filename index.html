@@ -42,6 +42,7 @@
   background-size: cover;
   background-position: center;
   transition: background-image 1s ease-in-out; /* Transition douce d'1 seconde */
+  filter: saturate(1.4) brightness(1.05); /* Augmente la saturation de 40% et ravive la lumière */
 }
 /* Un voile blanc semi-transparent pour garder vos textes bien lisibles */
 .main-bg-slideshow::after {
@@ -51,7 +52,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.75); /* Ajustez l'opacité (0.75 = 75%) selon le contraste voulu */
+  background: rgba(255, 255, 255, 0.4); /* Ajustez l'opacité (0.75 = 75%) selon le contraste voulu */
 }
 /* Éléments de premier plan : force tout le contenu HTML à passer devant les images */
 main > *:not(.main-bg-slideshow) {
@@ -161,7 +162,7 @@ main > *:not(.main-bg-slideshow) {
         
         <!-- Bloc de l'image centrée au milieu de la page -->
         <div style="text-align: center; margin: 2rem 0;">
-            <img src="nom_de_votre_image.jpeg" alt="Illustration professionnelle" style="max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+            <img src="nom_de_votre_image.jpeg" alt="Illustration professionnelle" style="max-width: 100%; opacity:0.5; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
         </div>
 
         <h2>Nos Services et Solutions</h2>
