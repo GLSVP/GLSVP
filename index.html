@@ -185,10 +185,19 @@ main > *:not(.main-bg-slideshow) {
         📁 Déposer un fichier
     </a>
 </section>
-<!-- Balise audio masquée ou visible selon votre choix -->
-<!-- Retirez l'attribut "controls" si vous voulez cacher complètement le lecteur -->
+<!-- Menu de sélection de vos musiques -->
+<div class="choix-musique" style="margin: 10px 0; font-family: sans-serif;">
+    <label for="select-audio" style="font-weight: bold; margin-right: 10px;">🎵 Choisir la boucle sonore :</label>
+    <select id="select-audio" style="padding: 5px; border-radius: 4px; cursor: pointer;">
+        <option value="greensleeves.mp3">Greensleeves (Piano)</option>
+        <option value="FurElise2.mp3">La Lettre à Élise - V2 (Piano)</option>
+        <option value="Mozart.mp3">Mozart (Classique)</option>
+    </select>
+</div>
+
+<!-- Votre balise audio -->
 <audio id="fond-sonore" loop controls>
-     <source src="greensleeves.mp3" type="audio/mpeg" />
+    <source id="audio-source" src="greensleeves.mp3" type="audio/mpeg" />
     Votre navigateur ne supporte pas l'élément audio.
 </audio>
 
@@ -215,15 +224,32 @@ main > *:not(.main-bg-slideshow) {
             });
         }
     });
+    // Script pour changer de musique à la volée depuis la liste déroulante
+        const selectAudio = document.getElementById('select-audio');
+        const audioSource = document.getElementById('audio-source');
+
+        selectAudio.addEventListener('change', (event) => {
+            // Changer le fichier source
+            audioSource.src = event.target.value;
+            
+            // Recharger le lecteur avec la nouvelle musique
+            audio.load();
+            
+            // Ré-appliquer vos configurations de volume et de vitesse
+            audio.volume = 0.75;
+            audio.playbackRate = 1.5;
+            
+            // Lancer la lecture
+            audio.play().catch(err => console.log("Lecture bloquée :", err));
+        });
 </script>
-<script>
   // Liste des images de votre diaporama (pensez à utiliser des images au format léger .webp)
   const images = [
-    'images/diapo1.jpg',
-    'images/diapo2.jpeg',
-    'images/diapo3.jpeg',
-    'images/diapo4.jpg',
-    'images/diapo5.jpg',
+    'images/diapo (1).jpg',
+    'images/diapo (2).jpg',
+    'images/diapo (3).jpg',
+    'images/diapo (4).jpg',
+    'images/diapo (5).jpg',
     'images/diapo (6).jpg',
     'images/diapo (7).jpg',
     'images/diapo (8).jpg',
