@@ -185,6 +185,37 @@ main > *:not(.main-bg-slideshow) {
         📁 Déposer un fichier
     </a>
 </section>
+<!-- Balise audio masquée ou visible selon votre choix -->
+<!-- Retirez l'attribut "controls" si vous voulez cacher complètement le lecteur -->
+<audio id="fond-sonore" loop controls>
+     <source src="greensleeves.mp3" type="audio/mpeg" />
+    Votre navigateur ne supporte pas l'élément audio.
+</audio>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('fond-sonore');
+        
+        // Ajustez le volume entre 0.0 (muet) et 1.0 (maximum). 
+        // Un fond sonore doit être discret (ex: 0.2 ou 0.3)
+        audio.volume = 0.2;
+        audio.playbackRate = 1.35; 
+
+        // Tentative de lecture automatique
+        const playPromise = audio.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log("Lecture automatique bloquée par le navigateur. Attente d'une interaction utilisateur.");
+                
+                // Si la lecture automatique est bloquée, on lance le son au premier clic sur la page
+                document.body.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true }); // { once: true } permet de ne déclencher l'action qu'une seule fois
+            });
+        }
+    });
+</script>
 <script>
   // Liste des images de votre diaporama (pensez à utiliser des images au format léger .webp)
   const images = [
