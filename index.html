@@ -70,7 +70,7 @@
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.6); 
-    backdrop-filter: blur(4px); /* ◄ Ajoute un léger flou artistique sur l'image de fond */
+//  backdrop-filter: blur(4px); /* ◄ Ajoute un léger flou artistique sur l'image de fond */
     z-index: 2;           /* Se place par-dessus les images du diaporama */
 }
 
@@ -150,6 +150,9 @@ main > :not(.bug-container) {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+main img:hover {
+    opacity: 1 !important; /* La photo redevient nette au survol de la souris */
+}
 </style>
 </head>
 <body>
@@ -185,8 +188,9 @@ main > :not(.bug-container) {
     <p data-translate="section1_text">Alors bienvenue et que ça reste entre nous !!!</p>
 
     <!-- Bloc de l'image centrée (laisser inchangé) -->
-    <div style="text-align: center; margin: 2rem 0;opacity: 0.75">
+    <div style="text-align: center; margin: 2rem 0">
         <img src="nom_de_votre_image.jpeg" alt="Illustration professionnelle" ... />
+        style="display: block; margin: 0 auto; width: auto; max-width: 400px; height: auto; opacity: 0.4; transition: opacity 0.3s;">
     </div>
 
     <!-- AJOUT DES ATTRIBUTS CI-DESSOUS -->
