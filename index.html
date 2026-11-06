@@ -32,14 +32,13 @@
   text-align: center; /* Force TOUT le texte à se centrer automatiquement */
 }
 /* Nouveau conteneur pour le fondu progressif */
-        /* Conteneur du diaporama limité à l'encadré blanc */
         #bg-container {
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 300px; /* Ajustez cette hauteur en pixels selon vos envies pour l'image */
-            margin-top: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px; /* Arrondit les coins des images pour coller au style */
+            height: 100%;
+            z-index: -1; /* Reste derrière le contenu du site */
             overflow: hidden;
         }
 
@@ -60,7 +59,19 @@
         /* Le calque visible */
         .slideshow-layer.active {
             opacity: 1;
-                }
+        }
+
+        /* Voile blanc semi-transparent pour garder vos textes bien lisibles */
+        #bg-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4); /* Ajuste la lumière sur le fond */
+            z-index: 1;
+        }
                 footer {
             text-align: center;
             padding: 1rem;
@@ -156,15 +167,14 @@
     </header>
 
      <main>
-   
-        <h2>Je vais ajouter des fichiers et des images dans cet espace</h2>
-        <p>Alors bienvenue et que ça reste entre nous !!!</p>
-        
-<div id="bg-container">
+ <div id="bg-container">
     <div id="slide1" class="slideshow-layer active"></div>
     <div id="slide2" class="slideshow-layer"></div>
 </div>
-
+  
+        <h2>Je vais ajouter des fichiers et des images dans cet espace</h2>
+        <p>Alors bienvenue et que ça reste entre nous !!!</p>
+        
         <!-- Bloc de l'image centrée au milieu de la page -->
         <div style="text-align: center; margin: 2rem 0;">
             <img src="nom_de_votre_image.jpeg" alt="Illustration professionnelle" style="display: block; margin: 0 auto; width: auto; max-width: 400px; height: auto; opacity: 0.4; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
