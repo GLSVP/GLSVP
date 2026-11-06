@@ -1,0 +1,44 @@
+{
+  "fr": {
+    "title": "Vers l'infini et l'au-delà",
+    "subtitle": "En attendant une reprise de mission nous nous amusons à faire une page internet avec l'IA",
+    "cv_btn": "Appuyer sur le bouton",
+    "section1_title": "Je vais ajouter des fichiers et des images dans cet espace",
+    "section1_text": "Alors bienvenue et que ça reste entre nous !!!",
+    "services_title": "Nos Services et Solutions",
+    "services_text": "Découvrez prochainement le détail de nos prestations, adaptées à vos besoins spécifiques.",
+    "footer_text": "© 2026 - Tous droits réservés.",
+    "share_title": "Partager un document",
+    "share_desc": "Pour m'envoyer un fichier en toute sécurité, cliquez ci-dessous :",
+    "share_btn": "📄 Déposer un fichier",
+    "music_label": "🎵 Bonjour"
+  },
+  "en": {
+    "title": "To infinity and beyond",
+    "subtitle": "While waiting for a mission resumption we are having fun making a website with AI",
+    "cv_btn": "Press the button",
+    "section1_title": "I will add files and images in this space",
+    "section1_text": "So welcome and keep it between us !!!",
+    "services_title": "Our Services and Solutions",
+    "services_text": "Discover soon the details of our services, adapted to your specific needs.",
+    "footer_text": "© 2026 - All rights reserved.",
+    "share_title": "Share a document",
+    "share_desc": "To send me a file securely, click below:",
+    "share_btn": "📄 Upload a file",
+    "music_label": "🎵 Hello"
+  },
+  "pt": {
+    "title": "Ao infinito e além",
+    "subtitle": "Enquanto esperamos a retomada da missão, estamos nos divertindo fazendo um site com IA",
+    "cv_btn": "Aperte o botão",
+    "section1_title": "Vou adicionar arquivos e imagens neste espaço",
+    "section1_text": "Então bem-vindo e que fique entre nós !!!",
+    "services_title": "Nossos Services et Soluções",
+    "services_text": "Descubra em breve os detalhes dos nossos serviços, adaptados às suas necessidades específicas.",
+    "footer_text": "© 2026 - Todos os direitos reservados.",
+    "share_title": "Compartilhar um documento",
+    "share_desc": "Para me enviar um arquivo com total segurança, clique abaixo:",
+    "share_btn": "📄 Enviar um arquivo",
+    "music_label": "🎵 Olá"
+  }
+}
