@@ -225,23 +225,26 @@ main > *:not(.main-bg-slideshow) {
         }
     });
     // Script pour changer de musique à la volée depuis la liste déroulante
-        const selectAudio = document.getElementById('select-audio');
-        const audioSource = document.getElementById('audio-source');
+const selectAudio = document.getElementById('select-audio');
+const audioSource = document.getElementById('audio-source');
 
-        selectAudio.addEventListener('change', (event) => {
-            // Changer le fichier source
-            audioSource.src = event.target.value;
-            
-            // Recharger le lecteur avec la nouvelle musique
-            audio.load();
-            
-            // Ré-appliquer vos configurations de volume et de vitesse
-            audio.volume = 0.75;
-            audio.playbackRate = 1.5;
-            
-            // Lancer la lecture
-            audio.play().catch(err => console.log("Lecture bloquée :", err));
-        });
+selectAudio.addEventListener('change', (event) => {
+    // 1. ⏸️ ON MET EN PAUSE pour stopper proprement le morceau en cours
+    audio.pause();
+    
+    // 2. On change la source du fichier par la nouvelle sélection
+    audioSource.src = event.target.value;
+    
+    // 3. On recharge le lecteur audio
+    audio.load();
+    
+    // 4. On ré-applique vos configurations de volume et de vitesse accélérée
+    audio.volume = 0.75;
+    audio.playbackRate = 1.5;
+    
+    // 5. ▶️ ON RELANCE la lecture automatique
+    audio.play().catch(err => console.log("Lecture bloquée :", err));
+});
 
   // Liste des images de votre diaporama (pensez à utiliser des images au format léger .webp)
   const images = [
