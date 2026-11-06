@@ -170,8 +170,8 @@ main img:hover {
         <div class="dropdown" style="display: inline-block;">
             <button class="btn-cv" data-translate="cv_btn">Appuyer sur le bouton</button>
             <div class="dropdown-content">
-                <a href="CV_GLSVP fr.pdf" download="CV_GLSVP fr.pdf">Format PDF (.pdf)</a>
-                <a href="CV_GLSVP fr.doc" download="CV_GLSVP fr.doc">Format Word (.doc)</a>
+                <a href="CV_GLSVP fr.pdf" download="CV_GLSVP fr.pdf">CV Format PDF (.pdf)</a>
+                <a href="CV_GLSVP fr.doc" download="CV_GLSVP fr.doc">CV Format Word (.doc)</a>
             </div>
         </div>
     </header>
@@ -212,8 +212,9 @@ main img:hover {
     </section>
 <!-- Menu de sélection de vos musiques -->
 <div class="choix-musique" style="margin: 10px 0; font-family: sans-serif;">
-        <label for="select-audio" style="font-weight: bold; margin-right: 10px;" data-translate="music_label">🎵 Bonjour</label>    <select id="select-audio" style="padding: 5px; border-radius: 4px; cursor: pointer;">
-        <option value="greensleeves.mp3">greensleeves</option>
+        <label for="select-audio" style="font-weight: bold; margin-right: 10px;" data-translate="music_label">🎵 Bonjour</label>    
+        <select id="select-audio" style="padding: 5px; border-radius: 4px; cursor: pointer;">
+        <option value="greensleeves.mp3">Greensleeves</option>
         <option value="FurElise2.mp3">FurElise2</option>
         <option value="Mozart.mp3">Mozart</option>
         <option value="Visiteurs.mp3">Visiteurs</option>
@@ -294,7 +295,7 @@ loadTranslations();
         audio.src = event.target.value;
         audio.load();
         audio.volume = 0.75;
-        audio.playbackRate = 1.5;
+        audio.playbackRate = 1.0;
         audio.play().catch(err => console.log("Lecture bloquée :", err));
     });
 
