@@ -31,35 +31,47 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   text-align: center; /* Force TOUT le texte à se centrer automatiquement */
 }
+/* Nouveau conteneur pour le fondu progressif */
+        #bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Reste derrière le contenu du site */
+            overflow: hidden;
+        }
 
-/* Le calque qui contiendra les images du diaporama */
-.main-bg-slideshow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Placé en arrière-plan */
-  background-size: cover;
-  background-position: center;
-  transition: background-image 0.25s ease-in-out; /* Transition douce d'1 seconde */
-  filter: saturate(1.4) brightness(1.05); /* Augmente la saturation de 40% et ravive la lumière */
-}
-/* Un voile blanc semi-transparent pour garder vos textes bien lisibles */
-.main-bg-slideshow::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.4); /* Ajustez l'opacité (0.75 = 75%) selon le contraste voulu */
-}
-/* Éléments de premier plan : force tout le contenu HTML à passer devant les images */
-main > *:not(.main-bg-slideshow) {
-  position: relative;
-  z-index: 2;
-}
+        /* Les deux calques superposés */
+        .slideshow-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            filter: saturate(1.4) brightness(1.05); /* Conserve vos filtres d'image */
+            transition: opacity 1.5s ease-in-out; /* Durée du fondu progressif (1.5s) */
+        }
+
+        /* Le calque visible */
+        .slideshow-layer.active {
+            opacity: 1;
+        }
+
+        /* Voile blanc semi-transparent pour garder vos textes bien lisibles */
+        #bg-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4); /* Ajuste la lumière sur le fond */
+            z-index: 1;
+        }
                 footer {
             text-align: center;
             padding: 1rem;
@@ -155,8 +167,10 @@ main > *:not(.main-bg-slideshow) {
     </header>
 
      <main>
-        <!-- Ajoutez cette ligne ici -->
-  <div class="main-bg-slideshow" id="bg-slideshow"></div>
+ <div id="bg-container">
+    <div id="slide1" class="slideshow-layer active"></div>
+    <div id="slide2" class="slideshow-layer"></div>
+</div>
   
         <h2>Je vais ajouter des fichiers et des images dans cet espace</h2>
         <p>Alors bienvenue et que ça reste entre nous !!!</p>
@@ -292,33 +306,37 @@ main > *:not(.main-bg-slideshow) {
 //  Mélange le tableau d'images aléatoirement
     images.sort(() => Math.random() - 0.5);
   let currentIndex = 0;
-  const slideshowElement = document.getElementById('bg-slideshow');
-
-  // 1. Affiche immédiatement la première image au chargement
-  if (images.length > 0) {
-    slideshowElement.style.backgroundImage = `url('${images[0]}')`;
-  }
-
-  // 2. Fonction de pré-chargement en arrière-plan (évite les clignotements)
-  function preloadImage(url) {
-    return new Promise((resolve) => {
-      const img = new Image();
-      img.src = url;
-      img.onload = () => resolve(url);
-    });
-  }
-
-  // 3. Changement automatique d'image toutes les 3 secondes
-  setInterval(async () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    const nextImageUrl = images[currentIndex];
-
-    // Télécharge l'image en mémoire avant de l'injecter sur la page
-    await preloadImage(nextImageUrl);
-    
-    // Applique l'image avec l'effet de transition CSS
-    slideshowElement.style.backgroundImage = `url('${nextImageUrl}')`;
-  }, 3000);
+// Récupération des deux couches de transition pour le fondu
+    const slide1 = document.getElementById('slide1');
+    const slide2 = document.getElementById('slide2');
+    let currentSlideElement = slide1;
+    // 1. Affiche immédiatement la première image au chargement
+    if (images.length > 0) {
+        slide1.style.backgroundImage = `url('${images[0]}')`;
+    }
+    // 2. Fonction de préchargement en arrière-plan (évite les clignotements)
+    function preloadImage(url) {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.src = url;
+            img.onload = () => resolve(url);
+        });
+    }
+    // 3. Changement automatique d'image toutes les 6 secondes avec fondu enchaîné
+    setInterval(async () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        const nextImageUrl = images[currentIndex];
+        // Télécharge l'image en mémoire avant de l'injecter
+        await preloadImage(nextImageUrl);
+        // Détermine quelle couche est actuellement masquée pour y injecter la nouvelle image
+        const nextSlideElement = (currentSlideElement === slide1) ? slide2 : slide1;       
+        nextSlideElement.style.backgroundImage = `url('${nextImageUrl}')`;       
+        // Alterne les classes CSS pour déclencher le fondu progressif fluide
+        nextSlideElement.classList.add('active');
+        currentSlideElement.classList.remove('active');
+        // La couche suivante devient la couche active actuelle
+        currentSlideElement = nextSlideElement;
+    }, 6000); // 6000ms = 6 secondes
 </script>
 </body>
 </html>
