@@ -167,10 +167,10 @@
     </header>
 
      <main>
- <div id="bg-container">
-    <div id="slide1" class="slideshow-layer active"></div>
-    <div id="slide2" class="slideshow-layer"></div>
-</div>
+        <div id="bg-container">
+        <div id="slide1" class="slideshow-layer active"></div>
+        <div id="slide2" class="slideshow-layer"></div>
+        </div>
   
         <h2>Je vais ajouter des fichiers et des images dans cet espace</h2>
         <p>Alors bienvenue et que ça reste entre nous !!!</p>
@@ -322,7 +322,7 @@
             img.onload = () => resolve(url);
         });
     }
-    // 3. Changement automatique d'image toutes les 6 secondes avec fondu enchaîné
+    // 3. Changement automatique d'image toutes les 3 secondes avec fondu enchaîné
     setInterval(async () => {
         currentIndex = (currentIndex + 1) % images.length;
         const nextImageUrl = images[currentIndex];
@@ -336,7 +336,7 @@
         currentSlideElement.classList.remove('active');
         // La couche suivante devient la couche active actuelle
         currentSlideElement = nextSlideElement;
-    }, 6000); // 6000ms = 6 secondes
+    }, 3000); // 3000ms = 3 secondes
 </script>
 </body>
 </html>
