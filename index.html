@@ -31,34 +31,52 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   text-align: center; /* Force TOUT le texte à se centrer automatiquement */
 }
+/* Le conteneur parent pour le fond progressif, confiné dans main */
+.bug-container {
+    position: absolute;   /* S'ancre par rapport au conteneur <main> */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;           /* Reste sous le texte */
+}
 
-/* Le calque qui contiendra les images du diaporama */
-.main-bg-slideshow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Placé en arrière-plan */
-  background-size: cover;
-  background-position: center;
-  transition: background-image 0.25s ease-in-out; /* Transition douce d'1 seconde */
-  filter: saturate(1.4) brightness(1.05); /* Augmente la saturation de 40% et ravive la lumière */
+/* Les calques d'images superposés */
+.slideshow-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;           /* Masqué par défaut */
+    filter: saturate(1.4) brightness(1.05);
+    transition: opacity 1.5s ease-in-out; /* Transition progressive */
 }
-/* Un voile blanc semi-transparent pour garder vos textes bien lisibles */
-.main-bg-slideshow::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.4); /* Ajustez l'opacité (0.75 = 75%) selon le contraste voulu */
+
+/* Le calque visible */
+.slideshow-layer.active {
+    opacity: 1;
 }
+
+/* Le voile blanc semi-transparent pour garder vos textes bien lisibles */
+.bug-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); 
+    z-index: 2;           /* Se place par-dessus les images du diaporama */
+}
+
 /* Éléments de premier plan : force tout le contenu HTML à passer devant les images */
-main > *:not(.main-bg-slideshow) {
-  position: relative;
-  z-index: 2;
+main > :not(.bug-container) {
+    position: relative;
+    z-index: 3;           /* Passe au-dessus du voile et des images */
 }
                 footer {
             text-align: center;
@@ -156,7 +174,10 @@ main > *:not(.main-bg-slideshow) {
 
      <main>
         <!-- Ajoutez cette ligne ici -->
-  <div class="main-bg-slideshow" id="bg-slideshow"></div>
+ <div class="bug-container" id="bg-slideshow">
+    <div class="slideshow-layer active"></div>
+    <div class="slideshow-layer"></div>
+</div>
   
         <h2>Je vais ajouter des fichiers et des images dans cet espace</h2>
         <p>Alors bienvenue et que ça reste entre nous !!!</p>
@@ -207,7 +228,7 @@ main > *:not(.main-bg-slideshow) {
         const audio = document.getElementById('fond-sonore');
         
         audio.volume = 0.75;
-        audio.playbackRate = 1.5;
+        audio.playbackRate = 1.2;
 
         const playPromise = audio.play();
 
@@ -289,36 +310,54 @@ main > *:not(.main-bg-slideshow) {
     'images/diapo (50).jpg',
     'images/diapo (51).jpg',  
   ];
-//  Mélange le tableau d'images aléatoirement
+// Mélange le tableau d'images aléatoirement
     images.sort(() => Math.random() - 0.5);
-  let currentIndex = 0;
-  const slideshowElement = document.getElementById('bg-slideshow');
-
-  // 1. Affiche immédiatement la première image au chargement
-  if (images.length > 0) {
-    slideshowElement.style.backgroundImage = `url('${images[0]}')`;
-  }
-
-  // 2. Fonction de pré-chargement en arrière-plan (évite les clignotements)
-  function preloadImage(url) {
-    return new Promise((resolve) => {
-      const img = new Image();
-      img.src = url;
-      img.onload = () => resolve(url);
-    });
-  }
-
-  // 3. Changement automatique d'image toutes les 3 secondes
-  setInterval(async () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    const nextImageUrl = images[currentIndex];
-
-    // Télécharge l'image en mémoire avant de l'injecter sur la page
-    await preloadImage(nextImageUrl);
     
-    // Applique l'image avec l'effet de transition CSS
-    slideshowElement.style.backgroundImage = `url('${nextImageUrl}')`;
-  }, 3000);
+    let currentIndex = 0;
+    
+    // Récupération des deux calques d'affichage
+    const container = document.getElementById('bg-slideshow');
+    const layers = container.getElementsByClassName('slideshow-layer');
+    let activeLayerIndex = 0; // Piste le calque actuellement visible (0 ou 1)
+
+    // 1. Affiche immédiatement la première image au chargement
+    if (images.length > 0 && layers.length > 0) {
+        layers[activeLayerIndex].style.backgroundImage = `url('${images[0]}')`;
+    }
+
+    // 2. Fonction de pré-chargement en arrière-plan (évite les clignotements)
+    function preloadImage(url) {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.src = url;
+            img.onload = () => resolve(url);
+        });
+    }
+
+    // 3. Changement automatique d'image toutes les 3 secondes
+    setInterval(async () => {
+        if (images.length === 0) return;
+
+        // Calcul de l'index de la prochaine image
+        currentIndex = (currentIndex + 1) % images.length;
+        const nextImageUrl = images[currentIndex];
+
+        // Détermine quel est le calque masqué (celui en arrière-plan)
+        const nextLayerIndex = activeLayerIndex === 0 ? 1 : 0;
+
+        // Télécharge l'image en mémoire avant de l'injecter
+        await preloadImage(nextImageUrl);
+
+        // Injecte la nouvelle image dans le calque d'arrière-plan
+        layers[nextLayerIndex].style.backgroundImage = `url('${nextImageUrl}')`;
+
+        // Alterne la classe active pour déclencher la transition CSS fluide
+        layers[activeLayerIndex].classList.remove('active');
+        layers[nextLayerIndex].classList.add('active');
+
+        // Met à jour l'index du calque actif pour le prochain tour
+        activeLayerIndex = nextLayerIndex;
+    }, 3000);
 </script>
 </body>
 </html>
