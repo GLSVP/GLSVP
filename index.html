@@ -13,6 +13,9 @@
             <a href="#" class="lang-link" onclick="changeLanguage('en')">GB English</a>
             <a href="#" class="lang-link" onclick="changeLanguage('pt')">BR Português</a>
             <a href="#" class="lang-link" onclick="changeLanguage('fr')">FR Français</a>
+            <a href="#" class="lang-link" onclick="changeLanguage('ge')">GE Deutsch</a>
+            <a href="#" class="lang-link" onclick="changeLanguage('es')">ES Español</a>
+            <a href="#" class="lang-link" onclick="changeLanguage('nd')">ND Néerlandais</a>
         </div>
 
         <h1 data-translate="title">Vers l'infini et l'au-delà</h1>
@@ -35,8 +38,8 @@
     </div>
 
     <!-- AJOUT DES ATTRIBUTS CI-DESSOUS -->
-    <h2 data-translate="section1_title">Je vais ajouter des fichiers et des images dans cet espace</h2>
-    <p data-translate="section1_text">Alors bienvenue et que ça reste entre nous !!!</p>
+    <h2 data-translate="section1_title">Nous vous souhaitons la bienvenue dans cet espace</h2>
+    <p data-translate="section1_text">Que ça reste entre nous !!!</p>
 
     <!-- Bloc de l'image centrée (laisser inchangé) -->
      <div style="text-align: center; margin: 2rem 0;">
@@ -44,18 +47,17 @@
         </div>
 
     <!-- AJOUT DES ATTRIBUTS CI-DESSOUS -->
-    <h2 data-translate="services_title">Nos Services et Solutions</h2>
-    <p data-translate="services_text">Découvrez prochainement le détail de nos prestations, adaptées à vos besoins spécifiques.</p>
+    <h2 data-translate="services_title">Prêt pour échanger ?!?</h2>
+    <p data-translate="services_text">Découvrez nos prestations, adaptées à vos besoins spécifiques.</p>
         </main>
     <footer>
         <p data-translate="footer_text">&copy; 2026 - Tous droits réservés.</p>
     </footer>
-<!-- Section Espace de téléchargement -->
 <!-- Section Espace de téléchargement (Alternative Google Forms) -->
 <section id="upload-section" style="max-width: 600px; margin: 40px auto; padding: 30px; border: 2px dashed #007bff; border-radius: 10px; background-color: #f8f9fa; font-family: sans-serif; text-align: center;">
     
 <h2 style="color: #333; margin-bottom: 10px;" data-translate="share_title">Partager un document</h2>
-        <p style="color: #666; margin-bottom: 25px;" data-translate="share_desc">Pour m'envoyer un fichier en toute sécurité, cliquez ci-dessous :</p>
+        <p style="color: #666; margin-bottom: 25px;" data-translate="share_desc">Pour envoyer un fichier en toute sécurité, cliquez juste :</p>
     <!-- REMPLACEZ l'adresse ci-dessous par le lien de votre Google Form -->
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvIIXdHu1iCAwoCy4O-yRKXPoZJkZXLT6e6jFqzFKXoD4NbA/viewform?usp=header" target="_blank" style="display: inline-block; background-color: #007bff; color: white; text-decoration: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 5px; transition: background 0.3s ease;">
 <button class="btn-upload" data-translate="share_btn">📄 Déposer un fichier</button>
@@ -63,7 +65,7 @@
     </section>
 <!-- Menu de sélection de vos musiques -->
 <div class="choix-musique" style="margin: 10px 0; font-family: sans-serif;">
-        <label for="select-audio" style="font-weight: bold; margin-right: 10px;" data-translate="music_label">🎵 Bonjour</label>    
+        <label for="select-audio" style="font-weight: bold; margin-right: 10px;" data-translate="music_label">Bonjour, ...</label>    
         <select id="select-audio" style="padding: 5px; border-radius: 4px; cursor: pointer;">
         <option value="Greensleeves.mp3">Greensleeves</option>
         <option value="FurElise2.mp3">FurElise2</option>
@@ -78,8 +80,7 @@
 
 <!-- Votre balise audio -->
 <audio id="fond-sonore" loop controls>
-    <source id="audio-source" src="greensleeves.mp3" type="audio/mpeg" />
-    Votre navigateur ne supporte pas l'élément audio.
+    <source id="audio-source" src="Asturias.mp3" type="audio/mpeg" />
 </audio>
 
 <script src="images.js"></script>
@@ -140,8 +141,7 @@ loadTranslations();
                 }, { once: true });
             });
         }
-    }); // <-- C'est cette fermeture (ligne 226) qui devait rester ici !
-
+    }); 
     // 2. BLOC DE CHANGEMENT DE MUSIQUE (Votre code actuel de l'image)
     const selectAudio = document.getElementById('select-audio');
     const audio = document.getElementById('fond-sonore');
