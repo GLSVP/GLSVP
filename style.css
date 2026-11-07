@@ -1,0 +1,184 @@
+        /* Un tout petit peu de style (CSS) pour que ce soit propre dès le départ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #da0d09;
+        }
+        header {
+            background-color: #0e21c8;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        main {
+    position: relative; /* Indispensable pour superposer l'arrière-plan */
+    overflow: hidden;   /* Empêche les images de dépasser des coins arrondis */
+    max-width: 800px;
+    width: 92%;         /* 🟢 AJOUT : Permet au bloc de rétrécir proprement sur smartphone sans coller aux bords */
+    margin: 2rem auto;  /* Centre automatiquement le bloc sur l'écran */
+    padding: 2rem 1rem; /* Marges intérieures */
+    box-sizing: border-box; /* 🟢 AJOUT : Évite que le padding ne déforme la largeur totale */
+    background: white;  /* Fond de secours pendant le chargement */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center; /* Force TOUT le texte à se centrer automatiquement */
+}
+/* Le conteneur parent pour le fond progressif, confiné dans main */
+.bug-container {
+    position: absolute;   /* S'ancre par rapport au conteneur <main> */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;           /* Reste sous le texte */
+}
+
+/* Les calques d'images superposés */
+.slideshow-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;           /* Masqué par défaut */
+    filter: saturate(1.4) brightness(1.05);
+    transition: opacity 1.5s ease-in-out; /* Transition progressive */
+}
+
+/* Le calque visible */
+.slideshow-layer.active {
+    opacity: 1;
+}
+
+/* Le voile blanc semi-transparent pour garder vos textes bien lisibles */
+.bug-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); 
+//  backdrop-filter: blur(4px); /* ◄ Ajoute un léger flou artistique sur l'image de fond */
+    z-index: 2;           /* Se place par-dessus les images du diaporama */
+}
+
+/* Éléments de premier plan : force tout le contenu HTML à passer devant les images */
+main > :not(.bug-container) {
+    position: relative;
+    z-index: 3;           /* Passe au-dessus du voile et des images */
+}
+                footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        /* Style pour le sélecteur de langue */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .lang-link {
+            text-decoration: none;
+            color: #ece4e4;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .lang-link:hover {
+            background-color: #eee;
+        }
+        .btn-cv {
+            font-family: 'Segoe UI', sans-serif; /* Changement de police */
+            color: #ffffff;                      /* Couleur du texte (blanc) */
+            background-color: #007bff;            /* Couleur de fond (bleu royal) */
+            text-decoration: none;               /* Supprime le soulignement par défaut */
+            padding: 12px 24px;                  /* Espace intérieur pour créer la forme du bouton */
+            border-radius: 5px;                  /* Arrondit les angles */
+            display: inline-block;               /* Permet de donner une structure de bloc au lien */
+            font-weight: bold;                   /* Texte en gras */
+            transition: background-color 0.3s;   /* Transition douce pour l'effet de survol */
+        }
+        .btn-cv:hover {
+            background-color: #0056b3;            /* Bleu plus foncé au survol */
+        }
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    z-index: 10;
+    border-radius: 4px;
+    margin-top: 0px;
+    border: 1px solid #ddd;
+}
+
+.dropdown-content a {
+    color: #333333;
+    padding: 12px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+    color: #007bff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+main img:hover {
+    opacity: 1 !important; /* La photo redevient nette au survol de la souris */
+}
+/* ==========================================================================
+   ALIGNEMENT ET RESPONSIVE DES ÉLÉMENTS DU HEADER
+   ========================================================================== */
+
+/* Espace et centre les liens de langue */
+.lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap; /* Passe à la ligne proprement si l'écran est très petit */
+}
+
+.lang-link {
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Optimisation du menu déroulant pour le tactile (Mobile) */
+@media (max-width: 768px) {
+    .dropdown {
+        position: relative;
+    }
+    /* Sur mobile, on s'assure que le menu déroulant s'affiche de manière exploitable au clic */
+    .dropdown-content {
+        min-width: 200px;
+        left: 50%;
+        transform: translateX(-50%); /* Centre le menu sous le bouton principal */
+    }
+    .dropdown-content a {
+        padding: 14px 20px; /* Zones de clic plus larges pour les doigts */
+        font-size: 16px;    /* Texte légèrement plus grand pour la lisibilité */
+    }
+}
