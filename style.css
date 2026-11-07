@@ -123,7 +123,7 @@ main img:hover {
     height: auto;
     z-index: 1;
     transform: translate(-50%, -50%);
-    object-fit: contain;
+    object-fit: contain; /* Ajuste la vidéo pour qu'elle soit entièrement visible sans la recadrer */
 }
 
 .video-header h1, .video-header p {
