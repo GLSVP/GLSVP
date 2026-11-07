@@ -179,5 +179,35 @@ main img:hover {
     .dropdown-content a {
         padding: 14px 20px; /* Zones de clic plus larges pour les doigts */
         font-size: 16px;    /* Texte légèrement plus grand pour la lisibilité */
-    }
+    }}
+    /* Le conteneur principal du header */
+.video-header {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Ajustez la hauteur selon vos besoins (60% de l'écran ici) */
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Masque ce qui dépasse de la vidéo */
+  color: #ffffff; /* Force le texte en blanc pour le contraste */
+  text-align: center;
+}
+
+/* Ajustement de la vidéo pour qu'elle couvre tout le fond */
+.video-header .bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1; /* Derrière le texte */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Se comporte comme un background-size: cover */
+}
+/* Améliore la lisibilité du texte sur la vidéo */
+.video-header h1, .video-header p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
