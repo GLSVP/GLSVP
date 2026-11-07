@@ -11,7 +11,7 @@
     "share_title": "Partager un document",
     "share_desc": "Pour envoyer un fichier en toute sécurité, cliquez juste :",
     "share_btn": "📄 Déposer un fichier",
-    "music_label": "Bonjour, ..."
+    "music_label": "    Bonjour, ..."
   },
   "en": {
     "title": "To infinity and beyond",
@@ -25,7 +25,7 @@
     "share_title": "Share a document",
     "share_desc": "To securely send a file, just click:",
     "share_btn": "📄 Upload a file",
-    "music_label": "Hello, ..."
+    "music_label": "    Hello, ..."
   },
   "pt": {
     "title": "Ao infinito e além",
@@ -39,7 +39,7 @@
     "share_title": "Compartilhar um documento",
     "share_desc": "Para enviar um arquivo com segurança, basta clicar:",
     "share_btn": "📄 Enviar um arquivo",
-    "music_label": "Olá, ..."
+    "music_label": "    Olá, ..."
   },
   "de": {
     "title": "Bis zur Unendlichkeit und noch viel weiter",
@@ -53,7 +53,7 @@
     "share_title": "Dokument teilen",
     "share_desc": "Um eine Datei sicher zu senden, klicken Sie einfach hier:",
     "share_btn": "📄 Datei hochladen",
-    "music_label": "Hallo, ..."
+    "music_label": "    Hallo, ..."
   },
   "es": {
     "title": "Hasta el infinito y más allá",
@@ -67,7 +67,7 @@
     "share_title": "Compartir un documento",
     "share_desc": "Para enviar un archivo de forma segura, simplemente haga clic:",
     "share_btn": "📄 Subir un archivo",
-    "music_label": "Hola, ..."
+    "music_label": "    Hola, ..."
   },
   "nl": {
     "title": "Naar het oneindige en daarbuiten",
@@ -81,6 +81,6 @@
     "share_title": "Document delen",
     "share_desc": "Om veilig een bestand te verzenden, klikt u hier:",
     "share_btn": "📄 Bestand uploaden",
-    "music_label": "Hallo, ..."
+    "music_label": "    Hallo, ..."
   }
 }
