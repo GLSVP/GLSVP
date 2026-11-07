@@ -69,4 +69,5 @@
     'images/diapo (67).jpg',
     'images/diapo (68).jpg',    
     'images/diapo (69).jpg',
+    'images/diapo (70).jpg',
   ];
