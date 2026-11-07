@@ -220,6 +220,24 @@ loadTranslations();
         // Met à jour l'index du calque actif pour le prochain tour
         activeLayerIndex = nextLayerIndex;
     }, 3000);
+// On attend que la page soit complètement chargée
+document.addEventListener("DOMContentLoaded", function() {
+    // On récupère le bouton bleu (ou son conteneur dropdown)
+    const cvDropdown = document.querySelector('main .dropdown');
+    
+    if (cvDropdown) {
+        // Quand la souris entre sur le bouton, on le propulse au premier plan
+        cvDropdown.addEventListener('mouseenter', function() {
+            this.style.position = 'relative';
+            this.style.zIndex = '999999';
+        });
+        
+        // Quand la souris sort, on réinitialise pour ne pas casser le reste du site
+        cvDropdown.addEventListener('mouseleave', function() {
+            this.style.zIndex = '3';
+        });
+    }
+});
 </script>
 </body>
 </html>
