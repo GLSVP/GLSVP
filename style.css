@@ -224,18 +224,21 @@ main img:hover {
     right: 0; /* Aligne le menu sur le bord droit du bouton si nécessaire */
     top: 100%; /* S'assure qu'il s'ouvre juste en dessous */
 }
+/* 1. Style du bouton de Langues (Bleu foncé, texte blanc) */
 button.lang-link {
-    background: transparent;
-    color: white;
-    border: 1px solid white;
-    padding: 6px 12px;
+    background-color: #0e21c8 !important; /* Même bleu que votre header */
+    color: white !important;
+    border: 2px solid white;
+    padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 14px;
 }
 
+/* Effet au survol du bouton de langues */
 button.lang-link:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background-color: #05138a !important; /* Bleu un peu plus foncé au survol */
 }
 /* Force le conteneur du bouton bleu à passer au premier plan au survol */
 div.dropdown[style*="display: inline-block"]:hover {
@@ -246,4 +249,22 @@ div.dropdown[style*="display: inline-block"]:hover {
 /* S'assure que son contenu passe aussi au-dessus de tout */
 div.dropdown[style*="display: inline-block"] .dropdown-content {
     z-index: 99999 !important;
+}
+/* 2. Correction du menu déroulant sous le bouton bleu "Appuyer sur le bouton" */
+
+/* On cible la balise main pour s'assurer qu'elle laisse passer les éléments */
+main {
+    position: relative !important;
+    overflow: visible !important; /* Indispensable pour laisser dépasser le menu */
+}
+
+/* Force le conteneur du bouton bleu à passer au PREMIER PLAN ABSOLU au survol */
+main .dropdown:hover {
+    z-index: 999999 !important;
+    position: relative !important;
+}
+
+/* S'assure que le contenu du menu déroulant s'affiche bien au-dessus de la section bleue */
+main .dropdown-content {
+    z-index: 9999999 !important;
 }
