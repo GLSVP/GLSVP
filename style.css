@@ -244,3 +244,20 @@ main .dropdown .dropdown-content {
         font-size: 16px;
     }
 }
+/* Force le menu à s'ouvrir BIEN EN DESSOUS du bouton, sans être recouvert */
+main .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%; /* S'ouvre juste sous le bouton bleu */
+    background-color: #ffffff !important;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3) !important; /* Ombre forte pour le voir */
+    z-index: 9999999 !important;
+}
+
+/* Force l'affichage au survol */
+main .dropdown:hover .dropdown-content {
+    display: block !important;
+}
