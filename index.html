@@ -14,15 +14,18 @@
   </video>
 
   <!-- Le contenu textuel enveloppé pour rester cliquable et visible (z-index) -->
-  <div style="position: relative; z-index: 2; width: 100%; max-width: 600px; margin: 0 auto;">
-    <div class="lang-switch">
-      <a href="#" class="lang-link" onclick="changeLanguage('en')">GB English</a>
-      <a href="#" class="lang-link" onclick="changeLanguage('pt')">BR Português</a>
-      <a href="#" class="lang-link" onclick="changeLanguage('fr')">FR Français</a>
-      <a href="#" class="lang-link" onclick="changeLanguage('de')">DE Deutsch</a>
-      <a href="#" class="lang-link" onclick="changeLanguage('es')">ES Español</a>
-      <a href="#" class="lang-link" onclick="changeLanguage('nl')">NL Néerlandais</a>
+ <div style="position: relative; z-index: 100; width: 100%; max-width: 600px; margin: 0 auto;">
+    <div class="dropdown lang-switch">
+    <button class="lang-link">🌐 Langues</button>
+    <div class="dropdown-content">
+        <a href="#" onclick="changeLanguage('en')">GB English</a>
+        <a href="#" onclick="changeLanguage('pt')">BR Português</a>
+        <a href="#" onclick="changeLanguage('fr')">FR Français</a>
+        <a href="#" onclick="changeLanguage('de')">DE Deutsch</a>
+        <a href="#" onclick="changeLanguage('es')">ES Español</a>
+        <a href="#" onclick="changeLanguage('nl')">NL Néerlandais</a>
     </div>
+</div>
 
     <h1 data-translate="title">Vers l'infini et l'au-delà</h1>
     <p data-translate="subtitle">En attendant une reprise de mission nous nous amusons à faire une page internet avec l'IA</p>

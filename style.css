@@ -212,3 +212,38 @@ main img:hover {
 .video-header h1, .video-header p {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
+/* Permet au menu absolu de se positionner juste en dessous du bouton */
+.dropdown.lang-switch {
+    position: relative;
+    display: inline-block;
+    text-align: left; /* Aligne le texte du menu déroulant à gauche */
+}
+
+/* Optionnel : Ajustement pour que le menu déroulant s'aligne bien à droite ou au centre */
+.dropdown.lang-switch .dropdown-content {
+    right: 0; /* Aligne le menu sur le bord droit du bouton si nécessaire */
+    top: 100%; /* S'assure qu'il s'ouvre juste en dessous */
+}
+button.lang-link {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button.lang-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+/* Force le conteneur du bouton bleu à passer au premier plan au survol */
+div.dropdown[style*="display: inline-block"]:hover {
+    position: relative;
+    z-index: 9999;
+}
+
+/* S'assure que son contenu passe aussi au-dessus de tout */
+div.dropdown[style*="display: inline-block"] .dropdown-content {
+    z-index: 99999 !important;
+}
