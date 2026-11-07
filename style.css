@@ -244,20 +244,38 @@ main .dropdown .dropdown-content {
         font-size: 16px;
     }
 }
-/* Force le menu à s'ouvrir BIEN EN DESSOUS du bouton, sans être recouvert */
-main .dropdown-content {
-    display: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 100%; /* S'ouvre juste sous le bouton bleu */
-    background-color: #ffffff !important;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.3) !important; /* Ombre forte pour le voir */
-    z-index: 9999999 !important;
+/* Positionne le bouton de manière fixe en haut à droite de l'écran */
+.lang-floating-box {
+    position: fixed !important;
+    top: 20px;
+    right: 20px;
+    z-index: 999999 !important; /* Passe absolument au-dessus de tout */
 }
 
-/* Force l'affichage au survol */
-main .dropdown:hover .dropdown-content {
-    display: block !important;
+/* Style du bouton (Bleu foncé élégant) */
+.lang-floating-box button.lang-link {
+    background-color: #0e21c8 !important;
+    color: white !important;
+    border: 2px solid white;
+    padding: 8px 16px;
+    border-radius: 20px; /* Bords plus arrondis style "pilule" moderne */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    font-family: 'Segoe UI', sans-serif;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.lang-floating-box button.lang-link:hover {
+    background-color: #05138a !important;
+    transform: scale(1.05); /* Léger effet de zoom au survol */
+}
+
+/* Aligne le menu déroulant sur le bord droit pour éviter qu'il sorte de l'écran */
+.lang-floating-box .dropdown-content {
+    right: 0;
+    left: auto;
+    top: 100%;
+    margin-top: 5px;
 }

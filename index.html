@@ -7,45 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+     <div class="dropdown lang-floating-box">
+        <button class="lang-link">🌐 Langues</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="changeLanguage('en')">GB English</a>
+            <a href="#" onclick="changeLanguage('pt')">BR Português</a>
+            <a href="#" onclick="changeLanguage('fr')">FR Français</a>
+            <a href="#" onclick="changeLanguage('de')">DE Deutsch</a>
+            <a href="#" onclick="changeLanguage('es')">ES Español</a>
+            <a href="#" onclick="changeLanguage('nl')">NL Nederlands</a>
+        </div>
+    </div>
 <header class="video-header">
   <!-- La vidéo avec la classe CSS appliquée et l'opacité ajoutée en ligne -->
   <video autoplay loop muted playsinline class="bg-video" style="opacity: 0.9;">
     <source src="Flamme.mp4" type="video/mp4">
   </video>
 
-  <!-- Le contenu textuel enveloppé pour rester cliquable et visible (z-index) -->
- <div style="position: relative; z-index: 100; width: 100%; max-width: 600px; margin: 0 auto;">
-    <div class="dropdown lang-switch">
-    <button class="lang-link">🌐 Langues</button>
-    <div class="dropdown-content">
-        <a href="#" onclick="changeLanguage('en')">GB English</a>
-        <a href="#" onclick="changeLanguage('pt')">BR Português</a>
-        <a href="#" onclick="changeLanguage('fr')">FR Français</a>
-        <a href="#" onclick="changeLanguage('de')">DE Deutsch</a>
-        <a href="#" onclick="changeLanguage('es')">ES Español</a>
-        <a href="#" onclick="changeLanguage('nl')">NL Néerlandais</a>
-    </div>
-</div>
-
     <h1 data-translate="title">Vers l'infini et l'au-delà</h1>
     <p data-translate="subtitle">En attendant une reprise de mission nous nous amusons à faire une page internet avec l'IA</p>
-    
-   <!-- Le conteneur du menu déroulant principal -->
-<div class="dropdown">
-    
-    <!-- Le bouton bleu : on met le "data-translate" uniquement sur le texte interne -->
-    <button class="btn-cv">
-        <span data-translate="cv_btn">Appuyer sur le bouton</span>
-    </button>
-    
-    <!-- Le menu déroulant qui s'affichera au-dessus de tout -->
-    <div class="dropdown-content">
-        <a href="CV_GLSVP-fr.pdf" target="_blank">Version Française (PDF)</a>
-        <a href="CV_GLSVP-en.pdf" target="_blank">English Version (PDF)</a>
-        <a href="CV_GLSVP-fr_BL.pdf" target="_blank">BL Version (PDF)</a>
-    </div>
-</div>
-  </div>
+
 </header>
 
         <main>
@@ -67,7 +48,23 @@
     <!-- AJOUT DES ATTRIBUTS CI-DESSOUS -->
     <h2 data-translate="services_title">Prêt pour échanger ?!?</h2>
     <p data-translate="services_text">Découvrez nos prestations, adaptées à vos besoins spécifiques.</p>
-        </main>
+       
+    <div class="dropdown cv-dropdown-container" style="margin-top: 30px; margin-bottom: 20px;">
+        <!-- Le bouton bleu CV -->
+        <button class="btn-cv">
+            <span data-translate="cv_btn">Appuyer sur le bouton</span>
+        </button>
+        
+        <!-- Le menu déroulant qui s'affichera au-dessus de tout -->
+        <div class="dropdown-content">
+            <a href="CV_GLSVP-fr.pdf" target="_blank">Version Française (PDF)</a>
+            <a href="CV_GLSVP-en.pdf" target="_blank">English Version (PDF)</a>
+            <a href="CV_GLSVP-fr_BL.pdf" target="_blank">BL Version (PDF)</a>
+        </div>
+    </div>
+</main>
+
+</main>
     <footer>
         <p data-translate="footer_text">&copy; 2026 - Tous droits réservés.</p>
     </footer>
@@ -220,24 +217,6 @@ loadTranslations();
         // Met à jour l'index du calque actif pour le prochain tour
         activeLayerIndex = nextLayerIndex;
     }, 3000);
-// On attend que la page soit complètement chargée
-document.addEventListener("DOMContentLoaded", function() {
-    // On récupère le bouton bleu (ou son conteneur dropdown)
-    const cvDropdown = document.querySelector('main .dropdown');
-    
-    if (cvDropdown) {
-        // Quand la souris entre sur le bouton, on le propulse au premier plan
-        cvDropdown.addEventListener('mouseenter', function() {
-            this.style.position = 'relative';
-            this.style.zIndex = '999999';
-        });
-        
-        // Quand la souris sort, on réinitialise pour ne pas casser le reste du site
-        cvDropdown.addEventListener('mouseleave', function() {
-            this.style.zIndex = '3';
-        });
-    }
-});
 </script>
 </body>
 </html>
