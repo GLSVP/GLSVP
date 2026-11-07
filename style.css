@@ -1,21 +1,25 @@
-        /* Un tout petit peu de style (CSS) pour que ce soit propre dès le départ */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #141cb4;
-        }
-        header {
-            background-color: #359a0d;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-        main {
-    position: relative;
-    overflow: visible; /* Permet aux images du diaporama de dépasser si nécessaire */
+/* ==========================================================================
+   STYLE GLOBAL & STRUCTURE
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #141cb4;
+}
+
+header {
+    background-color: #359a0d;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+main {
+    position: relative !important;
+    overflow: visible !important; /* Indispensable pour laisser dépasser les menus déroulants */
     max-width: 800px;
     width: 92%;
     margin: 2rem auto;
@@ -25,19 +29,40 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
-    }
-/* Le conteneur parent pour le fond progressif, confiné dans main */
+}
+
+/* Éléments de premier plan à l'intérieur du main */
+main > :not(.bug-container) {
+    position: relative;
+    z-index: 3;
+}
+
+/* Force le conteneur du bouton de votre CV à remonter d'un niveau au survol */
+main .dropdown:hover {
+    z-index: 99999 !important;
+    position: relative !important;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* ==========================================================================
+   CONTENEUR DIAPORAMA (BUG-CONTAINER)
+   ========================================================================== */
 .bug-container {
-    position: absolute;   /* S'ancre par rapport au conteneur <main> */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 1;           /* Reste sous le texte */
+    z-index: 1;
 }
 
-/* Les calques d'images superposés */
 .slideshow-layer {
     position: absolute;
     top: 0;
@@ -46,17 +71,15 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0;           /* Masqué par défaut */
+    opacity: 0;
     filter: saturate(1.4) brightness(1.05);
-    transition: opacity 1.5s ease-in-out; /* Transition progressive */
+    transition: opacity 1.5s ease-in-out;
 }
 
-/* Le calque visible */
 .slideshow-layer.active {
     opacity: 1;
 }
 
-/* Le voile blanc semi-transparent pour garder vos textes bien lisibles */
 .bug-container::after {
     content: '';
     position: absolute;
@@ -65,53 +88,56 @@
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.6); 
-    z-index: 2;           /* Se place par-dessus les images du diaporama */
+    z-index: 2;
 }
 
-/* Éléments de premier plan : force tout le contenu HTML à passer devant les images */
-main > :not(.bug-container) {
+main img:hover {
+    opacity: 1 !important;
+}
+
+/* ==========================================================================
+   HEADER VIDÉO ANIMÉ
+   ========================================================================== */
+.video-header {
     position: relative;
-    z-index: 3;           /* Passe au-dessus du voile et des images */
+    width: 100%;
+    min-height: 320px;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column; /* Aligne le sélecteur, le titre et le sous-titre de haut en bas */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+    box-sizing: border-box;
 }
-                footer {
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: #777;
-        }
-        /* Style pour le sélecteur de langue */
-        .lang-switch {
-            text-align: right;
-            margin-bottom: 20px;
-        }
-        .lang-link {
-            text-decoration: none;
-            color: #ece4e4;
-            font-weight: bold;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .lang-link:hover {
-            background-color: #eee;
-        }
-        .btn-cv {
-            font-family: 'Segoe UI', sans-serif; /* Changement de police */
-            color: #ffffff;                      /* Couleur du texte (blanc) */
-            background-color: #007bff;            /* Couleur de fond (bleu royal) */
-            text-decoration: none;               /* Supprime le soulignement par défaut */
-            padding: 12px 24px;                  /* Espace intérieur pour créer la forme du bouton */
-            border-radius: 5px;                  /* Arrondit les angles */
-            display: inline-block;               /* Permet de donner une structure de bloc au lien */
-            font-weight: bold;                   /* Texte en gras */
-            transition: background-color 0.3s;   /* Transition douce pour l'effet de survol */
-        }
-        .btn-cv:hover {
-            background-color: #0056b3;            /* Bleu plus foncé au survol */
-        }
 
+.video-header .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-header h1, .video-header p {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   SYSTÈME DE MENU DÉROULANT (DROPDOWN) GÉNÉRIQUE
+   ========================================================================== */
 .dropdown {
     position: relative;
+    display: inline-block; /* Permet aux conteneurs de s'adapter à la taille de leurs boutons */
 }
 
 .dropdown-content {
@@ -120,14 +146,14 @@ main > :not(.bug-container) {
     background-color: #ffffff;
     min-width: 180px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
-    z-index: 10;
+    z-index: 999999 !important; /* Force l'affichage au-dessus de TOUT le site */
     border-radius: 4px;
-    margin-top: 0px;
+    margin-top: 2px;
     border: 1px solid #ddd;
 }
 
 .dropdown-content a {
-    color: #333333;
+    color: #333333 !important;
     padding: 12px 15px;
     text-decoration: none;
     display: block;
@@ -138,95 +164,31 @@ main > :not(.bug-container) {
 
 .dropdown-content a:hover {
     background-color: #f5f5f5;
-    color: #007bff;
+    color: #007bff !important;
 }
 
+/* Déclenchement du menu au survol */
 .dropdown:hover .dropdown-content {
     display: block;
 }
-main img:hover {
-    opacity: 1 !important; /* La photo redevient nette au survol de la souris */
-}
+
 /* ==========================================================================
-   ALIGNEMENT ET RESPONSIVE DES ÉLÉMENTS DU HEADER
+   BOUTON ET MENU DE LANGUES SPECIFIQUE (HEADER)
    ========================================================================== */
-
-/* Espace et centre les liens de langue */
-.lang-switch {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 1rem;
-    flex-wrap: wrap; /* Passe à la ligne proprement si l'écran est très petit */
-}
-
-.lang-link {
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-/* Optimisation du menu déroulant pour le tactile (Mobile) */
-@media (max-width: 768px) {
-    .dropdown {
-        position: relative;
-    }
-    /* Sur mobile, on s'assure que le menu déroulant s'affiche de manière exploitable au clic */
-    .dropdown-content {
-        min-width: 200px;
-        left: 50%;
-        transform: translateX(-50%); /* Centre le menu sous le bouton principal */
-    }
-    .dropdown-content a {
-        padding: 14px 20px; /* Zones de clic plus larges pour les doigts */
-        font-size: 16px;    /* Texte légèrement plus grand pour la lisibilité */
-    }}
-/* Le conteneur principal du header */
-.video-header {
-  position: relative;
-  width: 100%;
-  min-height: 320px; /* Réduit pour les téléphones */
-  padding: 60px 20px; /* Donne de l'espace en haut/bas et sur les côtés */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  color: #ffffff;
-  text-align: center;
-  box-sizing: border-box; /* Évite les bugs de largeur avec le padding */
-}
-
-/* Ajustement de la vidéo pour qu'elle couvre tout le fond */
-.video-header .bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 1; /* Derrière le texte */
-  transform: translate(-50%, -50%);
-  object-fit: cover; /* Se comporte comme un background-size: cover */
-}
-/* Améliore la lisibilité du texte sur la vidéo */
-.video-header h1, .video-header p {
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-}
-/* Permet au menu absolu de se positionner juste en dessous du bouton */
 .dropdown.lang-switch {
-    position: relative;
-    display: inline-block;
-    text-align: left; /* Aligne le texte du menu déroulant à gauche */
+    margin-bottom: 20px;
+    z-index: 100; /* Place le sélecteur bien au-dessus de la vidéo */
 }
 
-/* Optionnel : Ajustement pour que le menu déroulant s'aligne bien à droite ou au centre */
 .dropdown.lang-switch .dropdown-content {
-    right: 0; /* Aligne le menu sur le bord droit du bouton si nécessaire */
-    top: 100%; /* S'assure qu'il s'ouvre juste en dessous */
+    left: 50%;
+    transform: translateX(-50%); /* Centre la liste sous le bouton Langues */
+    top: 100%;
 }
-/* 1. Style du bouton de Langues (Bleu foncé, texte blanc) */
+
+/* Style du bouton "Langues" (Bleu foncé, texte blanc) */
 button.lang-link {
-    background-color: #0e21c8 !important; /* Même bleu que votre header */
+    background-color: #0e21c8 !important;
     color: white !important;
     border: 2px solid white;
     padding: 8px 16px;
@@ -234,37 +196,51 @@ button.lang-link {
     cursor: pointer;
     font-weight: bold;
     font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.2s;
 }
 
-/* Effet au survol du bouton de langues */
 button.lang-link:hover {
-    background-color: #05138a !important; /* Bleu un peu plus foncé au survol */
-}
-/* Force le conteneur du bouton bleu à passer au premier plan au survol */
-div.dropdown[style*="display: inline-block"]:hover {
-    position: relative;
-    z-index: 9999;
+    background-color: #05138a !important;
 }
 
-/* S'assure que son contenu passe aussi au-dessus de tout */
-div.dropdown[style*="display: inline-block"] .dropdown-content {
-    z-index: 99999 !important;
+/* ==========================================================================
+   BOUTON CENTRAL (CV)
+   ========================================================================== */
+.btn-cv {
+    font-family: 'Segoe UI', sans-serif;
+    color: #ffffff !important;
+    background-color: #007bff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: none;
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
-/* 2. Correction du menu déroulant sous le bouton bleu "Appuyer sur le bouton" */
 
-/* On cible la balise main pour s'assurer qu'elle laisse passer les éléments */
-main {
-    position: relative !important;
-    overflow: visible !important; /* Indispensable pour laisser dépasser le menu */
+.btn-cv:hover {
+    background-color: #0056b3;
 }
 
-/* Force le conteneur du bouton bleu à passer au PREMIER PLAN ABSOLU au survol */
-main .dropdown:hover {
-    z-index: 999999 !important;
-    position: relative !important;
+/* Aligne le menu du CV sur la largeur du bouton */
+main .dropdown .dropdown-content {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
 }
 
-/* S'assure que le contenu du menu déroulant s'affiche bien au-dessus de la section bleue */
-main .dropdown-content {
-    z-index: 9999999 !important;
+/* ==========================================================================
+   RESPONSIVE MOBILE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .dropdown-content {
+        min-width: 200px;
+    }
+    .dropdown-content a {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
 }
