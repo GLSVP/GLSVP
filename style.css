@@ -15,7 +15,7 @@
         }
         main {
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* Permet aux images du diaporama de dépasser si nécessaire */
     max-width: 800px;
     width: 92%;
     margin: 2rem auto;
