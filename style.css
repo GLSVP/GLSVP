@@ -310,3 +310,19 @@ footer {
     z-index: 2; /* Force le texte à passer au-dessus de la vidéo */
     text-align: center;
 }
+/* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
+main:nth-of-type(2) {
+    display: block !important;
+    background-image: url("cartemonde.jpg"); /* Correspond au fichier du dossier */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; 
+    background-color: #03152a; /* Fond bleu nuit de secours si l'image ne charge pas */
+    
+    /* Dimensions forcées du bloc */
+    height: 60vh; /* Utilise height au lieu de min-height pour forcer le traçage */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
