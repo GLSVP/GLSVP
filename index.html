@@ -72,18 +72,18 @@
     </div>
     </footer>
 <!-- Section Espace de téléchargement (Alternative Google Forms) -->
-<section id="upload-section" style="max-width: 300px; margin: 40px auto; padding: 30px; border: 2px dashed #141cb4; border-radius: 10px; background-color: #ececef; font-family: sans-serif; text-align: center;">
+<section id="upload-section" style="max-width: 300px; margin: 40px auto; padding: 30px; border: 2px dashed #e5e6eb; border-radius: 10px; background-color: #141cb4; font-family: sans-serif; text-align: center;">
     
 <h2 style="color: #333; margin-bottom: 10px;" data-translate="share_title">Partager un document</h2>
         <p style="color: #666; margin-bottom: 25px;" data-translate="share_desc">Pour envoyer un fichier en toute sécurité, cliquez juste :</p>
     <!-- REMPLACEZ l'adresse ci-dessous par le lien de votre Google Form -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvIIXdHu1iCAwoCy4O-yRKXPoZJkZXLT6e6jFqzFKXoD4NbA/viewform?usp=header" target="_blank" style="display: inline-block; background-color: #007bff; color: white; text-decoration: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 5px; transition: background 0.3s ease;">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvIIXdHu1iCAwoCy4O-yRKXPoZJkZXLT6e6jFqzFKXoD4NbA/viewform?usp=header" target="_blank" style="display: inline-block; background-color: #141cb4; color: white; text-decoration: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 5px; transition: background 0.3s ease;">
 <button class="btn-upload" data-translate="share_btn">📄 Déposer un fichier</button>
         </a>
     </section>
 <!-- Menu de sélection de vos musiques -->
-<div class="choix-musique" style="margin: 10px 0; font-family: sans-serif;">
-        <label for="select-audio" style="font-weight: bold; margin-right: 10px;" data-translate="music_label">   Bonjour, ...</label>    
+<div class="choix-musique" style="margin: 5px 0; font-family: sans-serif;">
+        <label for="select-audio" style="color:white;font-weight: bold; margin-right: 5px;" data-translate="music_label">   Bonjour, ...</label>    
         <select id="select-audio" style="padding: 5px; border-radius: 4px; cursor: pointer;">
         <option value="Greensleeves.mp3">Greensleeves</option>
         <option value="FurElise2.mp3">FurElise2</option>
@@ -96,10 +96,14 @@
     </select>
 </div>
 
+<script>
+    src="images.js" </script>
+
 <!-- Votre balise audio -->
 <audio id="fond-sonore" loop controls>
     <source id="audio-source" src="Asturias.mp3" type="audio/mpeg" />
 </audio>
+
 <script>
     src="images.js"
 
