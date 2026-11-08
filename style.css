@@ -101,16 +101,9 @@ main img:hover {
 .video-header {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9; /* S'adapte parfaitement aux dimensions 1920x1080 de votre vidéo */
-    padding: 60px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    aspect-ratio: 16 / 9; /* Indispensable pour respecter les proportions 1920x1080 */
     overflow: hidden;
-    color: #ffffff;
-    text-align: center;
-    box-sizing: border-box;
+    /* Supprimez impérativement toute ligne 'height' ou 'min-height' ici */
 }
 
 .video-header .bg-video {
@@ -120,7 +113,7 @@ main img:hover {
     width: 100%;
     height: 100%;
     z-index: 1;
-    object-fit: contain; /* Garantit que la vidéo reste entière dans son plan visuel */
+    object-fit: contain; /* C'est cette propriété qui affichera 100% de la vidéo sans aucun zoom */
 }
 
 .video-header h1, .video-header p {
