@@ -313,18 +313,18 @@ footer {
 /* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
 main:nth-of-type(2) {
     display: block !important;
-    background-image: url("cartemonde.jpg"); /* Correspond au fichier du dossier */
+    background-image: url("cartemonde.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: contain; 
-    background-color: #03152a; /* Fond bleu nuit de secours si l'image ne charge pas */
+    background-size: contain;
+    background-color: #03152a; 
     
-    /* Dimensions forcées du bloc */
-     height: 60vh; 
+    /* MODIFICATIONS ICI */
     width: 100%;
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 40px; /* Crée un espace bleu de 40px sous la carte */
+    aspect-ratio: 1400 / 800; /* Force le bloc bleu à adopter exactement les proportions de l'image */
+    max-height: 55vh;         /* Sécurité pour éviter que la carte ne prenne trop de place verticalement */
+    padding: 0;
     margin: 0;
+    margin-bottom: 40px;      /* Repousse le footer de 40px nets sous le bloc de la carte */
+    box-sizing: border-box;
 }
