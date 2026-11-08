@@ -316,13 +316,15 @@ main:nth-of-type(2) {
     background-image: url("cartemonde.jpg"); /* Correspond au fichier du dossier */
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover; 
+    background-size: contain; 
     background-color: #03152a; /* Fond bleu nuit de secours si l'image ne charge pas */
     
     /* Dimensions forcées du bloc */
-    height: 60vh; /* Utilise height au lieu de min-height pour forcer le traçage */
+     height: 60vh; 
     width: 100%;
-    padding: 0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 40px; /* Crée un espace bleu de 40px sous la carte */
     margin: 0;
-    box-sizing: border-box;
 }
