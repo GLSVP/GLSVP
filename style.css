@@ -311,13 +311,20 @@ footer {
     text-align: center;
 }
 /* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
-#carte-timeline {
+main:nth-of-type(2) {
     display: block !important;
+    background-image: url("cartemonde.jpg"); /* Correspond au fichier du dossier */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; 
+    background-color: #03152a; /* Fond bleu nuit de secours si l'image ne charge pas */
+    
+    /* Dimensions forcées du bloc */
+     height: 60vh; 
     width: 100%;
-    height: 60vh; 
-    background-color: #03152a; /* Garde le fond bleu nuit en attendant le chargement */
-    padding: 0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 40px; /* Crée un espace bleu de 40px sous la carte */
     margin: 0;
-    margin-bottom: 40px;       /* Conserve l'espace d'harmonisation avec le footer */
-    box-sizing: border-box;
 }
