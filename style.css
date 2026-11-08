@@ -311,7 +311,7 @@ footer {
     text-align: center;
 }
 /* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
-main:nth-of-type(2) {
+#carte-timeline {
     display: block !important;
     width: 100%;
     height: 60vh; 

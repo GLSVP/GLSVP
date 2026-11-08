@@ -222,23 +222,29 @@ loadTranslations();
     }, 3000);
 </script>
 <script>
-    // 1. Initialisation de la carte en coordonnées planes (adaptée pour une image plate)
-    const map = L.map(document.querySelectorAll('main')[1], {
+   // 1. Initialisation de la carte en coordonnées planes (ciblage direct par ID)
+    const map = L.map('carte-timeline', {
         crs: L.CRS.Simple,
         minZoom: -2,
         maxZoom: 2,
         attributionControl: false // Masque le logo Leaflet pour garder le design propre
     });
 
-    // 2. Définition des dimensions (Ajustez 1400 et 800 selon les pixels réels de votre cartemonde.jpg)
+    // 2. Définition des dimensions 
     const largeurImage = 1400;
     const hauteurImage = 800;
-    const dimensions = [[0, 0], [hauteurImage, largeurImage]];
+    const dimensions = [[0, 0], [hauteurImage, largeurImage]]; // Correction faite ici aussi pour la virgule
 
     // 3. Injection automatique de votre image satellite dans le conteneur
     L.imageOverlay('cartemonde.jpg', dimensions).addTo(map);
     map.fitBounds(dimensions);
 
+    // AJOUT SÉCURITÉ : Force Leaflet à recalculer sa taille après le chargement complet du DOM
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            map.invalidateSize();
+        }, 100);
+    });
     // 4. Base de données de votre timeline (40 ans d'historique)
     // Astuce : Ajustez les valeurs X (de gauche à droite) et Y (du BAS vers le HAUT) pour placer vos points
     const etapesTimeline = [
