@@ -15,6 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
         { fichier: "Bolero.mp3", nom: "Bolero" }
     ];
 
+    // Fonction isolée pour appliquer et lancer une musique
+    function chargerEtJouerMusique(piste) {
+        selectAudio.value = piste.fichier;
+        audioSource.src = piste.fichier;
+        fondSonore.load();
+        
+        fondSonore.play().catch(error => {
+            console.log("Lecture automatique bloquée par le navigateur tant que l'utilisateur n'a pas cliqué sur la page.");
+        });
+    }
+
     if (selectAudio && audioSource && fondSonore) {
         // 2. Générer dynamiquement les options dans le menu HTML <select>
         selectAudio.innerHTML = ''; 
@@ -25,25 +36,37 @@ document.addEventListener('DOMContentLoaded', () => {
             selectAudio.appendChild(option);
         });
 
-        // 3. Sélectionner une piste au hasard au chargement de la page
+        // 3. Sélectionner une première piste au hasard au chargement de la page
         const indexAleatoire = Math.floor(Math.random() * pistesAudio.length);
         const pisteChoisie = pistesAudio[indexAleatoire];
-
-        // Appliquer la musique aléatoire de départ
+        
+        // Appliquer la musique de départ au chargement
         selectAudio.value = pisteChoisie.fichier;
         audioSource.src = pisteChoisie.fichier;
         fondSonore.load();
 
-        // 4. ÉCOUTEUR D'ÉVÉNEMENT : Permettre la sélection manuelle
+        // 4. ÉCOUTEUR D'ÉVÉNEMENT : Permettre le changement manuel par l'utilisateur
         selectAudio.addEventListener('change', (event) => {
-            const nouvellePiste = event.target.value;
-            audioSource.src = nouvellePiste;
-            fondSonore.load(); // Recharge le lecteur avec le nouveau morceau
+            const nouvellePisteFichier = event.target.value;
+            const pisteTrouvee = pistesAudio.find(p => p.fichier === nouvellePisteFichier);
+            if (pisteTrouvee) {
+                chargerEtJouerMusique(pisteTrouvee);
+            }
+        });
+
+        // 5. NOUVEAU - ENCHAÎNEMENT EN MODE ALÉATOIRE CONTINU
+        fondSonore.addEventListener('ended', () => {
+            let nouvel IndexAleatoire;
             
-            // Optionnel : Lance la musique automatiquement après le changement manuel
-            fondSonore.play().catch(error => {
-                console.log("Lecture automatique bloquée par le navigateur tant que l'utilisateur n'a pas interagi avec la page.");
-            });
+            // Boucle pour éviter de rejouer exactement le même morceau si le hasard retombe dessus
+            do {
+                nouvelIndexAleatoire = Math.floor(Math.random() * pistesAudio.length);
+            } while (pistesAudio[nouvelIndexAleatoire].fichier === selectAudio.value && pistesAudio.length > 1);
+
+            const prochainePisteAleatoire = pistesAudio[nouvelIndexAleatoire];
+            
+            // Lance la nouvelle musique et met à jour l'affichage du menu déroulant
+            chargerEtJouerMusique(prochainePisteAleatoire);
         });
     }
 });

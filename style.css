@@ -73,10 +73,11 @@ footer {
 }
 /* Style de l'image d'illustration au centre */
 main img {
-    border-radius: 8px; /* Arrondit les angles de l'image */
-    margin-bottom: 20px; /* Donne de l'air entre l'image et le texte en dessous */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ajoute une ombre légère pour la faire ressortir */
-    max-width: 100%; /* Sûreté pour qu'elle ne dépasse jamais sur petit écran */
+    border-radius: 8px; 
+    display: block;             /* NOUVEAU : Permet d'appliquer les marges automatiques */
+    margin: 0 auto 20px auto;   /* MODIFIÉ : Centre l'image horizontalement et garde l'espace en bas */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    max-width: 100%; 
     height: auto;
 }
 
