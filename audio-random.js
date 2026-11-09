@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        
         // 5. ENCHAÎNEMENT SANS REDONDANCE (Chaque piste est lue une seule fois)
         fondSonore.addEventListener('ended', () => {
             indexActuelDansFile++; // Passer à l'élément suivant de notre liste mélangée
