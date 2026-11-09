@@ -361,3 +361,9 @@ main:nth-of-type(2) {
     padding: 0;
     box-sizing: border-box;
 }
+.music-floating-box select {
+    background-color: white !important;
+    color: #333 !important;
+    border: 1px solid #ccc;
+    font-weight: bold;
+}

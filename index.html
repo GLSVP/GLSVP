@@ -7,29 +7,48 @@
     <link rel="stylesheet" href="style.css?v=1.4">
 </head>
 <body>
-     <div class="dropdown lang-floating-box">
-        <button class="lang-link">🌐 Langues</button>
-        <div class="dropdown-content">
-            <a href="#" onclick="changeLanguage('en')">GB English</a>
-            <a href="#" onclick="changeLanguage('pt')">BR Português</a>
-            <a href="#" onclick="changeLanguage('fr')">FR Français</a>
-            <a href="#" onclick="changeLanguage('de')">DE Deutsch</a>
-            <a href="#" onclick="changeLanguage('es')">ES Español</a>
-            <a href="#" onclick="changeLanguage('nl')">NL Nederlands</a>
+
+    <header class="video-header">
+        
+        <!-- Le titre h1 est maintenant placé tout en haut -->
+        <h1 data-translate="title">Vers l'infini et l'au-delà</h1>
+
+              <!-- BLOC MUSIQUE FLOTTANT (HAUT GAUCHE) -->
+        <div class="music-floating-box">
+            <span class="music-welcome">Bonjour</span>
+            
+            <div class="choix-musique">
+                <!-- Ton select d'origine indispensable pour la ligne 2 de ton JS -->
+                <select id="select-audio" style="padding: 5px; border-radius: 4px; cursor: pointer; font-family: 'Segoe UI', sans-serif; font-size: 14px;"></select>
+            </div>
+
+            <!-- Ton lecteur audio d'origine indispensable pour la ligne 4 de ton JS -->
+            <audio id="fond-sonore" controls style="height: 30px; max-width: 150px;">
+                <source id="audio-source" src="" type="audio/mpeg">
+            </audio>
         </div>
-    </div>
-<header class="video-header">
-  <!-- La vidéo avec la classe CSS appliquée et l'opacité ajoutée en ligne -->
-  <video autoplay loop muted playsinline class="bg-video" style="opacity: 0.9; ">
-    <source src="Flamme.mp4" type="video/mp4">
-  </video>
 
-    <h1 data-translate="title">Vers l'infini et l'au-delà</h1>
-<!--    <p data-translate="subtitle"></p> -->
+        <!-- Bloc Langues (qui flotte en haut à droite grâce au CSS fixe) -->
+        <div class="dropdown lang-floating-box">
+            <button class="lang-link">🌐 Langues</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="changeLanguage('en')">🇬🇧 English</a>
+                <a href="#" onclick="changeLanguage('pt')">🇧🇷 Português</a>
+                <a href="#" onclick="changeLanguage('fr')">🇫🇷 Français</a>
+                <a href="#" onclick="changeLanguage('de')">🇩🇪 Deutsch</a>
+                <a href="#" onclick="changeLanguage('es')">🇪🇸 Español</a>
+                <a href="#" onclick="changeLanguage('nl')">🇳🇱 Nederlands</a>
+            </div>
+        </div>
 
-</header>
+        <!-- La vidéo d'arrière-plan -->
+        <video autoplay loop muted playsinline class="bg-video" style="opacity: 0.9;">
+            <source src="Flamme.mp4" type="video/mp4">
+        </video>
 
-        <main>
+    </header>
+
+    <main>
     <!-- Le bloc de votre diaporama reste inchangé ici -->
     <div class="bug-container" id="bg-slideshow">
         <div class="slideshow-layer active"></div>
