@@ -414,10 +414,10 @@ main:nth-of-type(2) {
     border-radius: 23px !important;
 }
 /* ==========================================================================
-   CORRECTION BARRE MUSICALE ET BOUTON LANGUES (FONDS NOIRS ET TAILLES)
+   BARRE MUSICALE ET BOUTON LANGUES TRANSPARENTS
    ========================================================================== */
 
-/* 1. Force la boîte musicale flottante en noir et ajuste sa taille */
+/* Boîte musicale flottante en haut à gauche */
 .music-floating-box {
     position: fixed !important;
     top: 20px !important;
@@ -427,25 +427,25 @@ main:nth-of-type(2) {
     flex-direction: row !important;
     align-items: center !important;
     gap: 10px !important;
-    background-color: #000000 !important; /* Fond noir */
+    background-color: transparent !important; /* Fond transparent */
     height: 46px !important;
     padding: 0 15px !important;
     border-radius: 23px !important;
     border: 2px solid white !important;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.4) !important;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2) !important;
 }
 
-/* Élargit le lecteur audio pour faire réapparaître les commandes de vitesse cachées */
+/* Ajustement de la largeur du lecteur audio */
 .music-floating-box audio {
     height: 30px !important;
     width: 220px !important; 
 }
 
-/* 2. Force le bouton langues existant à passer en noir */
+/* Bouton langues en haut à droite */
 .lang-link, 
 .dropdown button,
 .dropdown.lang-floating-box button {
-    background-color: #000000 !important; /* Fond noir */
+    background-color: transparent !important; /* Fond transparent */
     color: white !important;
     border: 2px solid white !important;
     height: 46px !important;
@@ -453,8 +453,6 @@ main:nth-of-type(2) {
     padding: 0 20px !important;
     font-weight: bold !important;
 }
-
-
 /* ==========================================================================
    REMISE EN POSITION HAUTE DU TITRE H1
    ========================================================================== */
