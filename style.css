@@ -80,7 +80,7 @@ main img {
     
     /* CONFIGURATION DE LA TAILLE : Ajustez la valeur en pixels selon le rendu souhaité */
     width: 100%;
-    max-width: 300 px;           /* Réduit l'image à 300px maximum au lieu de prendre tout l'espace disponible */
+    max-width: 250 px;           /* Réduit l'image à 250px maximum au lieu de prendre tout l'espace disponible */
     height: auto;               /* Conserve les proportions d'origine de la photo */
 }
 
