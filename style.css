@@ -513,3 +513,36 @@ body .video-header h1 {
     margin: 0 !important;
     z-index: 10 !important; /* Reste bien visible au-dessus de la vidéo */
 }
+/* ==========================================================================
+   ADAPTATION MOBILE (ÉCRANS DE MOINS DE 768PX)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. On détache la boîte de musique du haut pour la mettre en bas de l'écran */
+    body .music-floating-box {
+        top: auto !important;
+        bottom: 15px !important; /* Fixée en bas à gauche sur mobile */
+        left: 10px !important;
+        right: 10px !important; /* S'étire sur toute la largeur */
+        justify-content: center !important; /* Centre le contenu de la boîte */
+        height: auto !important;
+        padding: 8px !important;
+    }
+
+    /* Rend le lecteur audio un peu plus compact sur mobile si nécessaire */
+    body .music-floating-box audio {
+        width: 160px !important;
+    }
+
+    /* 2. On repositionne le bouton langue pour qu'il ne gêne pas */
+    body .lang-floating-box {
+        top: 15px !important;
+        right: 15px !important;
+    }
+
+    /* 3. On ajuste le titre pour qu'il ne touche pas le bas */
+    body .video-header h1 {
+        font-size: 24px !important; /* Diminue la taille du texte sur mobile */
+        bottom: 80px !important; /* Remonte le titre pour laisser de la place au lecteur en bas */
+        white-space: normal !important; /* Permet au titre de passer sur deux lignes si besoin */
+    }
+}
