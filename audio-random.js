@@ -15,7 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
         { fichier: "Bolero.mp3", nom: "Bolero" }
     ];
 
-    // Fonction isolée pour appliquer et lancer une musique
+    // Variables pour gérer la file d'attente sans redondance
+    let fileDeLecture = [];
+    let indexActuelDansFile = 0;
+
+    // Fonction de mélange de Fisher-Yates pour mélanger la playlist au hasard
+    function melangerPlaylist() {
+        // Crée une copie de la liste originale pour la mélanger
+        fileDeLecture = [...pistesAudio];
+        for (let i = fileDeLecture.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [fileDeLecture[i], fileDeLecture[j]] = [fileDeLecture[j], fileDeLecture[i]];
+        }
+        indexActuelDansFile = 0; // Réinitialise l'index au début de la file
+    }
+
+    // Fonction unifiée pour charger et lancer une musique
     function chargerEtJouerMusique(piste) {
         selectAudio.value = piste.fichier;
         audioSource.src = piste.fichier;
@@ -27,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (selectAudio && audioSource && fondSonore) {
-        // 2. Générer dynamiquement les options dans le menu HTML <select>
+        // 2. Générer dynamiquement les options dans le menu HTML <select> dans l'ordre d'origine
         selectAudio.innerHTML = ''; 
         pistesAudio.forEach(piste => {
             const option = document.createElement('option');
@@ -36,37 +51,47 @@ document.addEventListener('DOMContentLoaded', () => {
             selectAudio.appendChild(option);
         });
 
-        // 3. Sélectionner une première piste au hasard au chargement de la page
-        const indexAleatoire = Math.floor(Math.random() * pistesAudio.length);
-        const pisteChoisie = pistesAudio[indexAleatoire];
+        // 3. Initialiser et mélanger la file d'attente au chargement
+        melangerPlaylist();
         
-        // Appliquer la musique de départ au chargement
-        selectAudio.value = pisteChoisie.fichier;
-        audioSource.src = pisteChoisie.fichier;
+        // Sélectionner la première piste issue du mélange aléatoire
+        const premierePiste = fileDeLecture[indexActuelDansFile];
+        selectAudio.value = premierePiste.fichier;
+        audioSource.src = premierePiste.fichier;
         fondSonore.load();
 
         // 4. ÉCOUTEUR D'ÉVÉNEMENT : Permettre le changement manuel par l'utilisateur
         selectAudio.addEventListener('change', (event) => {
             const nouvellePisteFichier = event.target.value;
             const pisteTrouvee = pistesAudio.find(p => p.fichier === nouvellePisteFichier);
+            
             if (pisteTrouvee) {
+                // Si l'utilisateur change manuellement, on met à jour l'index dans notre file d'attente
+                const indexDansFile = fileDeLecture.findIndex(p => p.fichier === nouvellePisteFichier);
+                if (indexDansFile !== -1) {
+                    indexActuelDansFile = indexDansFile;
+                }
                 chargerEtJouerMusique(pisteTrouvee);
             }
         });
 
-        // 5. NOUVEAU - ENCHAÎNEMENT EN MODE ALÉATOIRE CONTINU
+        // 5. ENCHAÎNEMENT SANS REDONDANCE (Chaque piste est lue une seule fois)
         fondSonore.addEventListener('ended', () => {
-            let nouvelIndexAleatoire;
+            indexActuelDansFile++; // Passer à l'élément suivant de notre liste mélangée
             
-            // Boucle pour éviter de rejouer exactement le même morceau si le hasard retombe dessus
-            do {
-                nouvelIndexAleatoire = Math.floor(Math.random() * pistesAudio.length);
-            } while (pistesAudio[nouvelIndexAleatoire].fichier === selectAudio.value && pistesAudio.length > 1);
+            // Si toutes les pistes de la file ont été lues
+            if (indexActuelDansFile >= fileDeLecture.length) {
+                const dernierePisteFichier = fileDeLecture[fileDeLecture.length - 1].fichier;
+                
+                // On remélange la liste pour le cycle suivant
+                do {
+                    melangerPlaylist();
+                } while (fileDeLecture[0].fichier === dernierePisteFichier && fileDeLecture.length > 1);
+                // La boucle do-while évite que la première piste du nouveau cycle soit la même que la dernière du cycle précédent
+            }
 
-            const prochainePisteAleatoire = pistesAudio[nouvelIndexAleatoire];
-            
-            // Lance la nouvelle musique et met à jour l'affichage du menu déroulant
-            chargerEtJouerMusique(prochainePisteAleatoire);
+            const prochainePiste = fileDeLecture[indexActuelDansFile];
+            chargerEtJouerMusique(prochainePiste);
         });
     }
 });
