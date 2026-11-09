@@ -19,14 +19,20 @@ header {
 
 main {
     position: relative !important;
-    overflow: visible !important; /* Indispensable pour laisser dépasser les menus déroulants */
-    max-width: 800px;
-    width: 92%;
+    overflow: visible !important; /* Laisse dépasser les menus déroulants sans problème */
+    
+    /* ALIGNEMENT PARFAIT SUR LA CARTE */
+    max-width: 1200px;
+    width: 65% !important; 
+    
     margin: 2rem auto;
     padding: 2rem 1rem;
     box-sizing: border-box;
     background: white;
-    border-radius: 8px;
+    
+    /* BORDS ARRONDIS DU BLOC */
+    border-radius: 12px;
+    
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
 }
@@ -61,6 +67,9 @@ footer {
     height: 100%;
     overflow: hidden;
     z-index: 1;
+    /* ... tes propriétés actuelles (position, top, left, etc.) ... */
+    border-radius: 12px; /* Donne la même courbe que le main */
+    overflow: hidden;    /* Coupe les angles pointus des images en arrière-plan */
 }
 
 .slideshow-layer {
@@ -334,4 +343,7 @@ main:nth-of-type(2) {
     
     padding: 0;
     box-sizing: border-box;
+
+    border-radius: 12px;
+    overflow: hidden;
 }
