@@ -12,7 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
         { fichier: "Nocturnes.mp3", nom: "Nocturnes" },
         { fichier: "Clairdelune.mp3", nom: "Clair de lune" },
         { fichier: "Asturias.mp3", nom: "Asturias" },
-        { fichier: "Bolero.mp3", nom: "Bolero" }
+        { fichier: "Bolero.mp3", nom: "Bolero" },
+        { fichier: "Risingsun.mp3", nom: "Rising Sun" },
+        { fichier: "Storm.mp3", nom: "Storm" },
+        { fichier: "Vivaldi.mp3", nom: "Vivaldi" },
+        { fichier: "West.mp3", nom: "West" },
+        { fichier: "Vedere.mp3", nom: "Vedere" }
     ];
 
     // Variables pour gérer la file d'attente sans redondance
