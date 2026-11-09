@@ -8,25 +8,26 @@
 </head>
 <body>
 
+    <!-- BLOC MUSIQUE FLOTTANT (HAUT GAUCHE - PLACÉ AVANT LE HEADER) -->
+    <div class="music-floating-box">
+        <span class="music-welcome">Bonjour</span>
+        
+        <div class="choix-musique">
+            <!-- Ton select d'origine indispensable pour la ligne 2 de ton JS -->
+            <select id="select-audio" style="padding: 5px; border-radius: 4px; cursor: pointer; font-family: 'Segoe UI', sans-serif; font-size: 14px;"></select>
+        </div>
+
+        <!-- Ton lecteur audio d'origine indispensable pour la ligne 4 de ton JS -->
+        <audio id="fond-sonore" controls style="height: 30px; max-width: 150px;">
+            <source id="audio-source" src="" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- LE HEADER COMMENCE ICI MAINTENANT -->
     <header class="video-header">
         
-        <!-- Le titre h1 est maintenant placé tout en haut -->
-        <h1 data-translate="title">Vers l'infini et au-delà</h1>
-
-              <!-- BLOC MUSIQUE FLOTTANT (HAUT GAUCHE) -->
-        <div class="music-floating-box">
-            <span class="music-welcome">Bonjour</span>
-            
-            <div class="choix-musique">
-                <!-- Ton select d'origine indispensable pour la ligne 2 de ton JS -->
-                <select id="select-audio" style="padding: 5px; border-radius: 4px; cursor: pointer; font-family: 'Segoe UI', sans-serif; font-size: 14px;"></select>
-            </div>
-
-            <!-- Ton lecteur audio d'origine indispensable pour la ligne 4 de ton JS -->
-            <audio id="fond-sonore" controls style="height: 30px; max-width: 150px;">
-                <source id="audio-source" src="" type="audio/mpeg">
-            </audio>
-        </div>
+        <!-- Le titre h1 est maintenant placé tout en haut du header -->
+        <h1 data-translate="title">Vers l'infini et l'au-delà</h1>
 
         <!-- Bloc Langues (qui flotte en haut à droite grâce au CSS fixe) -->
         <div class="dropdown lang-floating-box">
