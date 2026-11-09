@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 5. NOUVEAU - ENCHAÎNEMENT EN MODE ALÉATOIRE CONTINU
         fondSonore.addEventListener('ended', () => {
-            let nouvel IndexAleatoire;
+            let nouvelIndexAleatoire;
             
             // Boucle pour éviter de rejouer exactement le même morceau si le hasard retombe dessus
             do {
