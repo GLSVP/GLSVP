@@ -491,3 +491,25 @@ body .dropdown.lang-floating-box button {
     color: #ffffff !important;
     border: 2px solid #ffffff !important;
 }
+/* ==========================================================================
+   FIX FINAL : PLACEMENT DU TITRE EN BAS DU HEADER
+   ========================================================================== */
+
+/* 1. On s'assure que le header sert bien de repère de positionnement */
+body .video-header {
+    position: relative !important;
+    min-height: 250px !important; /* Force le header à garder une hauteur minimale propre pour la flamme */
+}
+
+/* 2. On ancre le titre h1 de manière absolue tout en bas du header */
+body .video-header h1 {
+    position: absolute !important;
+    bottom: 15px !important; /* Fixé à 15 pixels du bord inférieur du header */
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* Centre parfaitement le titre horizontalement */
+    width: auto !important;
+    text-align: center !important;
+    white-space: nowrap; /* Évite que le titre ne se coupe sur deux lignes */
+    margin: 0 !important;
+    z-index: 10 !important; /* Reste bien visible au-dessus de la vidéo */
+}
