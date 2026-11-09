@@ -546,3 +546,37 @@ body .video-header h1 {
         white-space: normal !important; /* Permet au titre de passer sur deux lignes si besoin */
     }
 }
+/* 1. Uniformisation du bouton Langues */
+.lang-button, #bouton-langues, .btn-langues { 
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 4px; /* Aligné sur le style de la boîte de musique */
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.lang-button:hover, #bouton-langues:hover, .btn-langues:hover {
+    background: rgba(255, 255, 255, 0.1) !important; /* Léger effet au survol */
+}
+
+/* 2. Ajustement de la boîte de musique pour assurer la cohérence */
+.music-floating-box {
+    background: transparent !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 4px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Si tu as des selects ou boutons internes à la boîte de musique */
+.music-floating-box select {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none;
+    cursor: pointer;
+}
