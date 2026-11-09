@@ -453,17 +453,19 @@ main:nth-of-type(2) {
     padding: 0 20px !important;
     font-weight: bold !important;
 }
-/* ==========================================================================
-   REMISE EN POSITION HAUTE DU TITRE H1
-   ========================================================================== */
-.video-header {
-    justify-content: flex-start !important; /* Force le contenu (titre) à remonter tout en haut */
-    padding-top: 40px !important; /* Donne un espace propre en haut */
+/* FORCE LE TITRE H1 À DESCENDRE TOUT EN BAS DU HEADER */
+body .video-header {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important; /* Pousse le titre vers le bas */
+    align-items: center !important;
+    padding-bottom: 40px !important; /* Crée un espace propre avant la zone bleue */
+    height: 100% !important;
 }
 
-.video-header h1 {
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
+body .video-header h1 {
+    margin-top: auto !important; /* Force la remontée mécanique du conteneur pour caler le h1 en bas */
+    margin-bottom: 0 !important;
 }
 /* ==========================================================================
    TRANSPARENCE FINALE GLB
