@@ -19,11 +19,11 @@ header {
 
 main {
     position: relative !important;
-    overflow: visible !important; /* Laisse dépasser les menus déroulants sans problème */
+    overflow: visible !important; /* Indispensable pour laisser dépasser les menus déroulants */
     
-    /* ALIGNEMENT PARFAIT SUR LA CARTE */
-    max-width: 1200px;
-    width: 65% !important; 
+    /* TAILLE RÉDUITE DE L'ENSEMBLE */
+    max-width: 750px;      /* Réduit la largeur maximale du bloc sur grand écran */
+    width: 85% !important;  /* Laisse une marge légère sur les côtés sur écran moyen */
     
     margin: 2rem auto;
     padding: 2rem 1rem;
@@ -70,6 +70,14 @@ footer {
     /* ... tes propriétés actuelles (position, top, left, etc.) ... */
     border-radius: 12px; /* Donne la même courbe que le main */
     overflow: hidden;    /* Coupe les angles pointus des images en arrière-plan */
+}
+/* Style de l'image d'illustration au centre */
+main img {
+    border-radius: 8px; /* Arrondit les angles de l'image */
+    margin-bottom: 20px; /* Donne de l'air entre l'image et le texte en dessous */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Ajoute une ombre légère pour la faire ressortir */
+    max-width: 100%; /* Sûreté pour qu'elle ne dépasse jamais sur petit écran */
+    height: auto;
 }
 
 .slideshow-layer {
@@ -320,6 +328,7 @@ footer {
     text-align: center;
 }
 /* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
+/* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
 main:nth-of-type(2) {
     display: block !important;
     background-image: url("cartemonde.jpg");
@@ -328,10 +337,14 @@ main:nth-of-type(2) {
     background-size: contain;
     background-color: #03152a; 
     
-    /* CORRECTION ICI : Gestion de la largeur et centrage du bloc */
-    width: 65% !important;        /* Aligne la largeur du bloc bleu sur celle de la bannière du haut (Découvrez nos prestations) */
-    max-width: 1200px;            /* Limite de sécurité pour les très grands écrans */
-    height: 45vh;                 /* Ajuste la hauteur pour éviter les bandes bleues excessives */
+    /* TAILLE RÉDUITE ALIGNÉE SUR LE PREMIER BLOC */
+    width: 85% !important;        
+    max-width: 750px;            
+    height: 40vh; /* Légèrement réduit aussi la hauteur pour garder de bonnes proportions */                
+    
+    /* Bords arrondis pour la carte */
+    border-radius: 12px;
+    overflow: hidden;
     
     /* Centrage absolu du bloc sur la page */
     margin-left: auto !important;
@@ -343,7 +356,4 @@ main:nth-of-type(2) {
     
     padding: 0;
     box-sizing: border-box;
-
-    border-radius: 12px;
-    overflow: hidden;
 }
