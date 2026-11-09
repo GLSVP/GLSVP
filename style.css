@@ -71,14 +71,17 @@ footer {
     border-radius: 12px; /* Donne la même courbe que le main */
     overflow: hidden;    /* Coupe les angles pointus des images en arrière-plan */
 }
-/* Style de l'image d'illustration au centre */
+/* Style de l'image d'illustration au centre avec taille réduite */
 main img {
     border-radius: 8px; 
-    display: block;             /* NOUVEAU : Permet d'appliquer les marges automatiques */
-    margin: 0 auto 20px auto;   /* MODIFIÉ : Centre l'image horizontalement et garde l'espace en bas */
+    display: block;             
+    margin: 0 auto 20px auto;   /* Conserve le centrage horizontal parfait */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-    max-width: 100%; 
-    height: auto;
+    
+    /* CONFIGURATION DE LA TAILLE : Ajustez la valeur en pixels selon le rendu souhaité */
+    width: 100%;
+    max-width: 350px;           /* Réduit l'image à 350px maximum au lieu de prendre tout l'espace disponible */
+    height: auto;               /* Conserve les proportions d'origine de la photo */
 }
 
 .slideshow-layer {
