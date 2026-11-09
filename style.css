@@ -413,3 +413,57 @@ main:nth-of-type(2) {
     background-color: #000000 !important; /* Aligne le fond sur du noir absolu */
     border-radius: 23px !important;
 }
+/* ==========================================================================
+   CORRECTION BARRE MUSICALE ET BOUTON LANGUES (FONDS NOIRS ET TAILLES)
+   ========================================================================== */
+
+/* 1. Force la boîte musicale flottante en noir et ajuste sa taille */
+.music-floating-box {
+    position: fixed !important;
+    top: 20px !important;
+    left: 20px !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+    background-color: #000000 !important; /* Fond noir */
+    height: 46px !important;
+    padding: 0 15px !important;
+    border-radius: 23px !important;
+    border: 2px solid white !important;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.4) !important;
+}
+
+/* Élargit le lecteur audio pour faire réapparaître les commandes de vitesse cachées */
+.music-floating-box audio {
+    height: 30px !important;
+    width: 220px !important; 
+}
+
+/* 2. Force le bouton langues existant à passer en noir */
+.lang-link, 
+.dropdown button,
+.dropdown.lang-floating-box button {
+    background-color: #000000 !important; /* Fond noir */
+    color: white !important;
+    border: 2px solid white !important;
+    height: 46px !important;
+    border-radius: 23px !important;
+    padding: 0 20px !important;
+    font-weight: bold !important;
+}
+
+
+/* ==========================================================================
+   REMISE EN POSITION HAUTE DU TITRE H1
+   ========================================================================== */
+.video-header {
+    justify-content: flex-start !important; /* Force le contenu (titre) à remonter tout en haut */
+    padding-top: 40px !important; /* Donne un espace propre en haut */
+}
+
+.video-header h1 {
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+}
