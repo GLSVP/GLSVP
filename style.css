@@ -210,7 +210,7 @@ main img:hover {
 button.lang-link {
     background-color: #0e21c8 !important;
     color: white !important;
-    border: 2px solid white;
+    border: 1px solid white;
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
