@@ -1,0 +1,219 @@
+<html lang="de"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Site</title>
+    <link rel="stylesheet" href="style.css?v=1.2">
+</head>
+<body>
+     <div class="dropdown lang-floating-box">
+        <button class="lang-link">🌐 Langues</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="changeLanguage('en')">GB English</a>
+            <a href="#" onclick="changeLanguage('pt')">BR Português</a>
+            <a href="#" onclick="changeLanguage('fr')">FR Français</a>
+            <a href="#" onclick="changeLanguage('de')">DE Deutsch</a>
+            <a href="#" onclick="changeLanguage('es')">ES Español</a>
+            <a href="#" onclick="changeLanguage('nl')">NL Nederlands</a>
+        </div>
+    </div>
+    <div class="dropdown cv-floating-box" style="margin-top: 30px; margin-bottom: 20px;">
+        <!-- Le bouton bleu CV -->
+        <button class="btn-cv">
+            <span data-translate="cv_btn">Knopf drücken</span>
+        </button>
+        
+        <!-- Le menu déroulant qui s'affichera au-dessus de tout -->
+        <div class="dropdown-content">
+            <a href="CV_GLSVP-fr.pdf" target="_blank">Version Française (PDF)</a>
+            <a href="CV_GLSVP-en.pdf" target="_blank">English Version (PDF)</a>
+            <a href="CV_GLSVP-fr_BL.pdf" target="_blank">BL Version (PDF)</a>
+        </div>
+    </div>
+<header class="video-header">
+  <!-- La vidéo avec la classe CSS appliquée et l'opacité ajoutée en ligne -->
+  <video autoplay="" loop="" muted="" playsinline="" class="bg-video" style="opacity: 0.9; ">
+    <source src="Flamme.mp4" type="video/mp4">
+  </video>
+
+    <h1 data-translate="title" style="position: absolute; top: 10px;">Bis zur Unendlichkeit und noch viel weiter</h1>
+<!--    <p data-translate="subtitle"></p> -->
+
+</header>
+
+        <main>
+    <!-- Le bloc de votre diaporama reste inchangé ici -->
+    <div class="bug-container" id="bg-slideshow">
+        <div class="slideshow-layer active" style="background-image: url(&quot;images/diapo (42).jpg&quot;);"></div>
+        <div class="slideshow-layer" style="background-image: url(&quot;images/diapo (106).jpg&quot;);"></div>
+    
+    </div>
+
+    <!-- AJOUT DES ATTRIBUTS CI-DESSOUS -->
+    
+    
+
+    <!-- Bloc de l'image centrée (laisser inchangé) -->
+     <div style="text-align: center; margin: 2rem 0;">
+            <img src="home.jpg" alt="Illustration professionnelle" style=" display: block; margin: 0 auto; width: 150px; max-width: 400px; height: 100px; opacity: 0.1; transition: opacity 0.2s;">
+        </div>
+
+    <!-- AJOUT DES ATTRIBUTS CI-DESSOUS -->
+    
+    
+       
+    
+</main>
+<!-- DEUXIÈME MAIN (Supplément totalement vierge avec Map Monde) -->
+<main></main>
+    <footer>
+        <!-- Conteneur pour l'arrière-plan vidéo -->
+    <div class="footer-video-container">
+        <video autoplay="" loop="" muted="" playsinline="" class="bg-video-footer">
+            <source src="Videoalu.mp4" type="video/mp4">
+        </video>
+    </div>
+    </footer>
+<!-- Section Espace de téléchargement (Alternative Google Forms)
+ <section id="upload-section" style="max-width: 300px; margin: 40px auto; padding: 30px; border: 2px dashed #e5e6eb; border-radius: 10px; background-color: #141cb4; font-family: sans-serif; text-align: center;">   
+ <h2 style="color: #f4f1f1; margin-bottom: 10px;" data-translate="share_title">Partager un document</h2>
+        <p style="color: #f2eeee; margin-bottom: 25px;" data-translate="share_desc">Pour envoyer un fichier en toute sécurité, cliquez juste :</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvIIXdHu1iCAwoCy4O-yRKXPoZJkZXLT6e6jFqzFKXoD4NbA/viewform?usp=header" target="_blank" style="display: inline-block; background-color: #141cb4; color: white; text-decoration: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 5px; transition: background 0.3s ease;">
+<button class="btn-upload" data-translate="share_btn">📄 Déposer un fichier</button> -->
+        
+    
+<!-- Menu de sélection de vos musiques -->
+<div class="choix-musique" style="margin: 5px 0; font-family: sans-serif;">
+    <label for="select-audio" style="color: black; font-weight: bold; margin-left: 5px; margin-right: 5px;">Musique :</label>
+    <!-- On laisse le select vide, le JavaScript va le remplir tout seul -->
+    <select id="select-audio" style="padding: 5px; border-radius: 4px; cursor: pointer;"><option value="Greensleeves.mp3">Greensleeves</option><option value="FurElise2.mp3">FurElise2</option><option value="Mozart.mp3">Mozart</option><option value="Visiteurs.mp3">Visiteurs</option><option value="Nocturnes.mp3">Nocturnes</option><option value="Clairdelune.mp3">Clair de lune</option><option value="Asturias.mp3">Asturias</option><option value="Bolero.mp3">Bolero</option><option value="Risingsun.mp3">Rising Sun</option><option value="Storm.mp3">Storm</option><option value="Vivaldi.mp3">Vivaldi</option><option value="West.mp3">West</option></select>
+</div>
+
+<audio id="fond-sonore" controls="">
+    <source id="audio-source" src="Vivaldi.mp3" type="audio/mpeg">
+</audio>
+
+<script src="audio-random.js"></script>
+
+<script src="images.js"></script>
+<script>
+
+    let currentLang = localStorage.getItem('userLanguage') || 'fr';
+let translations = {};
+
+// Fonction asynchrone pour charger votre fichier langue.json
+async function loadTranslations() {
+    try {
+        const response = await fetch('langue.json'); // ◄ Utilise votre fichier 'langue.json'
+        if (!response.ok) throw new Error('Erreur lors du chargement du fichier de langues');
+        
+        translations = await response.json();
+        applyTranslations(currentLang);
+    } catch (error) {
+        console.error('Impossible de charger les traductions:', error);
+    }
+}
+
+// Fonction pour parcourir et modifier le textContent des éléments data-translate
+function applyTranslations(lang) {
+    const elementsToTranslate = document.querySelectorAll('[data-translate]');
+    
+    elementsToTranslate.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    document.documentElement.lang = lang;
+}
+
+// Fonction pour changer la langue lors du clic
+function changeLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('userLanguage', lang);
+    applyTranslations(lang);
+}
+// Lance le chargement initial
+loadTranslations();
+    // 1. BLOC DE CHARGEMENT ET AUTOPLAY
+    window.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('fond-sonore');
+        
+        audio.volume = 0.35;
+        audio.playbackRate = 1;
+
+        const playPromise = audio.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log("Lecture automatique bloquée par le navigateur. Attente d'une interaction utilisateur.");
+                
+                document.body.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true });
+            });
+        }
+    }); 
+    // 2. BLOC DE CHANGEMENT DE MUSIQUE (Votre code actuel de l'image)
+    const selectAudio = document.getElementById('select-audio');
+    const audio = document.getElementById('fond-sonore');
+
+    selectAudio.addEventListener('change', (event) => {
+        // audio.pause();
+        audio.src = event.target.value;
+        audio.load();
+        audio.volume = 0.75;
+        audio.playbackRate = 1.0;
+        audio.play().catch(err => console.log("Lecture bloquée :", err));
+    });
+// Mélange le tableau d'images aléatoirement
+    images.sort(() => Math.random() - 0.5);
+    
+    let currentIndex = 0;
+    
+    // Récupération des deux calques d'affichage
+    const container = document.getElementById('bg-slideshow');
+    const layers = container.getElementsByClassName('slideshow-layer');
+    let activeLayerIndex = 0; // Piste le calque actuellement visible (0 ou 1)
+
+    // 1. Affiche immédiatement la première image au chargement
+    if (images.length > 0 && layers.length > 0) {
+        layers[activeLayerIndex].style.backgroundImage = `url('${images[0]}')`;
+    }
+
+    // 2. Fonction de pré-chargement en arrière-plan (évite les clignotements)
+    function preloadImage(url) {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.src = url;
+            img.onload = () => resolve(url);
+        });
+    }
+
+    // 3. Changement automatique d'image toutes les 3 secondes
+    setInterval(async () => {
+        if (images.length === 0) return;
+
+        // Calcul de l'index de la prochaine image
+        currentIndex = (currentIndex + 1) % images.length;
+        const nextImageUrl = images[currentIndex];
+
+        // Détermine quel est le calque masqué (celui en arrière-plan)
+        const nextLayerIndex = activeLayerIndex === 0 ? 1 : 0;
+
+        // Télécharge l'image en mémoire avant de l'injecter
+        await preloadImage(nextImageUrl);
+
+        // Injecte la nouvelle image dans le calque d'arrière-plan
+        layers[nextLayerIndex].style.backgroundImage = `url('${nextImageUrl}')`;
+
+        // Alterne la classe active pour déclencher la transition CSS fluide
+        layers[activeLayerIndex].classList.remove('active');
+        layers[nextLayerIndex].classList.add('active');
+
+        // Met à jour l'index du calque actif pour le prochain tour
+        activeLayerIndex = nextLayerIndex;
+    }, 3000);
+</script>
+
+</body></html>

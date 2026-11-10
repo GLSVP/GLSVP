@@ -75,13 +75,13 @@ footer {
 main img {
     border-radius: 8px; 
     display: block;             
-    margin: 0 auto 20px auto;   /* Conserve le centrage horizontal parfait */
+    margin: 0 auto 0px auto;   /* Conserve le centrage horizontal parfait */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
     
     /* CONFIGURATION DE LA TAILLE : Ajustez la valeur en pixels selon le rendu souhaité */
-    width: 100%;
-    max-width: 250 px;           /* Réduit l'image à 250px maximum au lieu de prendre tout l'espace disponible */
-    height: auto;               /* Conserve les proportions d'origine de la photo */
+    width: 50%;
+    max-width: 150 px;           /* Réduit l'image à 250px maximum au lieu de prendre tout l'espace disponible */
+    height: 0;               /* Conserve les proportions d'origine de la photo */
 }
 
 .slideshow-layer {
@@ -99,6 +99,22 @@ main img {
 
 .slideshow-layer.active {
     opacity: 1;
+}
+
+
+bg-slideshow.bug-container {
+    width: 100%;       /* Prend toute la largeur disponible de son parent */
+    max-width: 800px;  /* Limite la largeur maximale (ajustez la valeur) */
+    height: 435px;     /* Définit une nouvelle hauteur plus petite */
+    margin: 0 auto;    /* Centre le bloc horizontalement si nécessaire */
+    overflow: hidden;  /* Empêche le contenu de déborder */
+}
+
+bg-slideshow.bug-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Remplit le conteneur en conservant le ratio (rogne légèrement si besoin) */
+    /* OU utilisez 'object-fit: contain;' si vous voulez voir l'image entière sans rognage */
 }
 
 .bug-container::after {
@@ -211,16 +227,19 @@ main img:hover {
    ========================================================================== */
 .btn-cv {
     font-family: 'Segoe UI', sans-serif;
-    color: #000 !important;
+    color: #ffff !important;
     background-color: transparent;
     text-decoration: none;
-    padding: 12px 24px;
+    padding: 5px 5px;
     border-radius: 5px;
     border: none;
     display: inline-block;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
+    z-index: 5;
+    position:fixed;
+    top: 20px;
 }
 
 .btn-cv:hover {
@@ -343,7 +362,7 @@ main:nth-of-type(2) {
     padding: 0;
     box-sizing: border-box;
 }
-#select-audio {
+select-audio {
   /* Supprime le style par défaut (notamment la flèche du navigateur) */
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -383,3 +402,15 @@ main:nth-of-type(2) {
 #fond-sonore {
   filter: invert(1);
 }
+.dropdown cv-dropdown-container {
+z-index: 6;
+    }
+
+.cv-floating-box {
+    position: fixed !important;
+    top: 20px;
+    left: 20px;
+    z-index: 999999 !important; /* Passe absolument au-dessus de tout */
+}
+
+dropdown cv-dropdown-container" style="margin-top: 30px; margin-bottom: 20px
