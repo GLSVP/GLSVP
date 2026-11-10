@@ -19,20 +19,14 @@ header {
 
 main {
     position: relative !important;
-    overflow: visible !important; /* Indispensable pour laisser dépasser les menus déroulants */
-    
-    /* TAILLE RÉDUITE DE L'ENSEMBLE */
-    max-width: 750px;      /* Réduit la largeur maximale du bloc sur grand écran */
-    width: 85% !important;  /* Laisse une marge légère sur les côtés sur écran moyen */
-    
+    overflow: visible !important; /* Laisse dépasser les menus déroulants */
+    max-width: 750px;             
+    width: 85% !important;        
     margin: 2rem auto;
     padding: 2rem 1rem;
     box-sizing: border-box;
     background: white;
-    
-    /* BORDS ARRONDIS DU BLOC */
-    border-radius: 12px;
-    
+    border-radius: 12px;          
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
 }
@@ -49,11 +43,22 @@ main .dropdown:hover {
     position: relative !important;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #777;
+/* DEUXIÈME MAIN : Le supplément avec la carte du monde en local */
+main:nth-of-type(2) {
+    display: block !important;
+    background-image: url("cartemonde.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-color: #03152a; 
+    width: 85% !important;        
+    max-width: 750px;            
+    height: 40vh;                 
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 auto 40px auto !important;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -67,21 +72,18 @@ footer {
     height: 100%;
     overflow: hidden;
     z-index: 1;
-    /* ... tes propriétés actuelles (position, top, left, etc.) ... */
-    border-radius: 12px; /* Donne la même courbe que le main */
-    overflow: hidden;    /* Coupe les angles pointus des images en arrière-plan */
+    border-radius: 12px;
 }
-/* Style de l'image d'illustration au centre avec taille réduite */
-main img {
-    border-radius: 8px; 
-    display: block;             
-    margin: 0 auto 0px auto;   /* Conserve le centrage horizontal parfait */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-    
-    /* CONFIGURATION DE LA TAILLE : Ajustez la valeur en pixels selon le rendu souhaité */
-    width: 50%;
-    max-width: 150 px;           /* Réduit l'image à 250px maximum au lieu de prendre tout l'espace disponible */
-    height: 0;               /* Conserve les proportions d'origine de la photo */
+
+.bug-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); 
+    z-index: 2;
 }
 
 .slideshow-layer {
@@ -101,31 +103,17 @@ main img {
     opacity: 1;
 }
 
-
-bg-slideshow.bug-container {
-    width: 100%;       /* Prend toute la largeur disponible de son parent */
-    max-width: 800px;  /* Limite la largeur maximale (ajustez la valeur) */
-    height: 435px;     /* Définit une nouvelle hauteur plus petite */
-    margin: 0 auto;    /* Centre le bloc horizontalement si nécessaire */
-    overflow: hidden;  /* Empêche le contenu de déborder */
-}
-
-bg-slideshow.bug-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Remplit le conteneur en conservant le ratio (rogne légèrement si besoin) */
-    /* OU utilisez 'object-fit: contain;' si vous voulez voir l'image entière sans rognage */
-}
-
-.bug-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.6); 
-    z-index: 2;
+/* Style de l'image d'illustration au centre */
+main img {
+    border-radius: 8px; 
+    display: block;             
+    margin: 0 auto;   
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    width: 50%;
+    max-width: 150px; /* Correction de l'espace */          
+    height: auto;               
+    opacity: 0.1;
+    transition: opacity 0.2s;
 }
 
 main img:hover {
@@ -133,12 +121,12 @@ main img:hover {
 }
 
 /* ==========================================================================
-   HEADER VIDÉO ANIMÉ
+   HEADER & FOOTER VIDÉO ANIMÉS
    ========================================================================== */
 .video-header {
     position: relative;
     width: 100%;
-    height: 250px; /* Ajustez cette valeur (ex: 200px, 250px, 300px) pour changer la taille du header */
+    height: 250px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -148,7 +136,7 @@ main img:hover {
     text-align: center;
     box-sizing: border-box;
     padding: 20px;
-    background-color: #000000; /* Fond noir pour s'accorder avec les bords de la vidéo */
+    background-color: #000000; 
 }
 
 .video-header .bg-video {
@@ -157,23 +145,55 @@ main img:hover {
     left: 50%;
     width: 100%;
     height: 100%;
-    transform: translate(-50%, -50%); /* Centre parfaitement la vidéo */
-    object-fit: cover; /* Permet à la vidéo de remplir tout le petit cadre de 250px sans laisser de bandes vides */
+    transform: translate(-50%, -50%); 
+    object-fit: cover; 
     z-index: 1;
 }
 
-.video-header h1, .video-header p {
+.video-header h1 {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     position: relative;
     z-index: 2;
 }
 
+footer {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
+    color: #ffffff;
+    background-color: #20c51a; 
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-video-footer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    opacity: 0.9;      
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2; 
+    text-align: center;
+}
+
 /* ==========================================================================
-   SYSTÈME DE MENU DÉROULANT (DROPDOWN) GÉNÉRIQUE
+   SYSTÈME DE MENUS DÉROULANTS & BOÎTES FIXES
    ========================================================================== */
 .dropdown {
     position: relative;
-    display: inline-block; /* Permet aux conteneurs de s'adapter à la taille de leurs boutons */
+    display: inline-block; 
 }
 
 .dropdown-content {
@@ -182,7 +202,7 @@ main img:hover {
     background-color: #000;
     min-width: 180px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
-    z-index: 999999 !important; /* Force l'affichage au-dessus de TOUT le site */
+    z-index: 999999 !important; 
     border-radius: 20px;
     margin-top: 2px;
     border: 1px solid #000;
@@ -204,53 +224,115 @@ main img:hover {
     border-radius: 20px;
 }
 
-/* Déclenchement du menu au survol */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* ==========================================================================
-   BOUTON ET MENU DE LANGUES SPECIFIQUE (HEADER)
-   ========================================================================== */
-.dropdown.lang-switch {
-    margin-bottom: 20px;
-    z-index: 100; /* Place le sélecteur bien au-dessus de la vidéo */
+/* Flottant haut droite : Langues */
+.lang-floating-box {
+    position: fixed !important;
+    top: 20px;
+    right: 20px;
+    z-index: 999999 !important; 
 }
 
-.dropdown.lang-switch .dropdown-content {
-    left: 50%;
-    transform: translateX(-50%); /* Centre la liste sous le bouton Langues */
-    top: 100%;
+.lang-floating-box button.lang-link {
+    background-color: #0e21c8 !important;
+    color: white !important;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 20px; 
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    font-family: 'Segoe UI', sans-serif;
+    transition: transform 0.2s, background-color 0.2s;
 }
-/* ==========================================================================
-   BOUTON CENTRAL (CV)
-   ========================================================================== */
+
+.lang-floating-box button.lang-link:hover {
+    background-color: #05138a !important;
+    transform: scale(1.05); 
+}
+
+.lang-floating-box .dropdown-content {
+    right: 0;
+    left: auto;
+    top: 100%;
+    margin-top: 0px;
+}
+
+/* Flottant haut gauche : CV */
+.cv-floating-box {
+    position: fixed !important;
+    top: 20px;
+    left: 20px;
+    z-index: 999999 !important; 
+}
+
 .btn-cv {
     font-family: 'Segoe UI', sans-serif;
-    color: #ffff !important;
-    background-color: transparent;
-    text-decoration: none;
-    padding: 5px 5px;
-    border-radius: 5px;
-    border: none;
-    display: inline-block;
+    color: #ffffff !important;
+    background-color: #0e21c8; 
+    border: 1px solid white;
+    padding: 5px 15px;
+    border-radius: 20px;
     font-weight: bold;
+    font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 5;
-    position:fixed;
-    top: 20px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 .btn-cv:hover {
-    background-color: transparent;
+    background-color: #05138a;
+    transform: scale(1.05);
 }
 
-/* Aligne le menu du CV sur la largeur du bouton */
-main .dropdown .dropdown-content {
-    left: 50%;
-    transform: translateX(-50%);
+.cv-floating-box .dropdown-content {
+    left: 0;
     top: 100%;
+}
+
+/* ==========================================================================
+   SECTION MUSIQUE & LECTEUR AUDIO
+   ========================================================================= */
+.choix-musique {
+    margin: 20px 0; 
+    font-family: sans-serif;
+}
+
+/* Correction du sélecteur #select-audio */
+#select-audio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 140px;
+  padding: 10px 30px 10px 12px;
+  font-family: sans-serif; 
+  margin-left: 3px; 
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #000;
+  border: 2px solid #0e21c8; 
+  border-radius: 6px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 12px auto;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+#select-audio:focus,
+#select-audio:hover {
+  border-color: #f4f1f1; 
+  outline: none;
+}
+
+#fond-sonore {
+  filter: invert(1); 
+  margin-top: 10px;
 }
 
 /* ==========================================================================
@@ -264,153 +346,7 @@ main .dropdown .dropdown-content {
         padding: 14px 20px;
         font-size: 16px;
     }
-}
-/* Positionne le bouton de manière fixe en haut à droite de l'écran */
-.lang-floating-box {
-    position: fixed !important;
-    top: 20px;
-    right: 20px;
-    z-index: 999999 !important; /* Passe absolument au-dessus de tout */
-}
-
-/* Style du bouton (Bleu foncé élégant) */
-.lang-floating-box button.lang-link {
-    background-color: #0e21c8 !important;
-    color: white !important;
-    border: 1px solid white;
-    padding: 5px 10px;
-    border-radius: 20px; /* Bords plus arrondis style "pilule" moderne */
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-    font-family: 'Segoe UI', sans-serif;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.lang-floating-box button.lang-link:hover {
-    background-color: #05138a !important;
-    transform: scale(1.05); /* Léger effet de zoom au survol */
-}
-
-/* Aligne le menu déroulant sur le bord droit pour éviter qu'il sorte de l'écran */
-.lang-floating-box .dropdown-content {
-    right: 0;
-    left: auto;
-    top: 100%;
-    margin-top: 0px;
-}
-footer {
-    position: relative;
-    overflow: hidden;
-    padding: 60px 20px;
-    color: #ffffff;
-    background-color: #20c51a; /* Fond de secours pendant le chargement */
-}
-
-/* Conteneur de la vidéo */
-.footer-video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-/* Style de la vidéo de fond */
-.bg-video-footer {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Remplit tout l'espace du footer */
-    opacity: 0.9;      /* Optionnel : réduit l'opacité pour que le texte reste lisible */
-}
-
-/* Contenu par-dessus la vidéo */
-.footer-content {
-    position: relative;
-    z-index: 2; /* Force le texte à passer au-dessus de la vidéo */
-    text-align: center;
-}
-/* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
-/* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
-main:nth-of-type(2) {
-    display: block !important;
-    background-image: url("cartemonde.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    background-color: #03152a; 
-    
-    /* TAILLE RÉDUITE ALIGNÉE SUR LE PREMIER BLOC */
-    width: 85% !important;        
-    max-width: 750px;            
-    height: 40vh; /* Légèrement réduit aussi la hauteur pour garder de bonnes proportions */                
-    
-    /* Bords arrondis pour la carte */
-    border-radius: 12px;
-    overflow: hidden;
-    
-    /* Centrage absolu du bloc sur la page */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    
-    /* Espacement avec le footer */
-    margin-top: 0;
-    margin-bottom: 40px !important;
-    
-    padding: 0;
-    box-sizing: border-box;
-}
-select-audio {
-  /* Supprime le style par défaut (notamment la flèche du navigateur) */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  /* Dimensions et espacements */
-  width: 70%;
-  max-width: 100px;
-  padding: 10px 40px 10px 12px;
-
-  /* Typographie et couleurs */
-  font-family: 'sans-serif'; margin-left: 3px; color: #ffff;
-  font-size: 16px;
-  color: #ffff;
-  background-color: #000;
-
-  /* Bordures et arrondis */
-  border: 2px solid ; color: #ffff; /* Utilise le bleu de votre charte graphique */
-  border-radius: 6px;
-
-  /* Ajout d'une flèche personnalisée (SVG encodé ou URL d'image) */
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23141cb4%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px top 50%;
-  background-size: 12px auto;
-
-  cursor: pointer;
-  transition: border-color 0.3s ease;
-}
-
-/* Effet au survol ou focus */
-#select-audio:focus,
-#select-audio:hover {
-  border-color: #f4f1f1; /* Teinte claire ou autre couleur contrastée au survol */
-  outline: none;
-}
-#fond-sonore {
-  filter: invert(1);
-}
-.dropdown cv-dropdown-container {
-z-index: 6;
+    main {
+        width: 95% !important;
     }
-
-.cv-floating-box {
-    position: fixed !important;
-    top: 20px;
-    left: 20px;
-    z-index: 999999 !important; /* Passe absolument au-dessus de tout */
 }
-
-dropdown cv-dropdown-container" style="margin-top: 30px; margin-bottom: 20px
