@@ -150,10 +150,16 @@ main img:hover {
     z-index: 1;
 }
 
-.video-header h1 {
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-    position: relative;
+.periodic-header h1 {
+    position: absolute;
+    top: 40px;
+    left: -50%;
+    right: -50%;
     z-index: 2;
+    flex: 1;
+    padding: 0 15px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    opacity: 0.1;
 }
 
 footer {
@@ -244,10 +250,12 @@ footer {
     border-radius: 20px; 
     cursor: pointer;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 10px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
     font-family: 'Segoe UI', sans-serif;
     transition: transform 0.2s, background-color 0.2s;
+    opacity: 0.3;
+    margin-right: 130px;
 }
 
 .lang-floating-box button.lang-link:hover {
@@ -278,10 +286,12 @@ footer {
     padding: 5px 15px;
     border-radius: 20px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 10px;
     cursor: pointer;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.2s, background-color 0.2s;
+    opacity: 0.3;
+    margin-left: 110px;
 }
 
 .btn-cv:hover {
@@ -350,3 +360,93 @@ footer {
         width: 95% !important;
     }
 }
+/* ==========================================================================
+   MENDELEIEV
+   ========================================================================== */
+/* Le Header devient une grille stricte de 18 colonnes x 4 lignes */
+.periodic-header {
+    position: relative;
+    width: 100%;
+    height: 280px; 
+    display: grid;
+    grid-template-columns: repeat(18, minmax(30px, 1fr));
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px 4px;
+    padding: 30px 20px 15px 20px;
+    box-sizing: border-box;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+/* Style de base de chaque cellule d'élément */
+.chem-el {
+    grid-column: var(--c);
+    grid-row: var(--r);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    opacity: 0.75;
+    transition: all 0.25s ease;
+    cursor: help;
+    user-select: none;
+}
+
+/* Le petit numéro atomique */
+.chem-el span {
+    font-size: 0.65rem;
+    vertical-align: super;
+    margin-right: 2px;
+    opacity: 0.5;
+}
+
+/* Effet lumineux de survol */
+.chem-el:hover {
+    opacity: 1;
+    transform: scale(1.25);
+    z-index: 10;
+}
+
+/* ZONE CENTRALE : Contraint le titre à occuper le grand espace vide des lignes 1 à 3 */
+.header-center {
+    grid-column: 3 / 17; /* S'étend de la colonne 3 à 16 */
+    grid-row: 1 / 4;    /* S'occupe des lignes 1, 2 et 3 au centre */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    text-align: center;
+}
+
+.header-center h1 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.2);
+    margin: 0;
+}
+
+/* Vidéo d'arrière-plan */
+.bg-video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+/* ==========================================================================
+   CODES COULEURS HARMONISÉS PAR FAMILLES CHIMIQUES (Effet Néon)
+   ========================================================================== */
+.alkali       { color: #ff9c6e; text-shadow: 0 0 8px rgba(255, 156, 110, 0.5); } /* Alcalins */
+.alkaline     { color: #52c41a; text-shadow: 0 0 8px rgba(82, 196, 26, 0.5); }  /* Alcalino-terreux */
+.transition   { color: #ffa940; text-shadow: 0 0 6px rgba(255, 169, 64, 0.3); }  /* Métaux de transition */
+.boron-group  { color: #ffec3d; text-shadow: 0 0 6px rgba(255, 236, 61, 0.3); }  /* Cristallogènes / Icosagènes */
+.carbon-group { color: #40a9ff; text-shadow: 0 0 6px rgba(64, 169, 255, 0.3); } 
+.pnictogen    { color: #ff4d4f; text-shadow: 0 0 6px rgba(255, 77, 79, 0.3); }   
+.chalcogen    { color: #9254de; text-shadow: 0 0 6px rgba(146, 84, 222, 0.3); }  
+.halogen      { color: #13c2c2; text-shadow: 0 0 8px rgba(19, 194, 194, 0.5); }  /* Halogènes */
+.noble        { color: #b37feb; text-shadow: 0 0 8px rgba(179, 127, 235, 0.5); }  /* Gaz nobles */
