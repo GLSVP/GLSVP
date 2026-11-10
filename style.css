@@ -344,22 +344,6 @@ footer {
   filter: invert(1); 
   margin-top: 10px;
 }
-
-/* ==========================================================================
-   RESPONSIVE MOBILE
-   ========================================================================== */
-@media (max-width: 768px) {
-    .dropdown-content {
-        min-width: 200px;
-    }
-    .dropdown-content a {
-        padding: 14px 20px;
-        font-size: 16px;
-    }
-    main {
-        width: 95% !important;
-    }
-}
 /* ==========================================================================
    MENDELEIEV
    ========================================================================== */
@@ -450,3 +434,68 @@ footer {
 .chalcogen    { color: #9254de; text-shadow: 0 0 6px rgba(146, 84, 222, 0.3); }  
 .halogen      { color: #13c2c2; text-shadow: 0 0 8px rgba(19, 194, 194, 0.5); }  /* Halogènes */
 .noble        { color: #b37feb; text-shadow: 0 0 8px rgba(179, 127, 235, 0.5); }  /* Gaz nobles */
+
+/* ==========================================================================
+   RESPONSIVE MOBILE
+   ========================================================================== */
+/* ==========================================================================
+   ADAPTATION MOBILE OPTIMISÉE (Grille 8 colonnes fixes : 2 Gauche / 6 Droite)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .periodic-header {
+        /* Création d'une grille de 12 colonnes régulières */
+        grid-template-columns: repeat(12, minmax(20px, 1fr));
+        grid-template-rows: repeat(3, 1fr); /* Périodes 1, 2 et 3 uniquement */
+        height: 230px;
+        gap: 14px 4px;
+        padding: 60px 15px 15px 15px;
+    }
+
+    /* 1. Suppression de la quatrième ligne entière */
+    .periodic-header .chem-el[style*="--r: 4"] {
+        display: none !important;
+    }
+
+    /* ==========================================================================
+       BLOC GAUCHE : 4 colonnes parfaitement alignées (Places 1 à 4)
+       ========================================================================== */
+    .periodic-header .chem-el[style*="--c: 1"]  { grid-column: 1; }  /* H, Li, Na */
+    .periodic-header .chem-el[style*="--c: 2"]  { grid-column: 2; }  /* Be, Mg */
+    .periodic-header .chem-el[style*="--c: 13"] { grid-column: 3; }  /* Bore (B, Al) */
+    .periodic-header .chem-el[style*="--c: 14"] { grid-column: 4; }  /* Carbone (C, Si) */
+
+    /* ==========================================================================
+       BLOC DROITE : 4 colonnes propulsées contre la bordure (Places 9 à 12)
+       ========================================================================== */
+    .periodic-header .chem-el[style*="--c: 15"] { grid-column: 10; }   /* Azote (N, P) */
+    .periodic-header .chem-el[style*="--c: 16"] { grid-column: 11; }  /* Oxygène (O, S) */
+    .periodic-header .chem-el[style*="--c: 17"] { grid-column: 12; }  /* Halogènes (F, Cl) */
+    .periodic-header .chem-el[style*="--c: 18"] { grid-column: 13; }  /* Gaz nobles (He, Ne, Ar) */
+
+    /* ==========================================================================
+       ZONE CENTRALE : Parfaitement équilibrée (Places 5 à 8)
+       ========================================================================== */
+    .header-center {
+        grid-column: 5 / 9; /* Centrage absolu au milieu des deux blocs de 4 */
+        grid-row: 1 / 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        z-index: 2;
+        padding: 0 5px;
+    }
+
+    .header-center h1 {
+        font-size: 1.1rem !important;
+        line-height: 1.3;
+        white-space: normal !important;
+        max-width: 110px; /* Force un retour à la ligne propre sur la flamme */
+        margin-top: 10px;
+        text-shadow: 0 0 10px #000000, 0 0 20px #000000;
+    }
+
+    /* Redimensionnement général pour le confort mobile */
+    .chem-el { font-size: 0.95rem; }
+    .chem-el span { font-size: 0.55rem; }
+}
