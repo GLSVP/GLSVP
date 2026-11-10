@@ -8,45 +8,55 @@ body {
     padding: 0;
     color: #333;
     background-color: #141cb4;
- }
+}
+
 header {
     background-color: #359a0d;
     color: white;
     text-align: center;
     padding: 2rem;
- }
+}
+
 main {
     position: relative !important;
-    overflow: visible !important; /* Indispensable pour laisser dépasser les menus déroulants */  
+    overflow: visible !important; /* Indispensable pour laisser dépasser les menus déroulants */
+    
     /* TAILLE RÉDUITE DE L'ENSEMBLE */
     max-width: 750px;      /* Réduit la largeur maximale du bloc sur grand écran */
     width: 85% !important;  /* Laisse une marge légère sur les côtés sur écran moyen */
+    
     margin: 2rem auto;
     padding: 2rem 1rem;
     box-sizing: border-box;
     background: white;
+    
     /* BORDS ARRONDIS DU BLOC */
     border-radius: 12px;
+    
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
- }
- /* Éléments de premier plan à l'intérieur du main */
+}
+
+/* Éléments de premier plan à l'intérieur du main */
 main > :not(.bug-container) {
     position: relative;
     z-index: 3;
- }
- /* Force le conteneur du bouton de votre CV à remonter d'un niveau au survol */
+}
+
+/* Force le conteneur du bouton de votre CV à remonter d'un niveau au survol */
 main .dropdown:hover {
     z-index: 99999 !important;
     position: relative !important;
- }
+}
+
 footer {
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
     color: #777;
- }
- /* ==========================================================================
+}
+
+/* ==========================================================================
    CONTENEUR DIAPORAMA (BUG-CONTAINER)
    ========================================================================== */
 .bug-container {
@@ -60,18 +70,20 @@ footer {
     /* ... tes propriétés actuelles (position, top, left, etc.) ... */
     border-radius: 12px; /* Donne la même courbe que le main */
     overflow: hidden;    /* Coupe les angles pointus des images en arrière-plan */
- }
- /* Style de l'image d'illustration au centre avec taille réduite */
+}
+/* Style de l'image d'illustration au centre avec taille réduite */
 main img {
     border-radius: 8px; 
     display: block;             
     margin: 0 auto 20px auto;   /* Conserve le centrage horizontal parfait */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);    
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    
     /* CONFIGURATION DE LA TAILLE : Ajustez la valeur en pixels selon le rendu souhaité */
     width: 100%;
     max-width: 250 px;           /* Réduit l'image à 250px maximum au lieu de prendre tout l'espace disponible */
     height: auto;               /* Conserve les proportions d'origine de la photo */
- }
+}
+
 .slideshow-layer {
     position: absolute;
     top: 0;
@@ -83,10 +95,12 @@ main img {
     opacity: 0;
     filter: saturate(1.4) brightness(1.05);
     transition: opacity 1.5s ease-in-out;
- }
+}
+
 .slideshow-layer.active {
     opacity: 1;
- }
+}
+
 .bug-container::after {
     content: '';
     position: absolute;
@@ -96,11 +110,13 @@ main img {
     height: 100%;
     background: rgba(255, 255, 255, 0.6); 
     z-index: 2;
- }
+}
+
 main img:hover {
     opacity: 1 !important;
- }
- /* ==========================================================================
+}
+
+/* ==========================================================================
    HEADER VIDÉO ANIMÉ
    ========================================================================== */
 .video-header {
@@ -117,7 +133,8 @@ main img:hover {
     box-sizing: border-box;
     padding: 20px;
     background-color: #000000; /* Fond noir pour s'accorder avec les bords de la vidéo */
- }
+}
+
 .video-header .bg-video {
     position: absolute;
     top: 50%;
@@ -127,19 +144,22 @@ main img:hover {
     transform: translate(-50%, -50%); /* Centre parfaitement la vidéo */
     object-fit: cover; /* Permet à la vidéo de remplir tout le petit cadre de 250px sans laisser de bandes vides */
     z-index: 1;
- }
+}
+
 .video-header h1, .video-header p {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     position: relative;
     z-index: 2;
- }
- /* ==========================================================================
+}
+
+/* ==========================================================================
    SYSTÈME DE MENU DÉROULANT (DROPDOWN) GÉNÉRIQUE
    ========================================================================== */
 .dropdown {
     position: relative;
     display: inline-block; /* Permet aux conteneurs de s'adapter à la taille de leurs boutons */
- }
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -150,7 +170,8 @@ main img:hover {
     border-radius: 4px;
     margin-top: 2px;
     border: 1px solid #ddd;
- }
+}
+
 .dropdown-content a {
     color: #333333 !important;
     padding: 12px 15px;
@@ -159,32 +180,37 @@ main img:hover {
     text-align: left;
     font-family: 'Segoe UI', sans-serif;
     font-size: 14px;
- }
+}
+
 .dropdown-content a:hover {
     background-color: #f5f5f5;
     color: #007bff !important;
- }
- /* Déclenchement du menu au survol */
+}
+
+/* Déclenchement du menu au survol */
 .dropdown:hover .dropdown-content {
     display: block;
- }
- /* ==========================================================================
+}
+
+/* ==========================================================================
    BOUTON ET MENU DE LANGUES SPECIFIQUE (HEADER)
    ========================================================================== */
 .dropdown.lang-switch {
     margin-bottom: 20px;
     z-index: 100; /* Place le sélecteur bien au-dessus de la vidéo */
- }
+}
+
 .dropdown.lang-switch .dropdown-content {
     left: 50%;
     transform: translateX(-50%); /* Centre la liste sous le bouton Langues */
     top: 100%;
- }
- /* Style du bouton "Langues" (Bleu foncé, texte blanc) */
+}
+
+/* Style du bouton "Langues" (Bleu foncé, texte blanc) */
 button.lang-link {
     background-color: #0e21c8 !important;
     color: white !important;
-    border: 1px solid white;
+    border: 2px solid white;
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
@@ -192,11 +218,13 @@ button.lang-link {
     font-size: 14px;
     font-family: 'Segoe UI', sans-serif;
     transition: background-color 0.2s;
- }
+}
+
 button.lang-link:hover {
     background-color: #05138a !important;
- }
- /* ==========================================================================
+}
+
+/* ==========================================================================
    BOUTON CENTRAL (CV)
    ========================================================================== */
 .btn-cv {
@@ -210,18 +238,21 @@ button.lang-link:hover {
     display: inline-block;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.5s;
- }
+    transition: background-color 0.3s;
+}
+
 .btn-cv:hover {
     background-color: #0056b3;
- }
- /* Aligne le menu du CV sur la largeur du bouton */
+}
+
+/* Aligne le menu du CV sur la largeur du bouton */
 main .dropdown .dropdown-content {
     left: 50%;
     transform: translateX(-50%);
     top: 100%;
- }
- /* ==========================================================================
+}
+
+/* ==========================================================================
    RESPONSIVE MOBILE
    ========================================================================== */
 @media (max-width: 768px) {
@@ -232,19 +263,20 @@ main .dropdown .dropdown-content {
         padding: 14px 20px;
         font-size: 16px;
     }
- }
- /* Positionne le bouton de manière fixe en haut à droite de l'écran */
+}
+/* Positionne le bouton de manière fixe en haut à droite de l'écran */
 .lang-floating-box {
     position: fixed !important;
     top: 20px;
     right: 20px;
     z-index: 999999 !important; /* Passe absolument au-dessus de tout */
- }
- /* Style du bouton (Bleu foncé élégant) */
+}
+
+/* Style du bouton (Bleu foncé élégant) */
 .lang-floating-box button.lang-link {
     background-color: #0e21c8 !important;
     color: white !important;
-    border: 1px solid white;
+    border: 2px solid white;
     padding: 8px 16px;
     border-radius: 20px; /* Bords plus arrondis style "pilule" moderne */
     cursor: pointer;
@@ -253,26 +285,29 @@ main .dropdown .dropdown-content {
     box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
     font-family: 'Segoe UI', sans-serif;
     transition: transform 0.2s, background-color 0.2s;
- }
+}
+
 .lang-floating-box button.lang-link:hover {
     background-color: #05138a !important;
-    transform: scale(1.0); /* Léger effet de zoom au survol */
- }
- /* Aligne le menu déroulant sur le bord droit pour éviter qu'il sorte de l'écran */
+    transform: scale(1.05); /* Léger effet de zoom au survol */
+}
+
+/* Aligne le menu déroulant sur le bord droit pour éviter qu'il sorte de l'écran */
 .lang-floating-box .dropdown-content {
     right: 0;
     left: auto;
     top: 100%;
     margin-top: 0px;
- }
+}
 footer {
     position: relative;
     overflow: hidden;
     padding: 60px 20px;
     color: #ffffff;
     background-color: #20c51a; /* Fond de secours pendant le chargement */
- }
- /* Conteneur de la vidéo */
+}
+
+/* Conteneur de la vidéo */
 .footer-video-container {
     position: absolute;
     top: 0;
@@ -280,243 +315,49 @@ footer {
     width: 100%;
     height: 100%;
     z-index: 1;
- }
- /* Style de la vidéo de fond */
+}
+
+/* Style de la vidéo de fond */
 .bg-video-footer {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Remplit tout l'espace du footer */
     opacity: 0.9;      /* Optionnel : réduit l'opacité pour que le texte reste lisible */
- }
- /* Contenu par-dessus la vidéo */
+}
+
+/* Contenu par-dessus la vidéo */
 .footer-content {
     position: relative;
     z-index: 2; /* Force le texte à passer au-dessus de la vidéo */
     text-align: center;
- }
- /* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
+}
+/* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
+/* DEUXIÈME MAIN : Le supplément VIERGE avec fichier image en local */
 main:nth-of-type(2) {
     display: block !important;
     background-image: url("cartemonde.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    background-color: #03152a;    
+    background-color: #03152a; 
+    
     /* TAILLE RÉDUITE ALIGNÉE SUR LE PREMIER BLOC */
     width: 85% !important;        
     max-width: 750px;            
     height: 40vh; /* Légèrement réduit aussi la hauteur pour garder de bonnes proportions */                
+    
     /* Bords arrondis pour la carte */
     border-radius: 12px;
-    overflow: hidden; 
+    overflow: hidden;
+    
     /* Centrage absolu du bloc sur la page */
     margin-left: auto !important;
     margin-right: auto !important;
+    
     /* Espacement avec le footer */
     margin-top: 0;
     margin-bottom: 40px !important;
+    
     padding: 0;
     box-sizing: border-box;
- }
- /* ==========================================================================
-   BARRE MUSICALE FLOTTANTE (HAUT GAUCHE)
-   ========================================================================== */
-.music-floating-box {
-    position: fixed !important;
-    top: 20px !important;
-    left: 20px !important;
-    z-index: 999999 !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 10px !important;
-    background: #000000 !important; /* Fond noir absolu */
-    height: 46px !important; /* Même hauteur exacte que ton bouton langues */
-    padding: 0 15px !important;
-    border-radius: 23px !important; /* Arrondi pilule parfaitement symétrique */
-    border: 1px solid white !important;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.4) !important;
-    box-sizing: border-box !important;
- }
-.music-floating-box .music-welcome {
-    color: white !important;
-    font-family: 'Segoe UI', sans-serif !important;
-    font-weight: bold !important;
-    font-size: 14px !important;
- }
-.music-floating-box select {
-    background-color: white !important;
-    color: #333 !important;
-    border: 1px solid #ccc !important;
-    border-radius: 4px !important;
-    padding: 3px 6px !important;
-    font-weight: bold !important;
-    font-size: 13px !important;
- }
- /* Élargissement du lecteur audio pour révéler le bouton de vitesse */
-.music-floating-box audio {
-    height: 30px !important;
-    width: 210px !important; /* Largeur idéale pour afficher toutes les commandes natives */
- }
-/* ==========================================================================
-   AJUSTEMENT FOND NOIR BOUTON LANGUES
-   ========================================================================== */
-.lang-floating-box, 
-.lang-floating-box button,
-.dropdown.lang-floating-box button.lang-link {
-    background-color: #000000 !important; /* Aligne le fond sur du noir absolu */
-    border-radius: 23px !important;
- }
- /* ==========================================================================
-   BARRE MUSICALE ET BOUTON LANGUES TRANSPARENTS
-   ========================================================================== */
- /* Boîte musicale flottante en haut à gauche */
-.music-floating-box {
-    position: fixed !important;
-    top: 20px !important;
-    left: 20px !important;
-    z-index: 999999 !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 10px !important;
-    background-color: transparent !important; /* Fond transparent */
-    height: 46px !important;
-    padding: 0 15px !important;
-    border-radius: 23px !important;
-    border: 1px solid white !important;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2) !important;
- }
- /* Ajustement de la largeur du lecteur audio */
-.music-floating-box audio {
-    height: 30px !important;
-    width: 220px !important; 
- }
- /* Bouton langues en haut à droite */
-.lang-link, 
-.dropdown button,
-.dropdown.lang-floating-box button {
-    background-color: transparent !important; /* Fond transparent */
-    color: white !important;
-    border: 1px solid white !important;
-    height: 46px !important;
-    border-radius: 23px !important;
-    padding: 0 20px !important;
-    font-weight: bold !important;
- }
- /* FORCE LE TITRE H1 À DESCENDRE TOUT EN BAS DU HEADER */
-body .video-header {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-end !important; /* Pousse le titre vers le bas */
-    align-items: center !important;
-    padding-bottom: 40px !important; /* Crée un espace propre avant la zone bleue */
-    height: 100% !important;
- }
-body .video-header h1 {
-    margin-top: auto !important; /* Force la remontée mécanique du conteneur pour caler le h1 en bas */
-    margin-bottom: 0 !important;
- }
- /* ==========================================================================
-   TRANSPARENCE FINALE GLB
-   ========================================================================== */
-/* Cible directement le conteneur de musique */
-body .music-floating-box {
-    position: fixed !important;
-    top: 20px !important;
-    left: 20px !important;
-    z-index: 999999 !important;
-    background: transparent !important;
-    background-color: transparent !important;
- }
-/* Cible directement le bouton de langues à droite */
-body .lang-floating-box, 
-body .lang-link, 
-body #btn-langues,
-body .dropdown.lang-floating-box button {
-    background: transparent !important;
-    background-color: transparent !important;
-    color: #ffffff !important;
-    border: 1px solid #ffffff !important;
- }
-/* ==========================================================================
-   FIX FINAL : PLACEMENT DU TITRE EN BAS DU HEADER
-   ========================================================================== */
- /* 1. On s'assure que le header sert bien de repère de positionnement */
-body .video-header {
-    position: relative !important;
-    min-height: 250px !important; /* Force le header à garder une hauteur minimale propre pour la flamme */
- }
- /* 2. On ancre le titre h1 de manière absolue tout en bas du header */
-body .video-header h1 {
-    position: absolute !important;
-    bottom: 15px !important; /* Fixé à 15 pixels du bord inférieur du header */
-    left: 50% !important;
-    transform: translateX(-50%) !important; /* Centre parfaitement le titre horizontalement */
-    width: auto !important;
-    text-align: center !important;
-    white-space: nowrap; /* Évite que le titre ne se coupe sur deux lignes */
-    margin: 0 !important;
-    z-index: 10 !important; /* Reste bien visible au-dessus de la vidéo */
- }
- /* ==========================================================================
-   ADAPTATION MOBILE (ÉCRANS DE MOINS DE 768PX)
-   ========================================================================== */
-@media (max-width: 768px) {
-     /* 1. On détache la boîte de musique du haut pour la mettre en bas de l'écran */
-    body .music-floating-box {
-        top: auto !important;
-        bottom: 15px !important; /* Fixée en bas à gauche sur mobile */
-        left: 10px !important;
-        right: 10px !important; /* S'étire sur toute la largeur */
-        justify-content: center !important; /* Centre le contenu de la boîte */
-        height: auto !important;
-        padding: 8px !important;
-     }
-     /* Rend le lecteur audio un peu plus compact sur mobile si nécessaire */
-    body .music-floating-box audio {
-        width: 160px !important;
-     }
-     /* 2. On repositionne le bouton langue pour qu'il ne gêne pas */
-    body .lang-floating-box {
-        top: 15px !important;
-        right: 15px !important;
-     }
-     /* 3. On ajuste le titre pour qu'il ne touche pas le bas */
-    body .video-header h1 {
-        font-size: 24px !important; /* Diminue la taille du texte sur mobile */
-        bottom: 80px !important; /* Remonte le titre pour laisser de la place au lecteur en bas */
-        white-space: normal !important; /* Permet au titre de passer sur deux lignes si besoin */
-     }
- }
- /* 1. Uniformisation du bouton Langues */
-.lang-button, #bouton-langues, .btn-langues { 
-    background: transparent !important;
-    background-color: transparent !important;
-    color: #ffffff !important;
-    border: 1px solid #ffffff !important;
-    border-radius: 4px; /* Aligné sur le style de la boîte de musique */
-    padding: 6px 12px;
-    cursor: pointer;
-    transition: background 0.3s ease;
- }
-.lang-button:hover, #bouton-langues:hover, .btn-langues:hover {
-    background: rgba(255, 255, 255, 0.1) !important; /* Léger effet au survol */
- }
- /* 2. Ajustement de la boîte de musique pour assurer la cohérence */
-.music-floating-box {
-    background: transparent !important;
-    border: 1px solid #ffffff !important;
-    border-radius: 4px;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
- }
- /* Si tu as des selects ou boutons internes à la boîte de musique */
-.music-floating-box select {
-    background: transparent !important;
-    color: #ffffff !important;
-    border: none;
-    cursor: pointer;
- }
+}
