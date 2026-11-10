@@ -163,18 +163,18 @@ main img:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #ffffff;
+    background-color: #000;
     min-width: 180px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
     z-index: 999999 !important; /* Force l'affichage au-dessus de TOUT le site */
-    border-radius: 4px;
+    border-radius: 20px;
     margin-top: 2px;
-    border: 1px solid #ddd;
+    border: 1px solid #000;
 }
 
 .dropdown-content a {
-    color: #333333 !important;
-    padding: 12px 15px;
+    color: white !important;
+    padding: 12px 10px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -183,8 +183,9 @@ main img:hover {
 }
 
 .dropdown-content a:hover {
-    background-color: #f5f5f5;
+    background-color: #000;
     color: #007bff !important;
+    border-radius: 20px;
 }
 
 /* Déclenchement du menu au survol */
@@ -205,32 +206,13 @@ main img:hover {
     transform: translateX(-50%); /* Centre la liste sous le bouton Langues */
     top: 100%;
 }
-
-/* Style du bouton "Langues" (Bleu foncé, texte blanc) */
-button.lang-link {
-    background-color: #0e21c8 !important;
-    color: white !important;
-    border: 2px solid white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
-    font-family: 'Segoe UI', sans-serif;
-    transition: background-color 0.2s;
-}
-
-button.lang-link:hover {
-    background-color: #05138a !important;
-}
-
 /* ==========================================================================
    BOUTON CENTRAL (CV)
    ========================================================================== */
 .btn-cv {
     font-family: 'Segoe UI', sans-serif;
-    color: #ffffff !important;
-    background-color: #007bff;
+    color: #000 !important;
+    background-color: transparent;
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 5px;
@@ -242,7 +224,7 @@ button.lang-link:hover {
 }
 
 .btn-cv:hover {
-    background-color: #0056b3;
+    background-color: transparent;
 }
 
 /* Aligne le menu du CV sur la largeur du bouton */
@@ -276,8 +258,8 @@ main .dropdown .dropdown-content {
 .lang-floating-box button.lang-link {
     background-color: #0e21c8 !important;
     color: white !important;
-    border: 2px solid white;
-    padding: 8px 16px;
+    border: 1px solid white;
+    padding: 5px 10px;
     border-radius: 20px; /* Bords plus arrondis style "pilule" moderne */
     cursor: pointer;
     font-weight: bold;
