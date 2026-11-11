@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 layers[nextLayerIndex].classList.add('active');
 
                 activeLayerIndex = nextLayerIndex;
-            }, 3000);
+            }, 4000);
         }
     }
 });
