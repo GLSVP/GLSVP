@@ -499,3 +499,28 @@ footer {
     .chem-el { font-size: 0.95rem; }
     .chem-el span { font-size: 0.55rem; }
 }
+/* On transforme le bloc musique en conteneur flexible */
+.choix-musique {
+    display: flex;
+    flex-wrap: wrap;             /* Permet au select et à l'audio de rester l'un sous l'autre si nécessaire */
+    align-items: center;         /* Aligne verticalement le lecteur et le logo */
+    justify-content: space-between; /* Propulse le bloc musique à gauche et le logo tout à droite */
+    padding-right: 20px;         /* Aligne le logo avec les marges de votre site */
+}
+
+/* Style spécifique pour le logo */
+.logo-passerelle {
+    max-height: 45px;            /* Ajuste la taille du logo pour ne pas casser la hauteur du bandeau */
+    width: auto;
+    display: block;
+    
+    /* Filtre qui passe l'intégralité du PNG original en blanc pur */
+    filter: brightness(0) invert(1);
+    
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Petit effet d'interactivité au survol */
+.logo-passerelle:hover {
+    transform: scale(1.05);
+}
