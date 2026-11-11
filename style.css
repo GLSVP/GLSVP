@@ -499,28 +499,33 @@ footer {
     .chem-el { font-size: 0.95rem; }
     .chem-el span { font-size: 0.55rem; }
 }
-/* On transforme le bloc musique en conteneur flexible */
+/* Conteneur principal qui sépare le bloc musique (gauche) et le logo (droite) */
 .choix-musique {
     display: flex;
-    flex-wrap: wrap;             /* Permet au select et à l'audio de rester l'un sous l'autre si nécessaire */
-    align-items: center;         /* Aligne verticalement le lecteur et le logo */
-    justify-content: space-between; /* Propulse le bloc musique à gauche et le logo tout à droite */
-    padding-right: 20px;         /* Aligne le logo avec les marges de votre site */
+    align-items: center;         /* Centre verticalement le logo par rapport au bloc de gauche */
+    justify-content: space-between; 
+    padding-right: 20px;         
 }
 
-/* Style spécifique pour le logo */
+/* Nouveau sous-bloc pour conserver l'alignement vertical d'origine du lecteur */
+.groupe-audio-gauche {
+    display: block;              /* Annule l'effet flexbox sur les éléments internes */
+    text-align: left;
+}
+
 .logo-passerelle {
-    max-height: 45px;            /* Ajuste la taille du logo pour ne pas casser la hauteur du bandeau */
+    max-height: 150px;
     width: auto;
     display: block;
     
-    /* Filtre qui passe l'intégralité du PNG original en blanc pur */
-    filter: brightness(0) invert(1);
+    /* On change la méthode pour isoler le noir/couleur du fond blanc */
+    filter: invert(1); /* Inverse les couleurs : le texte foncé devient clair */
+    mix-blend-mode: screen; /* Rend le fond noir (anciennement blanc) invisible sur le bleu */
     
     transition: transform 0.2s ease-in-out;
 }
 
 /* Petit effet d'interactivité au survol */
 .logo-passerelle:hover {
-    transform: scale(1.05);
+    transform: scale(1.3);
 }
