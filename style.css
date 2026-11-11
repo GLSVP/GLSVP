@@ -435,6 +435,37 @@ footer {
 .halogen      { color: #13c2c2; text-shadow: 0 0 8px rgba(19, 194, 194, 0.5); }  /* Halogènes */
 .noble        { color: #b37feb; text-shadow: 0 0 8px rgba(179, 127, 235, 0.5); }  /* Gaz nobles */
 
+/* Conteneur principal qui sépare le bloc musique (gauche) et le logo (droite) */
+.choix-musique {
+    display: flex;
+    align-items: center;         /* Centre verticalement le logo par rapport au bloc de gauche */
+    justify-content: space-between; 
+    padding-right: 20px;         
+}
+
+/* Nouveau sous-bloc pour conserver l'alignement vertical d'origine du lecteur */
+.groupe-audio-gauche {
+    display: block;              /* Annule l'effet flexbox sur les éléments internes */
+    text-align: left;
+}
+
+.logo-passerelle {
+    max-height: 150px;
+    width: auto;
+    display: block;
+    
+    /* On change la méthode pour isoler le noir/couleur du fond blanc */
+    filter: invert(1); /* Inverse les couleurs : le texte foncé devient clair */
+    mix-blend-mode: screen; /* Rend le fond noir (anciennement blanc) invisible sur le bleu */
+    
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Petit effet d'interactivité au survol */
+.logo-passerelle:hover {
+    transform: scale(1.1);
+}
+
 /* ==========================================================================
    RESPONSIVE MOBILE
    ========================================================================== */
@@ -503,8 +534,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
-    padding-right: 5px;
+    padding: 5px;
+    gap: 5px;
   }
 
   .groupe-audio-gauche {
@@ -528,35 +559,4 @@ footer {
     width: auto;
     flex-shrink: 0;
   }
-}
-
-/* Conteneur principal qui sépare le bloc musique (gauche) et le logo (droite) */
-.choix-musique {
-    display: flex;
-    align-items: center;         /* Centre verticalement le logo par rapport au bloc de gauche */
-    justify-content: space-between; 
-    padding-right: 20px;         
-}
-
-/* Nouveau sous-bloc pour conserver l'alignement vertical d'origine du lecteur */
-.groupe-audio-gauche {
-    display: block;              /* Annule l'effet flexbox sur les éléments internes */
-    text-align: left;
-}
-
-.logo-passerelle {
-    max-height: 150px;
-    width: auto;
-    display: block;
-    
-    /* On change la méthode pour isoler le noir/couleur du fond blanc */
-    filter: invert(1); /* Inverse les couleurs : le texte foncé devient clair */
-    mix-blend-mode: screen; /* Rend le fond noir (anciennement blanc) invisible sur le bleu */
-    
-    transition: transform 0.2s ease-in-out;
-}
-
-/* Petit effet d'interactivité au survol */
-.logo-passerelle:hover {
-    transform: scale(1.1);
 }
