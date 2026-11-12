@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (window.matchMedia("(max-width: 768px)").matches) {
                 event.preventDefault();
                 // Remplacez l'URL ci-dessous par le bon lien pour mobile
-                const urlMobile = "https://passerelleportage.fr/qui-sommes-nous/#:~:text=Nous%20voyons";
+                const urlMobile = "https://passerelleportage.fr/#:~:text=Nous%20voyons";
                 window.open(urlMobile, "_blank");
             }
         });
