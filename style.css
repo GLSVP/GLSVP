@@ -243,7 +243,7 @@ footer {
 }
 
 .lang-floating-box button.lang-link {
-    background-color: #0e21c8 !important;
+    background-color: #000000 !important;
     color: white !important;
     border: 1px solid white;
     padding: 5px 10px;
@@ -254,7 +254,7 @@ footer {
     box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
     font-family: 'Segoe UI', sans-serif;
     transition: transform 0.2s, background-color 0.2s;
-    opacity: 0.3;
+    opacity: 0.4;
     margin-right: 130px;
 }
 
@@ -281,7 +281,7 @@ footer {
 .btn-cv {
     font-family: 'Segoe UI', sans-serif;
     color: #ffffff !important;
-    background-color: #0e21c8; 
+    background-color: #000000; 
     border: 1px solid white;
     padding: 5px 15px;
     border-radius: 20px;
@@ -290,7 +290,7 @@ footer {
     cursor: pointer;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.2s, background-color 0.2s;
-    opacity: 0.3;
+    opacity: 0.4;
     margin-left: 110px;
 }
 
@@ -437,20 +437,43 @@ footer {
 
 /* Conteneur principal qui sépare le bloc musique (gauche) et le logo (droite) */
 .choix-musique {
-    display: flex;
-    align-items: center;         /* Centre verticalement le logo par rapport au bloc de gauche */
-    justify-content: space-between; 
-    padding-right: 20px;         
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
 }
 
-/* Nouveau sous-bloc pour conserver l'alignement vertical d'origine du lecteur */
 .groupe-audio-gauche {
-    display: block;              /* Annule l'effet flexbox sur les éléments internes */
-    text-align: left;
+  transform: scale(0.7);
+  transform-origin: left center;
+  margin-right: -100px; /* Supprime le vide invisible créé par scale(0.5) */
+  flex-shrink: 0;
 }
+
+.video-centre {
+  width: 260px;
+  height: 75px;
+  overflow: hidden;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.lien-passerelle {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+  /* Conserve ton zoom parfait pour couper les bandes noires */
+  .video-centre video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(3.35);
+    display: block;
+  }
 
 .logo-passerelle {
-    max-height: 150px;
+    max-height: 120px;
     width: auto;
     display: block;
     
@@ -463,7 +486,7 @@ footer {
 
 /* Petit effet d'interactivité au survol */
 .logo-passerelle:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* ==========================================================================
@@ -530,64 +553,34 @@ footer {
     .chem-el { font-size: 0.95rem; }
     .chem-el span { font-size: 0.55rem; }
 
-.choix-musique {
+    .choix-musique {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px;
     gap: 5px;
-  }
+      }
 
-  .groupe-audio-gauche {
+    .groupe-audio-gauche {
     flex: 1;
     min-width: 0; /* Permet au bloc de rétrécir sous sa largeur minimale */
-  }
+    }
 
-  .groupe-audio-gauche label,
-  .groupe-audio-gauche select {
+    .groupe-audio-gauche label,
+    .groupe-audio-gauche select {
     font-size: 0.75rem;
-  }
+    }
 
-  .groupe-audio-gauche audio {
+    .groupe-audio-gauche audio {
     width: 100%;
     max-width: 210px; /* Réduit la largeur du lecteur natif */
     height: 32px;
-  }
+    }
 
-  .logo-passerelle {
+    .logo-passerelle {
     max-height: 45px; /* Réduit le logo pour qu'il tienne à droite */
     width: auto;
     flex-shrink: 0;
-  }
+    }
 }
-.choix-musique {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-    padding: 8px;
-  }
 
-  /* Réduit le lecteur audio à gauche pour laisser de la place à la vidéo */
-  .groupe-audio-gauche {
-    zoom: 0.50;
-    flex-shrink: 0;
-  }
-
-  /* Ajuste la hauteur du cadre vidéo au centre sur mobile */
-  .video-centre {
-    flex: 1;
-    min-width: 100px;
-    height: 75px; /* Hauteur adaptée à l'écran mobile */
-    overflow: hidden;
-    border-radius: 6px;
-  }
-
-  /* Conserve ton zoom parfait pour couper les bandes noires */
-  .video-centre video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(3.35);
-    display: block;
-  }
