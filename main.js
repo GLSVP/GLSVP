@@ -7,12 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const fondSonore = document.getElementById('fond-sonore');
 
     const pistesAudio = [
-        { fichier: "Musique/Visiteurs.mp3", nom: "Visiteurs" },
-        { fichier: "Musique/Les portes.mp3", nom: "Les portes" },
-        { fichier: "Musique/Broderie.mp3", nom: "Broderie" },
-        { fichier: "Musique/Asturias.mp3", nom: "Asturias" },
-        { fichier: "Musique/Menestrel.mp3", nom: "Menestrel" },
-         { fichier: "Musique/Le passage.mp3", nom: "Le passage" },
+        { fichier: "musique/Visiteurs.mp3", nom: "Visiteurs" },
+        { fichier: "musique/Les portes.mp3", nom: "Les portes" },
+        { fichier: "musique/Broderie.mp3", nom: "Broderie" },
+        { fichier: "musique/Menestrel.mp3", nom: "Menestrel" },
+         { fichier: "musique/Le passage.mp3", nom: "Le passage" },
     ];
 
     let fileDeLecture = [];
@@ -182,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (window.matchMedia("(max-width: 768px)").matches) {
                 event.preventDefault();
                 // Remplacez l'URL ci-dessous par le bon lien pour mobile
-                const urlMobile = "https://passerelleportage.fr/qui-sommes-nous/#:~:text=Pourquoi";
+                const urlMobile = "https://passerelleportage.fr/qui-sommes-nous/#:~:text=le%20nom";
                 window.open(urlMobile, "_blank");
             }
         });
