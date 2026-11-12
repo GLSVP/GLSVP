@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { fichier: "musiques/Les portes.mp3", nom: "Les portes" },
         { fichier: "musiques/Broderie.mp3", nom: "Broderie" },
         { fichier: "musiques/Menestrel.mp3", nom: "Menestrel" },
-         { fichier: "musiques/Le passage.mp3", nom: "Le passage" },
+        { fichier: "musiques/Le passage.mp3", nom: "Le passage" },
+        { fichier: "musiques/Emile.mp3", nom: "Emile" },
+        { fichier: "musiques/Interdits.mp3", nom: "Interdits" },
     ];
 
     let fileDeLecture = [];
@@ -181,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (window.matchMedia("(max-width: 768px)").matches) {
                 event.preventDefault();
                 // Remplacez l'URL ci-dessous par le bon lien pour mobile
-                const urlMobile = "https://passerelleportage.fr/#:~:text=Nous%20voyons";
+                const urlMobile = "https://passerelleportage.fr/qui-sommes-nous/#:~:text=Nous%20voyons";
                 window.open(urlMobile, "_blank");
             }
         });
