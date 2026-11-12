@@ -486,7 +486,7 @@ footer {
 
 /* Petit effet d'interactivité au survol */
 .logo-passerelle:hover {
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
 
 /* ==========================================================================
