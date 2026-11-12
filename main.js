@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const fondSonore = document.getElementById('fond-sonore');
 
     const pistesAudio = [
-        { fichier: "musique/Visiteurs.mp3", nom: "Visiteurs" },
-        { fichier: "musique/Les portes.mp3", nom: "Les portes" },
-        { fichier: "musique/Broderie.mp3", nom: "Broderie" },
-        { fichier: "musique/Menestrel.mp3", nom: "Menestrel" },
-         { fichier: "musique/Le passage.mp3", nom: "Le passage" },
+        { fichier: "musiques/Visiteurs.mp3", nom: "Visiteurs" },
+        { fichier: "musiques/Les portes.mp3", nom: "Les portes" },
+        { fichier: "musiques/Broderie.mp3", nom: "Broderie" },
+        { fichier: "musiques/Menestrel.mp3", nom: "Menestrel" },
+         { fichier: "musiques/Le passage.mp3", nom: "Le passage" },
     ];
 
     let fileDeLecture = [];
