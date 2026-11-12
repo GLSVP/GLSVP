@@ -16,9 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { fichier: "Asturias.mp3", nom: "Asturias" },
         { fichier: "Bolero.mp3", nom: "Bolero" },
         { fichier: "Risingsun.mp3", nom: "Rising Sun" },
-        { fichier: "Storm.mp3", nom: "Storm" },
-        { fichier: "Vivaldi.mp3", nom: "Vivaldi" },
-        { fichier: "West.mp3", nom: "West" },
+        { fichier: "Test.mp3", nom: "Test" },
     ];
 
     let fileDeLecture = [];
