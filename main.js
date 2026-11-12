@@ -7,16 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const fondSonore = document.getElementById('fond-sonore');
 
     const pistesAudio = [
-        { fichier: "Musique/Greensleeves.mp3", nom: "Greensleeves" },
-        { fichier: "Musique/FurElise2.mp3", nom: "FurElise2" },
-        { fichier: "Musique/Mozart.mp3", nom: "Mozart" },
         { fichier: "Musique/Visiteurs.mp3", nom: "Visiteurs" },
-        { fichier: "Musique/Nocturnes.mp3", nom: "Nocturnes" },
-        { fichier: "Musique/Clairdelune.mp3", nom: "Clair de lune" },
+        { fichier: "Musique/Les portes.mp3", nom: "Les portes" },
+        { fichier: "Musique/Broderie.mp3", nom: "Broderie" },
         { fichier: "Musique/Asturias.mp3", nom: "Asturias" },
-        { fichier: "Musique/Bolero.mp3", nom: "Bolero" },
-        { fichier: "Musique/Risingsun.mp3", nom: "Rising Sun" },
-        { fichier: "Musique/Test.mp3", nom: "Test" },
+        { fichier: "Musique/Menestrel.mp3", nom: "Menestrel" },
     ];
 
     let fileDeLecture = [];
