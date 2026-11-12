@@ -564,6 +564,7 @@ footer {
     .groupe-audio-gauche {
     flex: 1;
     min-width: 0; /* Permet au bloc de rétrécir sous sa largeur minimale */
+    z-index: 100
     }
 
     .groupe-audio-gauche label,

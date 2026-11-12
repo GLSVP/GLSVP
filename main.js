@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { fichier: "Musique/Broderie.mp3", nom: "Broderie" },
         { fichier: "Musique/Asturias.mp3", nom: "Asturias" },
         { fichier: "Musique/Menestrel.mp3", nom: "Menestrel" },
+         { fichier: "Musique/Le passage.mp3", nom: "Le passage" },
     ];
 
     let fileDeLecture = [];
@@ -171,3 +172,19 @@ function changeLanguage(lang) {
 
 // Lancement initial des langues
 loadTranslations();
+
+// Redirection mobile passerelle
+document.addEventListener("DOMContentLoaded", () => {
+    const lienPasserelle = document.querySelector(".lien-passerelle");
+
+    if (lienPasserelle) {
+        lienPasserelle.addEventListener("click", (event) => {
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                event.preventDefault();
+                // Remplacez l'URL ci-dessous par le bon lien pour mobile
+                const urlMobile = "https://passerelleportage.fr/qui-sommes-nous/#:~:text=Pourquoi";
+                window.open(urlMobile, "_blank");
+            }
+        });
+    }
+});
