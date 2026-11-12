@@ -7,16 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const fondSonore = document.getElementById('fond-sonore');
 
     const pistesAudio = [
-        { fichier: "Greensleeves.mp3", nom: "Greensleeves" },
-        { fichier: "FurElise2.mp3", nom: "FurElise2" },
-        { fichier: "Mozart.mp3", nom: "Mozart" },
-        { fichier: "Visiteurs.mp3", nom: "Visiteurs" },
-        { fichier: "Nocturnes.mp3", nom: "Nocturnes" },
-        { fichier: "Clairdelune.mp3", nom: "Clair de lune" },
-        { fichier: "Asturias.mp3", nom: "Asturias" },
-        { fichier: "Bolero.mp3", nom: "Bolero" },
-        { fichier: "Risingsun.mp3", nom: "Rising Sun" },
-        { fichier: "Test.mp3", nom: "Test" },
+        { fichier: "Musique/Greensleeves.mp3", nom: "Greensleeves" },
+        { fichier: "Musique/FurElise2.mp3", nom: "FurElise2" },
+        { fichier: "Musique/Mozart.mp3", nom: "Mozart" },
+        { fichier: "Musique/Visiteurs.mp3", nom: "Visiteurs" },
+        { fichier: "Musique/Nocturnes.mp3", nom: "Nocturnes" },
+        { fichier: "Musique/Clairdelune.mp3", nom: "Clair de lune" },
+        { fichier: "Musique/Asturias.mp3", nom: "Asturias" },
+        { fichier: "Musique/Bolero.mp3", nom: "Bolero" },
+        { fichier: "Musique/Risingsun.mp3", nom: "Rising Sun" },
+        { fichier: "Musique/Test.mp3", nom: "Test" },
     ];
 
     let fileDeLecture = [];
