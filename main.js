@@ -28,18 +28,28 @@ document.addEventListener('DOMContentLoaded', () => {
         indexActuelDansFile = 0;
     }
 
-    function chargerEtJouerMusique(piste) {
+    function chargerEtJouerMusique(piste, tempsDebut = 0, etaitEnPause = false) {
         if (!selectAudio || !audioSource || !fondSonore) return;
         selectAudio.value = piste.fichier;
         audioSource.src = piste.fichier;
         fondSonore.load();
-        
-        fondSonore.play().catch(() => {
-            console.log("Lecture automatique bloquée par le navigateur. En attente d'un clic utilisateur.");
-            document.body.addEventListener('click', () => {
-                fondSonore.play();
+
+        // Caler la musique à la seconde exacte sauvegardée
+        if (tempsDebut > 0) {
+            fondSonore.addEventListener('loadedmetadata', () => {
+                fondSonore.currentTime = tempsDebut;
             }, { once: true });
-        });
+        }
+
+        // Ne relancer la lecture que si elle n'était pas en pause
+        if (!etaitEnPause) {
+            fondSonore.play().catch(() => {
+                console.log("Lecture automatique bloquée par le navigateur. En attente d'un clic.");
+                document.body.addEventListener('click', () => {
+                    fondSonore.play();
+                }, { once: true });
+            });
+        }
     }
 
     if (selectAudio && audioSource && fondSonore) {
@@ -48,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fondSonore.playbackRate = 1;
 
         // Génération dynamique des options du menu déroulant
-        selectAudio.innerHTML = ''; 
+        selectAudio.innerHTML = '';
         pistesAudio.forEach(piste => {
             const option = document.createElement('option');
             option.value = piste.fichier;
@@ -56,11 +66,35 @@ document.addEventListener('DOMContentLoaded', () => {
             selectAudio.appendChild(option);
         });
 
-        // Lancement de la première piste aléatoire
+        // Préparation de la playlist aléatoire
         melangerPlaylist();
-        const premierePiste = fileDeLecture[indexActuelDansFile];
-        chargerEtJouerMusique(premierePiste);
 
+        // Vérification d'une lecture en cours depuis la page précédente
+        const fichierSauvegarde = sessionStorage.getItem('glsvp_audio_fichier');
+        const tempsSauvegarde = parseFloat(sessionStorage.getItem('glsvp_audio_temps')) || 0;
+        const etaitEnPause = sessionStorage.getItem('glsvp_audio_pause') === 'true';
+
+        const pisteReprise = pistesAudio.find(p => p.fichier === fichierSauvegarde);
+
+        if (pisteReprise) {
+            // Synchroniser l'index de la playlist avec la piste reprise
+            const indexReprise = fileDeLecture.findIndex(p => p.fichier === pisteReprise.fichier);
+            if (indexReprise !== -1) indexActuelDansFile = indexReprise;
+            
+            chargerEtJouerMusique(pisteReprise, tempsSauvegarde, etaitEnPause);
+        } else {
+            // Premier chargement du site : lancement aléatoire normal
+            const premierePiste = fileDeLecture[indexActuelDansFile];
+            chargerEtJouerMusique(premierePiste);
+        }
+
+        // Sauvegarde automatique juste avant de changer de page
+        window.addEventListener('beforeunload', () => {
+            sessionStorage.setItem('glsvp_audio_fichier', selectAudio.value);
+            sessionStorage.setItem('glsvp_audio_temps', fondSonore.currentTime);
+            sessionStorage.setItem('glsvp_audio_pause', fondSonore.paused);
+        });
+        
         // Écouteur : Changement manuel par l'utilisateur
         selectAudio.addEventListener('change', (event) => {
             const nouvellePisteFichier = event.target.value;
