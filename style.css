@@ -43,8 +43,8 @@ main .dropdown:hover {
     position: relative !important;
 }
 
-/* DEUXIÈME MAIN : Le supplément avec la carte du monde en local */
-main:nth-of-type(2) {
+/* Le supplément avec la carte du monde */
+.planisphere-container {
     display: block !important;
     background-image: url("cartemonde.jpg");
     background-repeat: no-repeat;
@@ -121,7 +121,7 @@ main img:hover {
 }
 
 /* ==========================================================================
-   HEADER & FOOTER VIDÉO ANIMÉS
+   HEADER VIDÉO ANIMÉS
    ========================================================================== */
 .video-header {
     position: relative;
@@ -160,38 +160,6 @@ main img:hover {
     padding: 0 15px;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     opacity: 0.1;
-}
-
-footer {
-    position: relative;
-    overflow: hidden;
-    padding: 60px 20px;
-    color: #ffffff;
-    background-color: #0000; 
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-.footer-video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.bg-video-footer {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    opacity: 0.9;      
-}
-
-.footer-content {
-    position: relative;
-    z-index: 2; 
-    text-align: center;
 }
 
 /* ==========================================================================
@@ -302,6 +270,37 @@ footer {
 .cv-floating-box .dropdown-content {
     left: 0;
     top: 100%;
+}
+
+/* ==========================================================================
+   DISCIPLINES & LIENS DE PASSERELLE
+   ========================================================================= */
+/* Conteneur pour aligner et espacer les boutons */
+.discipline-link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px auto;
+}
+
+/* Style individuel de chaque bouton */
+.btn-discipline {
+    display: inline-block;
+    padding: 10px 18px;
+    color: #ffffff !important;
+    background-color: #141cb4;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Effet au passage de la souris */
+.btn-discipline:hover {
+    background-color: #0d137a;
+    transform: translateY(-2px);
 }
 
 /* ==========================================================================
