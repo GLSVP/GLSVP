@@ -169,15 +169,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 4000);
         }
     }
-});
 
-// ==========================================================================
-// 3. LOGIQUE INTERNATIONALE (GESTION DE TRADUCTION SANS ONCLICK INLINE)
-// ==========================================================================
-let currentLang = localStorage.getItem('userLanguage') || 'fr';
-let translations = {};
 
-async function loadTranslations() {
+    // ==========================================================================
+    // 3. LOGIQUE INTERNATIONALE (GESTION DE TRADUCTION SANS ONCLICK INLINE)
+    // ==========================================================================
+    let currentLang = localStorage.getItem('userLanguage') || 'fr';
+    let translations = {};
+
+    async function loadTranslations() {
     try {
         const response = await fetch('langue.json');
         if (!response.ok) throw new Error('Erreur de chargement du fichier de langues');
@@ -186,9 +186,9 @@ async function loadTranslations() {
     } catch (error) {
         console.error('Impossible de charger les traductions:', error);
     }
-}
+    }
 
-function applyTranslations(lang) {
+    function applyTranslations(lang) {
     const elementsToTranslate = document.querySelectorAll('[data-translate]');
     elementsToTranslate.forEach(element => {
         const key = element.getAttribute('data-translate');
@@ -197,19 +197,18 @@ function applyTranslations(lang) {
         }
     });
     document.documentElement.lang = lang;
-}
+    }
 
-function changeLanguage(lang) {
+    function changeLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('userLanguage', lang);
     applyTranslations(lang);
-}
+    }
 
-// Lancement initial des langues
-loadTranslations();
+    // Lancement initial des langues
+    loadTranslations();
 
-// Redirection mobile passerelle
-document.addEventListener("DOMContentLoaded", () => {
+    // Redirection mobile passerelle
     const lienPasserelle = document.querySelector(".lien-passerelle");
 
     if (lienPasserelle) {
@@ -219,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Remplacez l'URL ci-dessous par le bon lien pour mobile
                 const urlMobile = "https://passerelleportage.fr/qui-sommes-nous/#:~:text=Nous%20voyons";
                 window.open(urlMobile, "_blank");
-            }
+                }
         });
     }
 });

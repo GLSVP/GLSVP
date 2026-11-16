@@ -11,7 +11,22 @@
     "share_title": "Partager un document",
     "share_desc": "Pour envoyer un fichier en toute sécurité, cliquez juste :",
     "share_btn": "📄 Déposer un fichier",
-    "music_label": "     Bonjour, ..."
+    "music_label": "      Bonjour, ...",
+    "btn_accueil": "Accueil",
+    "btn_meca": "Mécanique",
+    "btn_emeca": "Électromécanique",
+    "btn_elec": "Électricité",
+    "btn_auto": "Automatismes",
+    "btn_info": "Informatique",
+    "btn_reseaux": "Réseaux",
+    "btn_electro": "Électronique",
+    "btn_maint": "Maintenance",
+    "btn_process": "Process",
+    "emeca_title": "Électromécanique",
+    "emeca_intro": "L'alliance de la puissance électrique et de la précision mécanique au service du mouvement industriel.",
+    "emeca_point1": "Conversion d'énergie : maîtrise complète des moteurs, variateurs de vitesse, réducteurs et systèmes de transmission.",
+    "emeca_point2": "Diagnostic global : capacité à identifier rapidement l'origine d'une panne, qu'elle soit électrique ou mécanique.",
+    "emeca_point3": "Fiabilisation : montage, alignement, réglage et remise en état des ensembles tournants et équipements de production."
   },
   "en": {
     "title": "To infinity and beyond",
@@ -25,7 +40,23 @@
     "share_title": "Share a document",
     "share_desc": "To securely send a file, just click:",
     "share_btn": "📄 Upload a file",
-    "music_label": "     Hello, ..."
+    "music_label": "     Hello, ...",
+    "btn_accueil": "Home",
+    "btn_meca": "Mechanics",
+    "btn_emeca": "Electromechanics",
+    "btn_elec": "Electricity",
+    "btn_auto": "Automation",
+    "btn_info": "IT & Computing",
+    "btn_reseaux": "Networks",
+    "btn_electro": "Electronics",
+    "btn_maint": "Maintenance",
+    "btn_process": "Process",
+    "emeca_title": "Electromechanics",
+    "emeca_intro": "Combining electrical power and mechanical precision to drive industrial motion.",
+    "emeca_point1": "Energy conversion: full mastery of motors, variable speed drives, gearboxes, and transmission systems.",
+    "emeca_point2": "Comprehensive diagnostics: ability to quickly identify the root cause of a fault, whether electrical or mechanical.",
+    "emeca_point3": "Reliability engineering: assembly, alignment, adjustment, and overhaul of rotating equipment and production machinery."
+
   },
   "pt": {
     "title": "Ao infinito e além",
@@ -39,7 +70,23 @@
     "share_title": "Compartilhar um documento",
     "share_desc": "Para enviar um arquivo com segurança, basta clicar:",
     "share_btn": "📄 Enviar um arquivo",
-    "music_label": "     Olá, ..."
+    "music_label": "     Olá, ...",
+    "btn_accueil": "Início",
+    "btn_meca": "Mecânica",
+    "btn_emeca": "Eletromecânica",
+    "btn_elec": "Eletricidade",
+    "btn_auto": "Automação",
+    "btn_info": "Informática",
+    "btn_reseaux": "Redes",
+    "btn_electro": "Eletrônica",
+    "btn_maint": "Manutenção",
+    "btn_process": "Processos",
+    "emeca_title": "Eletromecânica",
+    "emeca_intro": "A aliança entre a potência elétrica e a precisão mecânica ao serviço do movimento industrial.",
+    "emeca_point1": "Conversão de energia: domínio completo de motores, variadores de velocidade, redutores e sistemas de transmissão.",
+    "emeca_point2": "Diagnóstico global: capacidade de identificar rapidamente a origem de uma falha, seja elétrica ou mecânica.",
+    "emeca_point3": "Confiabilidade: montagem, alinhamento, ajuste e recondicionamento de conjuntos rotativos e equipamentos de produção."
+
   },
   "de": {
     "title": "Bis zur Unendlichkeit und noch viel weiter",
@@ -53,7 +100,23 @@
     "share_title": "Dokument teilen",
     "share_desc": "Um eine Datei sicher zu senden, klicken Sie einfach hier:",
     "share_btn": "📄 Datei hochladen",
-    "music_label": "     Hallo, ..."
+    "music_label": "     Hallo, ...",
+    "btn_accueil": "Startseite",
+    "btn_meca": "Mechanik",
+    "btn_emeca": "Elektromechanik",
+    "btn_elec": "Elektrotechnik",
+    "btn_auto": "Automatisierung",
+    "btn_info": "Informatik",
+    "btn_reseaux": "Netzwerke",
+    "btn_electro": "Elektronik",
+    "btn_maint": "Instandhaltung",
+    "btn_process": "Prozesstechnik",
+    "emeca_title": "Elektromechanik",
+    "emeca_intro": "Die Verbindung von elektrischer Leistung und mechanischer Präzision im Dienste industrieller Bewegung.",
+    "emeca_point1": "Energieumwandlung: umfassende Beherrschung von Motoren, Frequenzumrichtern, Getrieben und Antriebssystemen.",
+    "emeca_point2": "Ganzheitliche Diagnose: schnelle Ermittlung der Fehlerursache, ob elektrisch oder mechanisch.",
+    "emeca_point3": "Betriebssicherheit: Montage, Ausrichtung, Einstellung und Instandsetzung rotierender Baugruppen und Produktionsanlagen."
+
   },
   "es": {
     "title": "Hasta el infinito y más allá",
@@ -67,7 +130,23 @@
     "share_title": "Compartir un documento",
     "share_desc": "Para enviar un archivo de forma segura, simplemente haga clic:",
     "share_btn": "📄 Subir un archivo",
-    "music_label": "     Hola, ..."
+    "music_label": "     Hola, ...",
+    "btn_accueil": "Inicio",
+    "btn_meca": "Mecánica",
+    "btn_emeca": "Electromecánica",
+    "btn_elec": "Electricidad",
+    "btn_auto": "Automatización",
+    "btn_info": "Informática",
+    "btn_reseaux": "Redes",
+    "btn_electro": "Electrónica",
+    "btn_maint": "Mantenimiento",
+    "btn_process": "Procesos",
+    "emeca_title": "Electromecánica",
+    "emeca_intro": "La alianza de la potencia eléctrica y la precisión mecánica al servicio del movimiento industrial.",
+    "emeca_point1": "Conversión de energía: dominio completo de motores, variadores de velocidad, reductores y sistemas de transmisión.",
+    "emeca_point2": "Diagnóstico integral: capacidad para identificar rápidamente el origen de una avería, ya sea eléctrica o mecánica.",
+    "emeca_point3": "Fiabilidad: montaje, alineación, ajuste y puesta a punto de equipos rotativos y maquinaria de producción."
+
   },
   "nl": {
     "title": "Naar het oneindige en daarbuiten",
@@ -81,6 +160,22 @@
     "share_title": "Document delen",
     "share_desc": "Om veilig een bestand te verzenden, klikt u hier:",
     "share_btn": "📄 Bestand uploaden",
-    "music_label": "     Hallo, ..."
+    "music_label": "     Hallo, ...",
+    "btn_accueil": "Home",
+    "btn_meca": "Mechanica",
+    "btn_emeca": "Elektromechanica",
+    "btn_elec": "Elektrotechniek",
+    "btn_auto": "Automatisering",
+    "btn_info": "Informatica",
+    "btn_reseaux": "Netwerken",
+    "btn_electro": "Elektronica",
+    "btn_maint": "Onderhoud",
+    "btn_process": "Proces",
+    "emeca_title": "Elektromechanica",
+    "emeca_intro": "De combinatie van elektrisch vermogen en mechanische precisie ten dienste van industriële aandrijving.",
+    "emeca_point1": "Energieomzetting: volledige beheersing van motoren, frequentieregelaars, reductoren en transmissiesystemen.",
+    "emeca_point2": "Integrale diagnose: het snel vaststellen van de oorzaak van een storing, zowel elektrisch als mechanisch.",
+    "emeca_point3": "Betrouwbaarheid: montage, uitlijning, afstelling en revisie van roterende machines en productie-installaties."
+
   }
 }
