@@ -199,11 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.lang = lang;
     }
 
-    function changeLanguage(lang) {
+    window.changeLanguage = function(lang) {
     currentLang = lang;
     localStorage.setItem('userLanguage', lang);
     applyTranslations(lang);
-    }
+};
 
     // Lancement initial des langues
     loadTranslations();
