@@ -26,7 +26,12 @@
     "emeca_intro": "L'alliance de la puissance électrique et de la précision mécanique au service du mouvement industriel.",
     "emeca_point1": "Conversion d'énergie : maîtrise complète des moteurs, variateurs de vitesse, réducteurs et systèmes de transmission.",
     "emeca_point2": "Diagnostic global : capacité à identifier rapidement l'origine d'une panne, qu'elle soit électrique ou mécanique.",
-    "emeca_point3": "Fiabilisation : montage, alignement, réglage et remise en état des ensembles tournants et équipements de production."
+    "emeca_point3": "Fiabilisation : montage, alignement, réglage et remise en état des ensembles tournants et équipements de production.",
+    "auto_title": "Automatismes",
+    "auto_intro": "L'intelligence opérationnelle au service de la performance, de l'autonomie et de la précision de vos lignes de production.",
+    "auto_point1": "Programmation et pilotage : conception et développement sur automates programmables industriels (API) et interfaces homme-machine (IHM).",
+    "auto_point2": "Supervision et communication : intégration de systèmes SCADA, réseaux industriels, bus de terrain et capteurs intelligents.",
+    "auto_point3": "Mise en service et optimisation : réglages sur site, fiabilisation des cycles machines et réduction des temps d'arrêt."
   },
   "en": {
     "title": "To infinity and beyond",
@@ -55,9 +60,13 @@
     "emeca_intro": "Combining electrical power and mechanical precision to drive industrial motion.",
     "emeca_point1": "Energy conversion: full mastery of motors, variable speed drives, gearboxes, and transmission systems.",
     "emeca_point2": "Comprehensive diagnostics: ability to quickly identify the root cause of a fault, whether electrical or mechanical.",
-    "emeca_point3": "Reliability engineering: assembly, alignment, adjustment, and overhaul of rotating equipment and production machinery."
-
-  },
+    "emeca_point3": "Reliability engineering: assembly, alignment, adjustment, and overhaul of rotating equipment and production machinery.",
+    "auto_title": "Automation",
+    "auto_intro": "Operational intelligence driving the performance, autonomy, and precision of your production lines.",
+    "auto_point1": "Programming and control: design and development on programmable logic controllers (PLCs) and human-machine interfaces (HMIs).",
+    "auto_point2": "Supervision and communication: integration of SCADA systems, industrial networks, fieldbuses, and smart sensors.",
+    "auto_point3": "Commissioning and optimization: on-site adjustments, machine cycle reliability improvement, and downtime reduction."
+    },
   "pt": {
     "title": "Ao infinito e além",
     "subtitle": "Enquanto aguardamos a retomada da missão, estamos nos divertindo criando um site com IA",
@@ -85,9 +94,13 @@
     "emeca_intro": "A aliança entre a potência elétrica e a precisão mecânica ao serviço do movimento industrial.",
     "emeca_point1": "Conversão de energia: domínio completo de motores, variadores de velocidade, redutores e sistemas de transmissão.",
     "emeca_point2": "Diagnóstico global: capacidade de identificar rapidamente a origem de uma falha, seja elétrica ou mecânica.",
-    "emeca_point3": "Confiabilidade: montagem, alinhamento, ajuste e recondicionamento de conjuntos rotativos e equipamentos de produção."
-
-  },
+    "emeca_point3": "Confiabilidade: montagem, alinhamento, ajuste e recondicionamento de conjuntos rotativos e equipamentos de produção.",
+    "auto_title": "Automação",
+    "auto_intro": "Inteligência operacional a serviço do desempenho, da autonomia e da precisão de suas linhas de produção.",
+    "auto_point1": "Programação e controle: concepção e desenvolvimento em controladores lógicos programáveis (CLPs) e interfaces homem-máquina (IHMs).",
+    "auto_point2": "Supervisão e comunicação: integração de sistemas SCADA, redes industriais, barramentos de campo e sensores inteligentes.",
+    "auto_point3": "Comissionamento e otimização: ajustes em campo, confiabilidade dos ciclos de máquina e redução de paradas."
+    },
   "de": {
     "title": "Bis zur Unendlichkeit und noch viel weiter",
     "subtitle": "Während wir auf die Wiederaufnahme der Mission warten, haben wir Spaß daran, eine Website mit KI zu erstellen",
@@ -115,9 +128,13 @@
     "emeca_intro": "Die Verbindung von elektrischer Leistung und mechanischer Präzision im Dienste industrieller Bewegung.",
     "emeca_point1": "Energieumwandlung: umfassende Beherrschung von Motoren, Frequenzumrichtern, Getrieben und Antriebssystemen.",
     "emeca_point2": "Ganzheitliche Diagnose: schnelle Ermittlung der Fehlerursache, ob elektrisch oder mechanisch.",
-    "emeca_point3": "Betriebssicherheit: Montage, Ausrichtung, Einstellung und Instandsetzung rotierender Baugruppen und Produktionsanlagen."
-
-  },
+    "emeca_point3": "Betriebssicherheit: Montage, Ausrichtung, Einstellung und Instandsetzung rotierender Baugruppen und Produktionsanlagen.",
+    "auto_title": "Automatisierungstechnik",
+    "auto_intro": "Operative Intelligenz im Dienste der Leistung, Autonomie und Präzision Ihrer Produktionslinien.",
+    "auto_point1": "Programmierung und Steuerung: Konzeption und Entwicklung auf speicherprogrammierbaren Steuerungen (SPS) und Mensch-Maschine-Schnittstellen (HMI).",
+    "auto_point2": "Überwachung und Kommunikation: Integration von SCADA-Systemen, industriellen Netzwerken, Feldbussen und intelligenten Sensoren.",
+    "auto_point3": "Inbetriebnahme und Optimierung: Einstellungen vor Ort, Erhöhung der Zuverlässigkeit von Maschinenzyklen und Reduzierung von Ausfallzeiten."
+    },
   "es": {
     "title": "Hasta el infinito y más allá",
     "subtitle": "Mientras esperamos la reanudación de la misión, nos divertimos creando un sitio web con IA",
@@ -145,9 +162,13 @@
     "emeca_intro": "La alianza de la potencia eléctrica y la precisión mecánica al servicio del movimiento industrial.",
     "emeca_point1": "Conversión de energía: dominio completo de motores, variadores de velocidad, reductores y sistemas de transmisión.",
     "emeca_point2": "Diagnóstico integral: capacidad para identificar rápidamente el origen de una avería, ya sea eléctrica o mecánica.",
-    "emeca_point3": "Fiabilidad: montaje, alineación, ajuste y puesta a punto de equipos rotativos y maquinaria de producción."
-
-  },
+    "emeca_point3": "Fiabilidad: montaje, alineación, ajuste y puesta a punto de equipos rotativos y maquinaria de producción.",
+    "auto_title": "Automatización",
+    "auto_intro": "Inteligencia operativa al servicio del rendimiento, la autonomía y la precisión de sus líneas de producción.",
+    "auto_point1": "Programación y control: diseño y desarrollo en autómatas programables industriales (PLC) e interfaces hombre-máquina (HMI).",
+    "auto_point2": "Supervisión y comunicación: integración de sistemas SCADA, redes industriales, buses de campo y sensores inteligentes.",
+    "auto_point3": "Puesta en marcha y optimización: ajustes in situ, fiabilización de los ciclos de máquina y reducción de tiempos de parada."
+    },
   "nl": {
     "title": "Naar het oneindige en daarbuiten",
     "subtitle": "In afwachting van de hervatting van de missie vermaken we ons met het maken van een website met AI",
@@ -175,7 +196,11 @@
     "emeca_intro": "De combinatie van elektrisch vermogen en mechanische precisie ten dienste van industriële aandrijving.",
     "emeca_point1": "Energieomzetting: volledige beheersing van motoren, frequentieregelaars, reductoren en transmissiesystemen.",
     "emeca_point2": "Integrale diagnose: het snel vaststellen van de oorzaak van een storing, zowel elektrisch als mechanisch.",
-    "emeca_point3": "Betrouwbaarheid: montage, uitlijning, afstelling en revisie van roterende machines en productie-installaties."
-
+    "emeca_point3": "Betrouwbaarheid: montage, uitlijning, afstelling en revisie van roterende machines en productie-installaties.",
+    "auto_title": "Automatisering",
+    "auto_intro": "Operationele intelligentie ten dienste van de prestaties, autonomie en precisie van uw productielijnen.",
+    "auto_point1": "Programmering en besturing: ontwerp en ontwikkeling op programmeerbare logische controllers (PLC's) en mens-machine-interfaces (HMI's).",
+    "auto_point2": "Supervisie en communicatie: integratie van SCADA-systemen, industriële netwerken, veldbussen en slimme sensoren.",
+    "auto_point3": "Inbedrijfstelling en optimalisatie: afstellingen op locatie, betrouwbaarheid van machinecycli en vermindering van stilstandtijd."
   }
 }

@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentLang = lang;
     localStorage.setItem('userLanguage', lang);
     applyTranslations(lang);
-};
+    };
 
     // Lancement initial des langues
     loadTranslations();
