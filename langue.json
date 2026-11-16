@@ -62,12 +62,17 @@
     "proc_point1": "Instrumentation et régulation : paramétrage, étalonnage et maintenance des boucles de contrôle (pression, débit, température, niveau).",
     "proc_point2": "Analyse et optimisation : suivi des paramètres physico-chimiques, ajustement des recettes et amélioration de la performance énergétique.",
     "proc_point3": "Sécurité des procédés : contrôle des vannes de régulation, vérification des seuils critiques et conformité aux exigences qualité.",
-        "res_title": "Réseaux",
+    "res_title": "Réseaux",
     "res_intro": "La fiabilité des infrastructures de communication pour assurer l'interconnexion fluide et sécurisée de vos équipements industriels.",
     "res_point1": "Architecture et câblage : déploiement de réseaux filaires, fibre optique, switchs industriels et points d'accès sans fil.",
     "res_point2": "Protocoles et bus de terrain : configuration et diagnostic des communications (Profinet, Modbus, Ethernet/IP) entre automates et supervision.",
-    "res_point3": "Diagnostic et sécurisation : analyse de trames, segmentation VLAN, pare-feu industriels et garantie de haute disponibilité."
-
+    "res_point3": "Diagnostic et sécurisation : analyse de trames, segmentation VLAN, pare-feu industriels et garantie de haute disponibilité.",
+    "btn_thermo": "Thermodynamique",
+    "thermo_title": "Thermodynamique",
+    "thermo_intro": "Maîtrisez les transferts d'énergie, les bilans thermiques et l'optimisation des systèmes énergétiques.",
+    "thermo_point1": "Analyse des cycles thermodynamiques et des machines thermiques",
+    "thermo_point2": "Calcul des bilans énergétiques et étude des transferts de chaleur",
+    "thermo_point3": "Évaluation des rendements et amélioration de l'efficacité énergétique"
   },
   "en": {
     "title": "To infinity and beyond",
@@ -136,8 +141,13 @@
     "res_intro": "Reliability of communication infrastructures to ensure seamless and secure interconnection of your industrial equipment.",
     "res_point1": "Architecture and cabling: deployment of wired networks, fiber optics, industrial switches, and wireless access points.",
     "res_point2": "Protocols and fieldbuses: configuration and diagnostics of communications (Profinet, Modbus, Ethernet/IP) between PLCs and supervision.",
-    "res_point3": "Diagnostics and security: packet analysis, VLAN segmentation, industrial firewalls, and high-availability assurance."
-
+    "res_point3": "Diagnostics and security: packet analysis, VLAN segmentation, industrial firewalls, and high-availability assurance.",
+    "btn_thermo": "Thermodynamics",
+    "thermo_title": "Thermodynamics",
+    "thermo_intro": "Master energy transfers, thermal balances, and the optimization of energy systems.",
+    "thermo_point1": "Analysis of thermodynamic cycles and heat engines",
+    "thermo_point2": "Calculation of energy balances and heat transfer studies",
+    "thermo_point3": "Efficiency evaluation and energy performance improvement"
   },
   "pt": {
     "title": "Ao infinito e além",
@@ -206,8 +216,13 @@
     "res_intro": "A confiabilidade das infraestruturas de comunicação para garantir a interconexão fluida e segura de seus equipamentos industriais.",
     "res_point1": "Arquitetura e cabeamento: implantação de redes cabeadas, fibra óptica, switches industriais e pontos de acesso sem fio.",
     "res_point2": "Protocolos e barramentos de campo: configuração e diagnóstico de comunicações (Profinet, Modbus, Ethernet/IP) entre CLPs e supervisão.",
-    "res_point3": "Diagnóstico e segurança: análise de tráfego, segmentação VLAN, firewalls industriais e garantia de alta disponibilidade."
-
+    "res_point3": "Diagnóstico e segurança: análise de tráfego, segmentação VLAN, firewalls industriais e garantia de alta disponibilidade.",
+    "btn_thermo": "Termodinâmica",
+    "thermo_title": "Termodinâmica",
+    "thermo_intro": "Domine as transferências de energia, os balanços térmicos e a otimização de sistemas energéticos.",
+    "thermo_point1": "Análise de ciclos termodinâmicos e máquinas térmicas",
+    "thermo_point2": "Cálculo de balanços energéticos e estudo de transferência de calor",
+    "thermo_point3": "Avaliação de rendimentos e melhoria da eficiência energética"
   },
   "de": {
     "title": "Bis zur Unendlichkeit und noch viel weiter",
@@ -276,8 +291,13 @@
     "res_intro": "Zuverlässigkeit von Kommunikationsinfrastrukturen zur Gewährleistung einer reibungslosen und sicheren Vernetzung Ihrer Industrieanlagen.",
     "res_point1": "Architektur und Verkabelung: Aufbau kabelgebundener Netzwerke, Glasfasertechnik, industrieller Switches und WLAN-Zugangspunkte.",
     "res_point2": "Protokolle und Feldbusse: Konfiguration und Diagnose der Kommunikation (Profinet, Modbus, Ethernet/IP) zwischen SPS und Leitsystemen.",
-    "res_point3": "Diagnose und Absicherung: Datenverkehrsanalyse, VLAN-Segmentierung, industrielle Firewalls und Gewährleistung hoher Verfügbarkeit."
-
+    "res_point3": "Diagnose und Absicherung: Datenverkehrsanalyse, VLAN-Segmentierung, industrielle Firewalls und Gewährleistung hoher Verfügbarkeit.",
+    "btn_thermo": "Thermodynamik",
+    "thermo_title": "Thermodynamik",
+    "thermo_intro": "Beherrschen Sie Energieübertragungen, Wärmebilanzen und die Optimierung von Energiesystemen.",
+    "thermo_point1": "Analyse thermodynamischer Kreisprozesse und Wärmekraftmaschinen",
+    "thermo_point2": "Berechnung von Energiebilanzen und Untersuchung der Wärmeübertragung",
+    "thermo_point3": "Bewertung von Wirkungsgraden und Steigerung der Energieeffizienz"
   },
   "es": {
     "title": "Hasta el infinito y más allá",
@@ -346,8 +366,13 @@
     "res_intro": "La fiabilidad de las infraestructuras de comunicación para garantizar la interconexión fluida y segura de sus equipos industriales.",
     "res_point1": "Arquitectura y cableado: despliegue de redes cableadas, fibra óptica, switches industriales y puntos de acceso inalámbricos.",
     "res_point2": "Protocolos y buses de campo: configuración y diagnóstico de comunicaciones (Profinet, Modbus, Ethernet/IP) entre PLC y supervisión.",
-    "res_point3": "Diagnóstico y seguridad: análisis de tráfico, segmentación VLAN, cortafuegos industriales y garantía de alta disponibilidad."
-
+    "res_point3": "Diagnóstico y seguridad: análisis de tráfico, segmentación VLAN, cortafuegos industriales y garantía de alta disponibilidad.",
+    "btn_thermo": "Termodinámica",
+    "thermo_title": "Termodinámica",
+    "thermo_intro": "Domina las transferencias de energía, los balances térmicos y la optimización de sistemas energéticos.",
+    "thermo_point1": "Análisis de ciclos termodinámicos y máquinas térmicas",
+    "thermo_point2": "Cálculo de balances energéticos y estudio de transferencia de calor",
+    "thermo_point3": "Evaluación de rendimientos y mejora de la eficiencia energética"
   },
   "nl": {
     "title": "Naar het oneindige en daarbuiten",
@@ -416,7 +441,12 @@
     "res_intro": "Betrouwbaarheid van communicatie-infrastructuren om een soepele en veilige koppeling van uw industriële apparatuur te waarborgen.",
     "res_point1": "Architectuur en bekabeling: uitrol van bekabelde netwerken, glasvezel, industriële switches en draadloze toegangspunten.",
     "res_point2": "Protocollen en veldbussen: configuratie en diagnose van communicatie (Profinet, Modbus, Ethernet/IP) tussen PLC's en supervisie.",
-    "res_point3": "Diagnose en beveiliging: pakketanalyse, VLAN-segmentatie, industriële firewalls en garantie van hoge beschikbaarheid."
-
+    "res_point3": "Diagnose en beveiliging: pakketanalyse, VLAN-segmentatie, industriële firewalls en garantie van hoge beschikbaarheid.",
+    "btn_thermo": "Thermodynamica",
+    "thermo_title": "Thermodynamica",
+    "thermo_intro": "Beheers energieoverdrachten, warmtebalansen en de optimalisatie van energiesystemen.",
+    "thermo_point1": "Analyse van thermodynamische kringprocessen en warmtemachines",
+    "thermo_point2": "Berekening van energiebalansen en studie van warmteoverdracht",
+    "thermo_point3": "Evaluatie van rendementen en verbetering van energie-efficiëntie"
   }
 }
