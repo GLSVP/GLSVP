@@ -25,10 +25,11 @@ main {
     margin: 2rem auto;
     padding: 2rem 1rem;
     box-sizing: border-box;
-    background: white;
+    background: #141cb4;
     border-radius: 12px;          
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
+    color:#141cb4;
 }
 
 /* Éléments de premier plan à l'intérieur du main */
