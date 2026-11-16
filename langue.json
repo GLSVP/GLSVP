@@ -27,11 +27,16 @@
     "emeca_point1": "Conversion d'énergie : maîtrise complète des moteurs, variateurs de vitesse, réducteurs et systèmes de transmission.",
     "emeca_point2": "Diagnostic global : capacité à identifier rapidement l'origine d'une panne, qu'elle soit électrique ou mécanique.",
     "emeca_point3": "Fiabilisation : montage, alignement, réglage et remise en état des ensembles tournants et équipements de production.",
-    "auto_title": "Automatismes",
+    "auto_title": "Automatisme",
     "auto_intro": "L'intelligence opérationnelle au service de la performance, de l'autonomie et de la précision de vos lignes de production.",
     "auto_point1": "Programmation et pilotage : conception et développement sur automates programmables industriels (API) et interfaces homme-machine (IHM).",
     "auto_point2": "Supervision et communication : intégration de systèmes SCADA, réseaux industriels, bus de terrain et capteurs intelligents.",
-    "auto_point3": "Mise en service et optimisation : réglages sur site, fiabilisation des cycles machines et réduction des temps d'arrêt."
+    "auto_point3": "Mise en service et optimisation : réglages sur site, fiabilisation des cycles machines et réduction des temps d'arrêt.",
+    "elec_title": "Électricité",
+    "elec_intro": "La maîtrise de la distribution énergétique et des équipements de puissance pour garantir la sécurité et la continuité de vos installations.",
+    "elec_point1": "Distribution et câblage : installation, raccordement d'armoires électriques, tableaux basse tension et cheminements de câbles.",
+    "elec_point2": "Diagnostic et dépannage : recherche de défauts, contrôle d'isolement, mesures électriques et remise en service rapide.",
+    "elec_point3": "Sécurité et conformité : vérification des dispositifs de protection, mise aux normes industrielles et habilitations électriques."
   },
   "en": {
     "title": "To infinity and beyond",
@@ -65,8 +70,13 @@
     "auto_intro": "Operational intelligence driving the performance, autonomy, and precision of your production lines.",
     "auto_point1": "Programming and control: design and development on programmable logic controllers (PLCs) and human-machine interfaces (HMIs).",
     "auto_point2": "Supervision and communication: integration of SCADA systems, industrial networks, fieldbuses, and smart sensors.",
-    "auto_point3": "Commissioning and optimization: on-site adjustments, machine cycle reliability improvement, and downtime reduction."
-    },
+    "auto_point3": "Commissioning and optimization: on-site adjustments, machine cycle reliability improvement, and downtime reduction.",
+    "elec_title": "Electricity",
+    "elec_intro": "Mastery of power distribution and electrical equipment to ensure the safety and continuity of your facilities.",
+    "elec_point1": "Distribution and wiring: installation, connection of electrical cabinets, low-voltage switchboards, and cable routing.",
+    "elec_point2": "Diagnostics and troubleshooting: fault finding, insulation testing, electrical measurements, and rapid commissioning.",
+    "elec_point3": "Safety and compliance: verification of protection devices, industrial standard compliance, and electrical certifications."
+  },
   "pt": {
     "title": "Ao infinito e além",
     "subtitle": "Enquanto aguardamos a retomada da missão, estamos nos divertindo criando um site com IA",
@@ -99,8 +109,13 @@
     "auto_intro": "Inteligência operacional a serviço do desempenho, da autonomia e da precisão de suas linhas de produção.",
     "auto_point1": "Programação e controle: concepção e desenvolvimento em controladores lógicos programáveis (CLPs) e interfaces homem-máquina (IHMs).",
     "auto_point2": "Supervisão e comunicação: integração de sistemas SCADA, redes industriais, barramentos de campo e sensores inteligentes.",
-    "auto_point3": "Comissionamento e otimização: ajustes em campo, confiabilidade dos ciclos de máquina e redução de paradas."
-    },
+    "auto_point3": "Comissionamento e otimização: ajustes em campo, confiabilidade dos ciclos de máquina e redução de paradas.",
+    "elec_title": "Eletricidade",
+    "elec_intro": "Domínio da distribuição de energia e dos equipamentos de potência para garantir a segurança e a continuidade de suas instalações.",
+    "elec_point1": "Distribuição e cabeamento: instalação, ligação de painéis elétricos, quadros de baixa tensão e infraestrutura de cabos.",
+    "elec_point2": "Diagnóstico e manutenção: detecção de falhas, teste de isolação, medições elétricas e restabelecimento rápido.",
+    "elec_point3": "Segurança e conformidade: verificação de dispositivos de proteção, adequação às normas industriais e habilitações elétricas."
+  },
   "de": {
     "title": "Bis zur Unendlichkeit und noch viel weiter",
     "subtitle": "Während wir auf die Wiederaufnahme der Mission warten, haben wir Spaß daran, eine Website mit KI zu erstellen",
@@ -133,8 +148,13 @@
     "auto_intro": "Operative Intelligenz im Dienste der Leistung, Autonomie und Präzision Ihrer Produktionslinien.",
     "auto_point1": "Programmierung und Steuerung: Konzeption und Entwicklung auf speicherprogrammierbaren Steuerungen (SPS) und Mensch-Maschine-Schnittstellen (HMI).",
     "auto_point2": "Überwachung und Kommunikation: Integration von SCADA-Systemen, industriellen Netzwerken, Feldbussen und intelligenten Sensoren.",
-    "auto_point3": "Inbetriebnahme und Optimierung: Einstellungen vor Ort, Erhöhung der Zuverlässigkeit von Maschinenzyklen und Reduzierung von Ausfallzeiten."
-    },
+    "auto_point3": "Inbetriebnahme und Optimierung: Einstellungen vor Ort, Erhöhung der Zuverlässigkeit von Maschinenzyklen und Reduzierung von Ausfallzeiten.",
+    "elec_title": "Elektrotechnik",
+    "elec_intro": "Beherrschung der Energieverteilung und Leistungsanlagen zur Gewährleistung der Sicherheit und Kontinuität Ihrer Einrichtungen.",
+    "elec_point1": "Verteilung und Verdrahtung: Installation, Anschluss von Schaltschränken, Niederspannungsverteilern und Kabelwegen.",
+    "elec_point2": "Diagnose und Störungsbeseitigung: Fehlersuche, Isolationsprüfung, elektrische Messungen und schnelle Wiederinbetriebnahme.",
+    "elec_point3": "Sicherheit und Konformität: Prüfung von Schutzeinrichtungen, Einhaltung industrieller Normen und Schaltberechtigungen."
+  },
   "es": {
     "title": "Hasta el infinito y más allá",
     "subtitle": "Mientras esperamos la reanudación de la misión, nos divertimos creando un sitio web con IA",
@@ -167,8 +187,13 @@
     "auto_intro": "Inteligencia operativa al servicio del rendimiento, la autonomía y la precisión de sus líneas de producción.",
     "auto_point1": "Programación y control: diseño y desarrollo en autómatas programables industriales (PLC) e interfaces hombre-máquina (HMI).",
     "auto_point2": "Supervisión y comunicación: integración de sistemas SCADA, redes industriales, buses de campo y sensores inteligentes.",
-    "auto_point3": "Puesta en marcha y optimización: ajustes in situ, fiabilización de los ciclos de máquina y reducción de tiempos de parada."
-    },
+    "auto_point3": "Puesta en marcha y optimización: ajustes in situ, fiabilización de los ciclos de máquina y reducción de tiempos de parada.",
+    "elec_title": "Electricidad",
+    "elec_intro": "Dominio de la distribución energética y de los equipos de potencia para garantizar la seguridad y la continuidad de sus instalaciones.",
+    "elec_point1": "Distribución y cableado: instalación, conexionado de armarios eléctricos, cuadros de baja tensión y canalizaciones.",
+    "elec_point2": "Diagnóstico y reparación: localización de averías, control de aislamiento, mediciones eléctricas y rápida puesta en servicio.",
+    "elec_point3": "Seguridad y conformidad: verificación de dispositivos de protección, adecuación a normativas industriales y habilitaciones eléctricas."
+  },
   "nl": {
     "title": "Naar het oneindige en daarbuiten",
     "subtitle": "In afwachting van de hervatting van de missie vermaken we ons met het maken van een website met AI",
@@ -201,6 +226,11 @@
     "auto_intro": "Operationele intelligentie ten dienste van de prestaties, autonomie en precisie van uw productielijnen.",
     "auto_point1": "Programmering en besturing: ontwerp en ontwikkeling op programmeerbare logische controllers (PLC's) en mens-machine-interfaces (HMI's).",
     "auto_point2": "Supervisie en communicatie: integratie van SCADA-systemen, industriële netwerken, veldbussen en slimme sensoren.",
-    "auto_point3": "Inbedrijfstelling en optimalisatie: afstellingen op locatie, betrouwbaarheid van machinecycli en vermindering van stilstandtijd."
+    "auto_point3": "Inbedrijfstelling en optimalisatie: afstellingen op locatie, betrouwbaarheid van machinecycli en vermindering van stilstandtijd.",
+    "elec_title": "Elektriciteit",
+    "elec_intro": "Beheersing van energiedistributie en vermogensapparatuur om de veiligheid en continuïteit van uw installaties te waarborgen.",
+    "elec_point1": "Distributie en bekabeling: installatie, aansluiting van schakelkasten, laagspanningsborden en kabeltracés.",
+    "elec_point2": "Diagnose en storingsopsporing: foutopsporing, isolatiemeting, elektrische metingen en snelle herinbedrijfstelling.",
+    "elec_point3": "Veiligheid en conformiteit: controle van beveiligingsinrichtingen, naleving van industriële normen en elektrische bevoegdheden."
   }
 }
