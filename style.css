@@ -338,7 +338,7 @@ main img:hover {
     color: #ffff;
     border-left: 5px solid #f97316;
     padding-left: 1rem;
-    background-color:#141cb4
+    background-color:transparent
 }
 
 .carte-discipline .accroche {
@@ -350,7 +350,7 @@ main img:hover {
     font-weight: 500;
     color: #ffff;
     margin: 1.5rem 0;
-    background-color:#141cb4
+    background-color:transparent
 }
 
 .liste-competences {
@@ -361,7 +361,7 @@ main img:hover {
 .liste-competences li {
     margin-bottom: 0.85rem;
     color: #ffff;
-    background-color:#141cb4
+    background-color:transparent
 }
 
 .liste-competences li::marker {
