@@ -116,5 +116,53 @@
     'images/diapo_emeca(2).jpg',
     'images/diapo_emeca(3).jpg',
     'images/diapo_emeca(4).jpg',
+  ],
+  automatisme: [
+    'images/diapo_auto(1).jpg',
+    'images/diapo_auto(2).jpg',
+    'images/diapo_auto(3).jpg',
+    'images/diapo_auto(4).jpg',
+  ],
+  electricite: [
+    'images/diapo_elec(1).jpg',
+    'images/diapo_elec(2).jpg',
+    'images/diapo_elec(3).jpg',
+    'images/diapo_elec(4).jpg',
+  ],
+  electronique: [
+    'images/diapo_electro(1).jpg',
+    'images/diapo_electro(2).jpg',
+    'images/diapo_electro(3).jpg',
+    'images/diapo_electro(4).jpg',
+  ],
+  informatique: [
+    'images/diapo_info(1).jpg',
+    'images/diapo_info(2).jpg',
+    'images/diapo_info(3).jpg',
+    'images/diapo_info(4).jpg',
+  ],
+  maintenance: [
+    'images/diapo_main(1).jpg',
+    'images/diapo_main(2).jpg',
+    'images/diapo_main(3).jpg',
+    'images/diapo_main(4).jpg',
+  ],
+  mecanique: [
+    'images/diapo_meca(1).jpg',
+    'images/diapo_meca(2).jpg',
+    'images/diapo_meca(3).jpg',
+    'images/diapo_meca(4).jpg',
+  ],
+  process: [
+    'images/diapo_pro(1).jpg',
+    'images/diapo_pro(2).jpg',
+    'images/diapo_pro(3).jpg',
+    'images/diapo_pro(4).jpg',
+  ],
+  reseaux: [
+    'images/diapo_res(1).jpg',
+    'images/diapo_res(2).jpg',
+    'images/diapo_res(3).jpg',
+    'images/diapo_res(4).jpg',
   ]
   }
