@@ -1,6 +1,6 @@
  // Liste des images de votre diaporama (pensez à utiliser des images au format léger .webp)
  const catalogueImages = {
-  accueil: Array.from({ length: 229 }, (_, i) => `images/diapo-(${i + 1}).jpg`),
+  accueil: Array.from({ length: 294 }, (_, i) => `images/diapo-(${i + 1}).jpg`),
   electromecanique: [
     'images/diapo_emeca(1).jpg',
     'images/diapo_emeca(2).jpg',
