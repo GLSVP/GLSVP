@@ -1,5 +1,6 @@
  // Liste des images de votre diaporama (pensez à utiliser des images au format léger .webp)
-  const images = [
+ const catalogueImages = {
+    accueil: [
     'images/diapo-(1).jpg',
     'images/diapo-(2).jpg',
     'images/diapo-(3).jpg',
@@ -109,4 +110,11 @@
     'images/diapo-(107).jpg',
     'images/diapo-(108).jpg',
     'images/diapo-(109).jpg',
-  ];
+  ],
+  electromecanique: [
+    'images/diapo_emeca(1).jpg',
+    'images/diapo_emeca(2).jpg',
+    'images/diapo_emeca(3).jpg',
+    'images/diapo_emeca(4).jpg',
+  ]
+  }

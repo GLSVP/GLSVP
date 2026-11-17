@@ -129,7 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. LOGIQUE DU DIAPORAMA GLOBAL (IMAGES ALÉATOIRES FLUIDES)
     // ==========================================================================
     // On s'assure que le tableau "images" existe via votre fichier externe images.js
-    if (typeof images !== 'undefined' && images.length > 0) {
+    // On récupère le nom de la page via l'attribut data-page du <body> (par défaut : 'accueil')
+    const pageActuelle = document.body.dataset.page || 'accueil';
+    const images = (typeof catalogueImages !== 'undefined' && catalogueImages[pageActuelle])
+        ? catalogueImages[pageActuelle]
+        : [];
+
+    if (images.length > 0) {
         const container = document.getElementById('bg-slideshow');
         
         if (container) {
