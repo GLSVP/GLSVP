@@ -69,10 +69,10 @@
     "res_point3": "Diagnostic et sécurisation : analyse de trames, segmentation VLAN, pare-feu industriels et garantie de haute disponibilité.",
     "btn_thermo": "Thermodynamique",
     "thermo_title": "Thermodynamique",
-    "thermo_intro": "Maîtrisez les transferts d'énergie, les bilans thermiques et l'optimisation des systèmes énergétiques.",
-    "thermo_point1": "Analyse des cycles thermodynamiques et des machines thermiques",
-    "thermo_point2": "Calcul des bilans énergétiques et étude des transferts de chaleur",
-    "thermo_point3": "Évaluation des rendements et amélioration de l'efficacité énergétique"
+    "thermo_intro": "MMaîtrisez les transferts d'énergie, les bilans thermiques et l'optimisation des systèmes énergétiques.",
+    "thermo_point1": "Cycles et machines : analyse des cycles thermodynamiques, étude des moteurs, turbines et pompes à chaleur.",
+    "thermo_point2": "Bilans et transferts : calcul des bilans énergétiques, étude des transferts de chaleur et dimensionnement d'échangeurs.",
+    "thermo_point3": "ÉRendement et efficacité : évaluation des rendements, diagnostic thermique et optimisation des installations énergétiques."
   },
   "en": {
     "title": "To infinity and beyond",
@@ -145,9 +145,10 @@
     "btn_thermo": "Thermodynamics",
     "thermo_title": "Thermodynamics",
     "thermo_intro": "Master energy transfers, thermal balances, and the optimization of energy systems.",
-    "thermo_point1": "Analysis of thermodynamic cycles and heat engines",
-    "thermo_point2": "Calculation of energy balances and heat transfer studies",
-    "thermo_point3": "Efficiency evaluation and energy performance improvement"
+    "thermo_point1": "Cycles and machinery: analysis of thermodynamic cycles, study of engines, turbines, and heat pumps.",
+    "thermo_point2": "Balances and heat transfer: energy balance calculations, heat transfer studies, and heat exchanger sizing.",
+    "thermo_point3": "Performance and efficiency: efficiency assessment, thermal diagnostics, and optimization of energy systems."
+
   },
   "pt": {
     "title": "Ao infinito e além",
@@ -220,9 +221,10 @@
     "btn_thermo": "Termodinâmica",
     "thermo_title": "Termodinâmica",
     "thermo_intro": "Domine as transferências de energia, os balanços térmicos e a otimização de sistemas energéticos.",
-    "thermo_point1": "Análise de ciclos termodinâmicos e máquinas térmicas",
-    "thermo_point2": "Cálculo de balanços energéticos e estudo de transferência de calor",
-    "thermo_point3": "Avaliação de rendimentos e melhoria da eficiência energética"
+    "thermo_point1": "Ciclos e máquinas: análise de ciclos termodinâmicos, estudo de motores, turbinas e bombas de calor.",
+    "thermo_point2": "Balanços e transferências: cálculo de balanços energéticos, estudo de transferência de calor e dimensionamento de permutadores.",
+    "thermo_point3": "Rendimento e eficiência: avaliação de rendimentos, diagnóstico térmico e otimização de instalações energéticas."
+
   },
   "de": {
     "title": "Bis zur Unendlichkeit und noch viel weiter",
@@ -295,9 +297,10 @@
     "btn_thermo": "Thermodynamik",
     "thermo_title": "Thermodynamik",
     "thermo_intro": "Beherrschen Sie Energieübertragungen, Wärmebilanzen und die Optimierung von Energiesystemen.",
-    "thermo_point1": "Analyse thermodynamischer Kreisprozesse und Wärmekraftmaschinen",
-    "thermo_point2": "Berechnung von Energiebilanzen und Untersuchung der Wärmeübertragung",
-    "thermo_point3": "Bewertung von Wirkungsgraden und Steigerung der Energieeffizienz"
+    "thermo_point1": "Kreisprozesse und Maschinen: Analyse thermodynamischer Kreisprozesse, Untersuchung von Motoren, Turbinen und Wärmepumpen.",
+    "thermo_point2": "Bilanzen und Wärmeübertragung: Berechnung von Energiebilanzen, Untersuchung der Wärmeübertragung und Auslegung von Wärmetauschern.",
+    "thermo_point3": "Wirkungsgrad und Effizienz: Bewertung von Wirkungsgraden, thermische Diagnose und Optimierung von Energieanlagen."
+
   },
   "es": {
     "title": "Hasta el infinito y más allá",
@@ -370,9 +373,10 @@
     "btn_thermo": "Termodinámica",
     "thermo_title": "Termodinámica",
     "thermo_intro": "Domina las transferencias de energía, los balances térmicos y la optimización de sistemas energéticos.",
-    "thermo_point1": "Análisis de ciclos termodinámicos y máquinas térmicas",
-    "thermo_point2": "Cálculo de balances energéticos y estudio de transferencia de calor",
-    "thermo_point3": "Evaluación de rendimientos y mejora de la eficiencia energética"
+    "thermo_point1": "Ciclos y máquinas: análisis de ciclos termodinámicos, estudio de motores, turbinas y bombas de calor.",
+    "thermo_point2": "Balances y transferencias: cálculo de balances energéticos, estudio de transferencia de calor y dimensionamiento de intercambiadores.",
+    "thermo_point3": "Rendimiento y eficiencia: evaluación de rendimientos, diagnóstico térmico y optimización de instalaciones energéticas."
+
   },
   "nl": {
     "title": "Naar het oneindige en daarbuiten",
@@ -445,8 +449,9 @@
     "btn_thermo": "Thermodynamica",
     "thermo_title": "Thermodynamica",
     "thermo_intro": "Beheers energieoverdrachten, warmtebalansen en de optimalisatie van energiesystemen.",
-    "thermo_point1": "Analyse van thermodynamische kringprocessen en warmtemachines",
-    "thermo_point2": "Berekening van energiebalansen en studie van warmteoverdracht",
-    "thermo_point3": "Evaluatie van rendementen en verbetering van energie-efficiëntie"
+    "thermo_point1": "Kringprocessen en machines: analyse van thermodynamische kringprocessen, studie van motoren, turbines en warmtepompen.",
+    "thermo_point2": "Balansen en warmteoverdracht: berekening van energiebalansen, studie van warmteoverdracht en dimensionering van warmtewisselaars.",
+    "thermo_point3": "Rendement en efficiëntie: beoordeling van rendementen, thermische diagnose en optimalisatie van energie-installaties."
+
   }
 }
