@@ -72,7 +72,13 @@
     "thermo_intro": "MMaîtrisez les transferts d'énergie, les bilans thermiques et l'optimisation des systèmes énergétiques.",
     "thermo_point1": "Cycles et machines : analyse des cycles thermodynamiques, étude des moteurs, turbines et pompes à chaleur.",
     "thermo_point2": "Bilans et transferts : calcul des bilans énergétiques, étude des transferts de chaleur et dimensionnement d'échangeurs.",
-    "thermo_point3": "ÉRendement et efficacité : évaluation des rendements, diagnostic thermique et optimisation des installations énergétiques."
+    "thermo_point3": "ÉRendement et efficacité : évaluation des rendements, diagnostic thermique et optimisation des installations énergétiques.",
+    "btn_FLNG": "floating liquified natural gas",
+    "FLNG_title": "Floating Liquified NAtural Gas",
+    "FLNG_intro": "EN COURS",
+    "FLNG_point1": "En cours",
+    "FLNG_point2": "En cours",
+    "FLNG_point3": "En cours"
   },
   "en": {
     "title": "To infinity and beyond",
@@ -147,7 +153,14 @@
     "thermo_intro": "Master energy transfers, thermal balances, and the optimization of energy systems.",
     "thermo_point1": "Cycles and machinery: analysis of thermodynamic cycles, study of engines, turbines, and heat pumps.",
     "thermo_point2": "Balances and heat transfer: energy balance calculations, heat transfer studies, and heat exchanger sizing.",
-    "thermo_point3": "Performance and efficiency: efficiency assessment, thermal diagnostics, and optimization of energy systems."
+    "thermo_point3": "Performance and efficiency: efficiency assessment, thermal diagnostics, and optimization of energy systems.",
+    "btn_FLNG": "floating liquified natural gas",
+    "FLNG_title": "Floating Liquified NAtural Gas",
+    "FLNG_intro": "EN COURS",
+    "FLNG_point1": "En cours",
+    "FLNG_point2": "En cours",
+    "FLNG_point3": "En cours"
+
 
   },
   "pt": {
@@ -223,7 +236,14 @@
     "thermo_intro": "Domine as transferências de energia, os balanços térmicos e a otimização de sistemas energéticos.",
     "thermo_point1": "Ciclos e máquinas: análise de ciclos termodinâmicos, estudo de motores, turbinas e bombas de calor.",
     "thermo_point2": "Balanços e transferências: cálculo de balanços energéticos, estudo de transferência de calor e dimensionamento de permutadores.",
-    "thermo_point3": "Rendimento e eficiência: avaliação de rendimentos, diagnóstico térmico e otimização de instalações energéticas."
+    "thermo_point3": "Rendimento e eficiência: avaliação de rendimentos, diagnóstico térmico e otimização de instalações energéticas.",
+    "btn_FLNG": "floating liquified natural gas",
+    "FLNG_title": "Floating Liquified NAtural Gas",
+    "FLNG_intro": "EN COURS",
+    "FLNG_point1": "En cours",
+    "FLNG_point2": "En cours",
+    "FLNG_point3": "En cours"
+
 
   },
   "de": {
@@ -299,7 +319,14 @@
     "thermo_intro": "Beherrschen Sie Energieübertragungen, Wärmebilanzen und die Optimierung von Energiesystemen.",
     "thermo_point1": "Kreisprozesse und Maschinen: Analyse thermodynamischer Kreisprozesse, Untersuchung von Motoren, Turbinen und Wärmepumpen.",
     "thermo_point2": "Bilanzen und Wärmeübertragung: Berechnung von Energiebilanzen, Untersuchung der Wärmeübertragung und Auslegung von Wärmetauschern.",
-    "thermo_point3": "Wirkungsgrad und Effizienz: Bewertung von Wirkungsgraden, thermische Diagnose und Optimierung von Energieanlagen."
+    "thermo_point3": "Wirkungsgrad und Effizienz: Bewertung von Wirkungsgraden, thermische Diagnose und Optimierung von Energieanlagen.",
+    "btn_FLNG": "floating liquified natural gas",
+    "FLNG_title": "Floating Liquified NAtural Gas",
+    "FLNG_intro": "EN COURS",
+    "FLNG_point1": "En cours",
+    "FLNG_point2": "En cours",
+    "FLNG_point3": "En cours"
+
 
   },
   "es": {
@@ -375,7 +402,14 @@
     "thermo_intro": "Domina las transferencias de energía, los balances térmicos y la optimización de sistemas energéticos.",
     "thermo_point1": "Ciclos y máquinas: análisis de ciclos termodinámicos, estudio de motores, turbinas y bombas de calor.",
     "thermo_point2": "Balances y transferencias: cálculo de balances energéticos, estudio de transferencia de calor y dimensionamiento de intercambiadores.",
-    "thermo_point3": "Rendimiento y eficiencia: evaluación de rendimientos, diagnóstico térmico y optimización de instalaciones energéticas."
+    "thermo_point3": "Rendimiento y eficiencia: evaluación de rendimientos, diagnóstico térmico y optimización de instalaciones energéticas.",
+    "btn_FLNG": "floating liquified natural gas",
+    "FLNG_title": "Floating Liquified NAtural Gas",
+    "FLNG_intro": "EN COURS",
+    "FLNG_point1": "En cours",
+    "FLNG_point2": "En cours",
+    "FLNG_point3": "En cours"
+
 
   },
   "nl": {
@@ -451,7 +485,14 @@
     "thermo_intro": "Beheers energieoverdrachten, warmtebalansen en de optimalisatie van energiesystemen.",
     "thermo_point1": "Kringprocessen en machines: analyse van thermodynamische kringprocessen, studie van motoren, turbines en warmtepompen.",
     "thermo_point2": "Balansen en warmteoverdracht: berekening van energiebalansen, studie van warmteoverdracht en dimensionering van warmtewisselaars.",
-    "thermo_point3": "Rendement en efficiëntie: beoordeling van rendementen, thermische diagnose en optimalisatie van energie-installaties."
+    "thermo_point3": "Rendement en efficiëntie: beoordeling van rendementen, thermische diagnose en optimalisatie van energie-installaties.",
+    "btn_FLNG": "floating liquified natural gas",
+    "FLNG_title": "Floating Liquified NAtural Gas",
+    "FLNG_intro": "EN COURS",
+    "FLNG_point1": "En cours",
+    "FLNG_point2": "En cours",
+    "FLNG_point3": "En cours"
+
 
   }
 }
