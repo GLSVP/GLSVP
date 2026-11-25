@@ -32,6 +32,6 @@
     ...Array.from({ length: 327 }, (_, i) => `images/diapo-(${i + 1}).jpg`),
   ],
   "floating liquified natural gas": [
-    ...Array.from({ length: 6 }, (_, 328) => `images/diapo-(${i + 1}).jpg`),
+    ...Array.from({ length: 6 }, (_, i) => `images/diapo-(${i + 328}).jpg`),
   ]
   }
