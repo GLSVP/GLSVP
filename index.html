@@ -168,20 +168,5 @@
             });
         });
     </script>
-    <script>
-        // 1. Sauvegarder la position de défilement avant de quitter la page
-    window.addEventListener("beforeunload", () => {
-    sessionStorage.setItem("scrollPosition", window.scrollY);
-    });
-
-    // 2. Restaurer la position dès que la nouvelle page est chargée
-    window.addEventListener("DOMContentLoaded", () => {
-    const scrollPosition = sessionStorage.getItem("scrollPosition");
-    if (scrollPosition !== null) {
-        window.scrollTo(0, parseInt(scrollPosition, 10));
-        sessionStorage.removeItem("scrollPosition"); // Nettoie après usage
-    }
-    });
-    </script>
-
+    
 </body></html>

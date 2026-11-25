@@ -227,4 +227,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
         });
     }
+    // 1. Désactiver la restauration automatique du navigateur qui force le haut de page
+    if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+    }
+
+    // 2. Sauvegarder la position uniquement lors du clic sur un bouton de discipline
+    document.querySelectorAll('.btn-discipline').forEach(bouton => {
+    bouton.addEventListener('click', () => {
+        sessionStorage.setItem('disciplineScrollY', window.scrollY);
+    });
+    });
+
+    // 3. Restaurer la position une fois que toute la page et les images sont chargées
+    window.addEventListener('load', () => {
+    const savedY = sessionStorage.getItem('disciplineScrollY');
+    if (savedY !== null) {
+        window.scrollTo({
+        top: parseInt(savedY, 10),
+        behavior: 'instant' // Évite un effet de glissement visible
+        });
+        sessionStorage.removeItem('disciplineScrollY');
+    }
+    });
+
 });
