@@ -271,6 +271,7 @@ main img:hover {
 .cv-floating-box .dropdown-content {
     left: 0;
     top: 100%;
+    margin-top: 0px;
 }
 
 /* ==========================================================================
