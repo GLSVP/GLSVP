@@ -125,56 +125,62 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==========================================================================
+    // -------------------------------------------------------------------------
     // 2. LOGIQUE DU DIAPORAMA GLOBAL (IMAGES ALÉATOIRES FLUIDES)
-    // ==========================================================================
-    // On s'assure que le tableau "images" existe via votre fichier externe images.js
-    // On récupère le nom de la page via l'attribut data-page du <body> (par défaut : 'accueil')
-    const pageActuelle = document.body.dataset.page || 'accueil';
+    // -------------------------------------------------------------------------
+    let diaporamaInterval = null;
+
+    function lancerDiaporama(pageActuelle) {
+    if (diaporamaInterval) clearInterval(diaporamaInterval);
+
     const images = (typeof catalogueImages !== 'undefined' && catalogueImages[pageActuelle])
-        ? catalogueImages[pageActuelle]
+        ? [...catalogueImages[pageActuelle]]
         : [];
 
     if (images.length > 0) {
         const container = document.getElementById('bg-slideshow');
-        
         if (container) {
-            const layers = container.getElementsByClassName('slideshow-layer');
-            let activeLayerIndex = 0;
-            let currentIndex = 0;
+        const layers = container.getElementsByClassName('slideshow-layer');
+        let activeLayerIndex = 0;
+        let currentIndex = 0;
 
-            // Mélange initial du catalogue d'images
-            images.sort(() => Math.random() - 0.5);
-            
-            if (layers.length > 0) {
-                layers[activeLayerIndex].style.backgroundImage = `url('${images[0]}')`;
-            }
+        // Mélange initial du catalogue d'images
+        images.sort(() => Math.random() - 0.5);
 
-            function preloadImage(url) {
-                return new Promise((resolve) => {
-                    const img = new Image();
-                    img.src = url;
-                    img.onload = () => resolve(url);
-                });
-            }
+        if (layers.length > 0) {
+            layers[activeLayerIndex].style.backgroundImage = `url('${images[0]}')`;
+        }
 
-            setInterval(async () => {
-                if (images.length === 0 || layers.length < 2) return;
+        function preloadImage(url) {
+            return new Promise((resolve) => {
+            const img = new Image();
+            img.src = url;
+            img.onload = () => resolve(url);
+            });
+        }
 
-                currentIndex = (currentIndex + 1) % images.length;
-                const nextImageUrl = images[currentIndex];
-                const nextLayerIndex = activeLayerIndex === 0 ? 1 : 0;
+        diaporamaInterval = setInterval(async () => {
+            if (images.length === 0 || layers.length < 2) return;
 
-                await preloadImage(nextImageUrl);
+            currentIndex = (currentIndex + 1) % images.length;
+            const nextImageUrl = images[currentIndex];
+            const nextLayerIndex = activeLayerIndex === 0 ? 1 : 0;
 
-                layers[nextLayerIndex].style.backgroundImage = `url('${nextImageUrl}')`;
-                layers[activeLayerIndex].classList.remove('active');
-                layers[nextLayerIndex].classList.add('active');
+            await preloadImage(nextImageUrl);
 
-                activeLayerIndex = nextLayerIndex;
-            }, 4000);
+            layers[nextLayerIndex].style.backgroundImage = `url('${nextImageUrl}')`;
+            layers[activeLayerIndex].classList.remove('active');
+            layers[nextLayerIndex].classList.add('active');
+
+            activeLayerIndex = nextLayerIndex;
+        }, 4000);
         }
     }
+    }
+
+    // Lancement initial au chargement de la page
+    const pageInitiale = document.body.dataset.page || 'accueil';
+    lancerDiaporama(pageInitiale);
 
 
     // ==========================================================================
@@ -227,28 +233,55 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
         });
     }
-    // 1. Désactiver la restauration automatique du navigateur qui force le haut de page
-    if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-    }
+    
+    // -------------------------------------------------------------------------
+    // 4. NAVIGATION FLUIDE SANS RECHARGEMENT (PRÉSERVE LA POSITION ET L'AUDIO)
+    // -------------------------------------------------------------------------
+    document.querySelectorAll('.btn-discipline').forEach(lien => {
+    lien.addEventListener('click', async (e) => {
+        e.preventDefault(); // Bloque le rechargement et garde la fenêtre figée
 
-    // 2. Sauvegarder la position uniquement lors du clic sur un bouton de discipline
-    document.querySelectorAll('.btn-discipline').forEach(bouton => {
-    bouton.addEventListener('click', () => {
-        sessionStorage.setItem('disciplineScrollY', window.scrollY);
+        const url = lien.getAttribute('href');
+
+        try {
+        const reponse = await fetch(url);
+        if (!reponse.ok) throw new Error('Page introuvable');
+        const texteHtml = await reponse.text();
+
+        const parser = new DOMParser();
+        const nouveauDoc = parser.parseFromString(texteHtml, 'text/html');
+
+        const ancienMain = document.querySelector('main');
+        const nouveauMain = nouveauDoc.querySelector('main');
+
+        if (ancienMain && nouveauMain) {
+            // 1. Remplace uniquement le contenu central
+            ancienMain.innerHTML = nouveauMain.innerHTML;
+            document.title = nouveauDoc.title;
+
+            // 2. Met à jour l'identifiant de page et relance le bon diaporama
+            const nouvellePage = nouveauDoc.body.dataset.page || 'accueil';
+            document.body.dataset.page = nouvellePage;
+            lancerDiaporama(nouvellePage);
+
+            // 3. Traduit les nouveaux textes injectés dans <main>
+            if (typeof applyTranslations === 'function') {
+            applyTranslations(currentLang);
+            }
+
+            // 4. Met à jour l'URL dans la barre d'adresse
+            window.history.pushState({}, '', url);
+        }
+        } catch (erreur) {
+        window.location.href = url; // Sécurité si testé en local sans serveur
+        }
     });
     });
 
-    // 3. Restaurer la position une fois que toute la page et les images sont chargées
-    window.addEventListener('load', () => {
-    const savedY = sessionStorage.getItem('disciplineScrollY');
-    if (savedY !== null) {
-        window.scrollTo({
-        top: parseInt(savedY, 10),
-        behavior: 'instant' // Évite un effet de glissement visible
-        });
-        sessionStorage.removeItem('disciplineScrollY');
-    }
+    // Gère les boutons Précédent/Suivant du navigateur
+    window.addEventListener('popstate', () => {
+    window.location.reload();
     });
+
 
 });
